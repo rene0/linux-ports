@@ -50,7 +50,7 @@ IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
 .		endif
 .    endif
 .  else
-# default for OSVERSION >= 800076
+# default
 LINUX_DIST_SUFFIX=	-f10
 .  endif
 
