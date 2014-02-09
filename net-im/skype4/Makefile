@@ -54,27 +54,6 @@ RUN_DEPENDS+=	linux_v4l2wrapper-kmod>=1.0:${PORTSDIR}/multimedia/linux_v4l2wrapp
 SUB_LIST+=	VIDEO=""
 .endif
 
-### FIX ME, once they get bumped:
-# for 7: 704102
-# for 8: 802504
-# for HEAD: 900037
-# we need src/sys/dev/sound/pcm/dsp.c r221388
-IGNORE_MSG=	needs sys/dev/sound/pcm/dsp.c r221388 (and other changes).\
-		Please update your system post 
-.if ${OSVERSION} < 704102
-OUTDATED=	true
-IGNORE_MSG+=	r221584 / Sat May 7 09:33:37 2011 UTC
-.elif (${OSVERSION} > 800000 && ${OSVERSION} < 802503)
-OUTDATED=	true
-IGNORE_MSG+=	r221583 / Sat May 7 09:26:11 2011 UTC
-.elif (${OSVERSION} > 900000 && ${OSVERSION} < 900036)
-OUTDATED=	true
-IGNORE_MSG+=	r221388 / Tue May 3 15:50:22 2011 UTC
-.endif
-.ifdef OUTDATED
-IGNORE=	${IGNORE_MSG}
-.endif
-
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
