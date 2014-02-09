@@ -5,6 +5,7 @@ PORTNAME=	qt47
 PORTVERSION=	4.7.2
 RPMVERSION=	1_18.el5
 DIST_SUBDIR=    rpm/${LINUX_RPM_ARCH}/centos/c5
+SRC_DISTFILES:=	# no file available, nowhere
 
 CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
