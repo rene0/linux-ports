@@ -1,9 +1,10 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	cyrus-sasl-lib #FIXME: get bsd.linux-rpm to accept DISTNAME ?
+PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.23
 CATEGORIES=	security linux
+DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 

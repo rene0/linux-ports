@@ -22,5 +22,6 @@ CATEGORIES=	www linux
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	5
 USE_LDCONFIG=	yes
+DESCR=	${.CURDIR}/../qt4-webkit/pkg-descr
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	jpeg #FIXME: get bsd.linux-rpm to accept DISTNAME ?
+PORTNAME=	jpeg
 PORTVERSION=	1.2.1
 CATEGORIES=	graphics linux
 DISTNAME=	lib${PORTNAME}-turbo-${PORTVERSION}-${RPMVERSION}
