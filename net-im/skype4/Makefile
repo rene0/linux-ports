@@ -32,20 +32,15 @@ PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
+#NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+#NVIDIA_GL_USE=		LINUX_APPS=xorglibs
+#NVIDIA_GL_USE_OFF=	LINUX_APPS=dri
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-#.if ${PORT_OPTIONS:MNVIDIA_GL}
-#RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-#USE_LINUX_APPS+=xorglibs
-#.else
-#USE_LINUX_APPS+=dri
-#.endif
 
-.if ${PORT_OPTIONS:MVIDEO}
-RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
-USE_LINUX_APPS+=	libv4l
-.endif
+VIDEO_RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+VIDEO_USE=		LINUX_APPS=libv4l
 
 do-install:
 	@${INSTALL} -d ${STAGEDIR}${PREFIX}/share/applications
