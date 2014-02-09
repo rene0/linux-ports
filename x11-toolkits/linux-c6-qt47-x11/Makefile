@@ -14,6 +14,7 @@ COMMENT=	RPM of QT4 (Linux CentOS 5)
 ONLY_FOR_ARCHS=	i386 amd64
 RPMVERSION=	1_18.el5
 USE_LINUX=	c6
+LINUX_RPM_ARCH=	i386
 USE_LINUX_APPS=	fontconfig png  xorglibs png alsalib dri jpeg tiff qt47
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	5
