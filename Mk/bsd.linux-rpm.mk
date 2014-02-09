@@ -73,7 +73,8 @@ LINUX_DIST_VER=	10
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 .    if ${LINUX_DIST} == "fedora"
-# we do not want to define MASTER_SITES and MASTER_SITE_* if they are already defined
+# we do not want to define MASTER_SITES and MASTER_SITE_*
+# if they are already defined
 # ex.: MASTER_SITES=file:///...
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
