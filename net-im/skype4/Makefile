@@ -45,9 +45,6 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 .if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=	libv4l
-SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
-.else
-SUB_LIST+=	VIDEO=""
 .endif
 
 do-install:
