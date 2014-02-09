@@ -6,6 +6,7 @@ PORTVERSION=	4.7.2
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	http://dl.atrpms.net/el5-i386/atrpms/testing/
 DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/centos/c5
+SRC_DISTFILES:=		# unretrievable.
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux CentOS 5)
