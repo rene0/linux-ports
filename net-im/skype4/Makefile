@@ -35,9 +35,6 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 #NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 #NVIDIA_GL_USE=		LINUX_APPS=xorglibs
 #NVIDIA_GL_USE_OFF=	LINUX_APPS=dri
-.include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
 
 VIDEO_RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 VIDEO_USE=		LINUX_APPS=libv4l
@@ -58,4 +55,4 @@ do-install:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
