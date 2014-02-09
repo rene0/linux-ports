@@ -14,6 +14,7 @@ COMMENT=	Image loading library for GTK+ (Linux Fedora 10)
 CONFLICTS=	linux-gdk-pixbuf-[0-9]* linux-f8-gdk-pixbuf-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	36.fc9
