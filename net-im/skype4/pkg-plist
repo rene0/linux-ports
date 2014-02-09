@@ -1,7 +1,6 @@
 bin/skype
 share/pixmaps/skype.png
 share/applications/skype.desktop
-%%SKYPEDIR%%/skype
 %%SKYPEDIR%%/avatars/Angel Skype.png
 %%SKYPEDIR%%/avatars/Architect Skype.png
 %%SKYPEDIR%%/avatars/Beach Skype.png
@@ -62,11 +61,18 @@ share/applications/skype.desktop
 %%SKYPEDIR%%/avatars/Travel Skype.png
 %%SKYPEDIR%%/avatars/Wetsuit Skype.png
 %%SKYPEDIR%%/avatars/Yin Yang Skype.png
+%%SKYPEDIR%%/icons/SkypeBlue_128x128.png
 %%SKYPEDIR%%/icons/SkypeBlue_16x16.png
+%%SKYPEDIR%%/icons/SkypeBlue_24x24.png
+%%SKYPEDIR%%/icons/SkypeBlue_256x256.png
 %%SKYPEDIR%%/icons/SkypeBlue_32x32.png
 %%SKYPEDIR%%/icons/SkypeBlue_48x48.png
+%%SKYPEDIR%%/icons/SkypeBlue_64x64.png
+%%SKYPEDIR%%/icons/SkypeBlue_96x96.png
 %%SKYPEDIR%%/lang/skype_bg.qm
 %%SKYPEDIR%%/lang/skype_bg.ts
+%%SKYPEDIR%%/lang/skype_cs.qm
+%%SKYPEDIR%%/lang/skype_cs.ts
 %%SKYPEDIR%%/lang/skype_de.qm
 %%SKYPEDIR%%/lang/skype_de.ts
 %%SKYPEDIR%%/lang/skype_en.qm
@@ -87,6 +93,8 @@ share/applications/skype.desktop
 %%SKYPEDIR%%/lang/skype_lt.ts
 %%SKYPEDIR%%/lang/skype_lv.qm
 %%SKYPEDIR%%/lang/skype_lv.ts
+%%SKYPEDIR%%/lang/skype_no.qm
+%%SKYPEDIR%%/lang/skype_no.ts
 %%SKYPEDIR%%/lang/skype_pl.qm
 %%SKYPEDIR%%/lang/skype_pl.ts
 %%SKYPEDIR%%/lang/skype_pt_br.qm
@@ -107,6 +115,7 @@ share/applications/skype.desktop
 %%SKYPEDIR%%/lang/skype_zh_s.ts
 %%SKYPEDIR%%/lang/skype_zh_t.qm
 %%SKYPEDIR%%/lang/skype_zh_t.ts
+%%SKYPEDIR%%/skype
 %%SKYPEDIR%%/sounds/CallBusy.wav
 %%SKYPEDIR%%/sounds/CallConnecting.wav
 %%SKYPEDIR%%/sounds/CallFailed.wav
@@ -134,4 +143,3 @@ share/applications/skype.desktop
 @dirrm %%SKYPEDIR%%/icons
 @dirrm %%SKYPEDIR%%/avatars
 @dirrm %%SKYPEDIR%%
-@dirrmtry share/applications
