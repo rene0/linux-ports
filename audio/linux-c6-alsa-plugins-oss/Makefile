@@ -23,7 +23,6 @@ USE_LINUX_APPS=	alsalib
 USE_LINUX_RPM=	yes
 RPMVERSION=	3.el6
 
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 CONF_FILE=	etc/alsa/pcm/pcm-oss.conf
@@ -34,8 +33,7 @@ post-patch:
 
 post-install:
 	@if [ ! -f ${PREFIX}/${CONF_FILE} ]; then \
-		${CP} -p ${PREFIX}/${CONF_FILE}-dist ${PREFIX}/${CONF_FILE} ; \
+		${CP} -p ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE} ; \
 	fi
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

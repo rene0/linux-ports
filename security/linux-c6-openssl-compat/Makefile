@@ -21,6 +21,6 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../openssl/pkg-descr
 
 post-install:
-	@cd ${PREFIX}/usr/lib && ${LN} -sf libssl.so.6 libssl.so.7
+	@cd ${STAGEDIR}${PREFIX}/usr/lib && ${LN} -sf libssl.so.6 libssl.so.7
 
 .include <bsd.port.mk>
