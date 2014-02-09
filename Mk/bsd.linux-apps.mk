@@ -39,8 +39,7 @@ Linux_APPS_Pre_Include=			bsd.linux-apps.mk
 
 Linux_APPS_Post_Include=	bsd.linux-apps.mk
 
-# OVERRIDE_LINUX_NONBASE_PORTS may be used only with LINUX_OSRELEASE=2.6.16
-.  if (${LINUX_OSRELEASE} == "2.6.18") && defined(OVERRIDE_LINUX_NONBASE_PORTS)
+.  if defined(OVERRIDE_LINUX_NONBASE_PORTS)
 .    if ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 LINUX_DIST_SUFFIX=	-f10
 .    else
