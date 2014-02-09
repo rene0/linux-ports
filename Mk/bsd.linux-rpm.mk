@@ -44,7 +44,7 @@ NO_BUILD=			yes
 
 .  if ${ARCH} == "amd64"
 .    if ${USE_LINUX} == "c6"
-LINUX_RPM_ARCH=		i686	# the linuxulator does not yet support amd64 code
+LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
 .    else
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .    endif
