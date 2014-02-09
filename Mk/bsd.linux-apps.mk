@@ -46,7 +46,7 @@ LINUX_DIST_SUFFIX=	-f10
 .		if ${OVERRIDE_LINUX_NONBASE_PORTS} == "c6"
 LINUX_DIST_SUFFIX=	-c6
 .		else
-IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\"
+IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
 .		endif
 .    endif
 .  else
