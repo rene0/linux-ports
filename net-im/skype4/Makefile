@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=	VIDEO
 
 NO_BUILD=	yes
 
+USES=		desktop-file-utils
 USE_BZIP2=	yes
 USE_LINUX=	c6
 USE_LINUX_APPS+=alsalib alsa-plugins-oss fontconfig xorglibs qt47 qt47-x11 qt47-webkit openssl-compat
