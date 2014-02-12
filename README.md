@@ -40,9 +40,9 @@ following command:
 ```
 
 Also add this sysctl(8) variable to /etc/sysctl.conf to make the change permanent:
-
+```
     # echo 'compat.linux.osrelease=2.6.18' >> /etc/sysctl.conf
-
+```
 Specific Skype requirements
 ---------------------------
 
