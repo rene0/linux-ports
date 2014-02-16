@@ -1,5 +1,5 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
-# $FreeBSD:$
+# $FreeBSD$
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.310
