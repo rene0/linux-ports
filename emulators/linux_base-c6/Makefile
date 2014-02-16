@@ -1,5 +1,5 @@
 # Created by: Svyatoslav Lempert <svyatoslav.lempert@gmail dot com>
-# $FreeBSD: head/emulators/linux_base-c6/Makefile 342245 2014-02-02 06:58:50Z netchild $
+# $FreeBSD$
 
 PORTNAME=		c6
 PORTVERSION=		6.5

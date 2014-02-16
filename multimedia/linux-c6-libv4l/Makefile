@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD: head/multimedia/linux-f10-libv4l/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	libv4l
 PORTVERSION=	0.6.3
