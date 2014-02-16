@@ -66,16 +66,3 @@ like `cp -r linux-ports/* /usr/ports` worked.. Now you are ready to install
 ```
     # portmaster net-im/skype4
 ```
-
-If you want video calls support on a somewhat older FreeBSD system (before
-`FreeBSD 10.0`) you should also replace linux_videodev2.h header from
-`multimedia/linux_v4l2wrapper-kmod` port:
-```
-    # cd /usr/ports/multimedia/linux_v4l2wrapper-kmod
-    # make patch
-    # mv -i /sys/compat/linux/linux_videodev2.h{,.bak}
-    # cp -i work/linux_v4l2/linux_videodev2.h /sys/compat/linux
-```
-
-Then rebuild/install the kernel. Again, this patch has already been applied for
-`FreeBSD 10.0` and `CURRENT`.
