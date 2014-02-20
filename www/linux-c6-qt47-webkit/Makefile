@@ -24,5 +24,6 @@ CATEGORIES=	www linux
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	5
 USE_LDCONFIG=	yes
+DESCR=  ${.CURDIR}/../../www/webkit-gtk3/pkg-descr # contains no GTK references, reuse
 
 .include <bsd.port.mk>
