@@ -18,6 +18,7 @@ LINUX_RPM_ARCH=	i386
 USE_LINUX_APPS=	fontconfig png  xorglibs png alsalib dri jpeg tiff qt47
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	5
+DESCR=	${.CURDIR}/../../devel/qt4/pkg-descr
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
