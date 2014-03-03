@@ -60,13 +60,13 @@ LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
-.if ${USE_LINUX} == "c6"
-LINUX_DIST=	centos
-LINUX_DIST_VER=	6.5
-.else
+.if ${USE_LINUX} == "f10"
 USE_LINUX?=	"f10"
 LINUX_DIST=	fedora
 LINUX_DIST_VER=	10
+.else
+LINUX_DIST=	centos
+LINUX_DIST_VER=	6.5
 .endif
 
 .  if defined(LINUX_DIST)
@@ -115,6 +115,10 @@ MASTER_SITES=	http://vault.centos.org/${LINUX_DIST_VER}/os/i386/Packages/
 .    endif
 .  endif
 
+
+#.if ${USE_LINUX:L} == "yes" #redundant with bsd.port.mk fu
+#USE_LINUX=	c6
+#.endif
 PKGNAMEPREFIX?=			linux-${USE_LINUX}-
 
 # DISTFILES and SRC_DISTFILES assume that there is only one bindist
@@ -160,9 +164,10 @@ linux-rpm-clean-portdocs:
 
 .  if defined(AUTOMATIC_PLIST)
 
-.	if ${USE_LINUX} == "f10" || ${USE_LINUX:L} == "yes"
+.	if ${USE_LINUX} == "f10"
 _LINUX_BASE_SUFFIX=		f10
-.	elif ${USE_LINUX} == "c6"
+.	elif ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
+USE_LINUX=	c6
 _LINUX_BASE_SUFFIX=		c6
 .	else
 # other linux_base ports do not provide a pkg-plist file

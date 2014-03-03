@@ -258,8 +258,8 @@ MASTER_SITE_EXIM+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
 	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/centos/6.5/os/i386/Packages/ \
-	http://vault.centos.org/6.5/os/Source/SPackages/
+	http://vault.centos.org/6.5/os/Source/SPackages/ \
+	http://vault.centos.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
