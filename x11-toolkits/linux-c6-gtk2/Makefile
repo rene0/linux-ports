@@ -14,7 +14,7 @@ COMMENT=	GTK+ library, version 2.X  (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-gtk2-[0-9]* linux-f8-gtk2-[0-9]* linux-f10-gtk2-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_APPS=	png jpeg tiff xorglibs pango atk
 USE_LINUX_RPM=	yes
 RPMVERSION=	4.el6

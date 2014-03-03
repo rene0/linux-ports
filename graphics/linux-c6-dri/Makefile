@@ -22,7 +22,7 @@ SRC_DISTFILES=	mesa-9.2-0.5.el6.src.rpm \
 				freeglut-2.6.0-1.el6.src.rpm
 .endif
 
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes

@@ -16,7 +16,7 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/centos/c5
 
 ONLY_FOR_ARCHS=	i386 amd64
 RPMVERSION=	1_18.el5
-USE_LINUX=	c6
+USE_LINUX=	yes
 LINUX_RPM_ARCH=	i386
 USE_LINUX_APPS=	fontconfig png xorglibs sqlite3 qt47 qt47-x11
 

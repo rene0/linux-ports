@@ -22,7 +22,7 @@ NO_BUILD=	yes
 
 USES=		desktop-file-utils
 USE_BZIP2=	yes
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_APPS+=alsalib alsa-plugins-oss fontconfig xorglibs qt47 qt47-x11 qt47-webkit openssl-compat
 RESTRICTED=	Redistribution prohibited.
 
@@ -36,8 +36,14 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 #NVIDIA_GL_USE=		LINUX_APPS=xorglibs
 #NVIDIA_GL_USE_OFF=	LINUX_APPS=dri
 
-VIDEO_RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
-VIDEO_USE=		LINUX_APPS=libv4l
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MVIDEO}
+RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+USE_LINUX_APPS+=	libv4l
+SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
+.else
+SUB_LIST+=	VIDEO=""
+.endif
 
 do-install:
 	@${INSTALL} -d ${STAGEDIR}${PREFIX}/share/applications

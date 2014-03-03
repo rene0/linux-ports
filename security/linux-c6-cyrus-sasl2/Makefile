@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 SRC_DISTFILES=	cyrus-sasl-2.1.23-13.el6_3.1.src.rpm
 .endif 
 
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_RPM=	yes
 RPMVERSION=	13.el6_3.1
 USE_LDCONFIG=	yes

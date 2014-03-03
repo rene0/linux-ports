@@ -12,7 +12,7 @@ DISTNAME=	openssl098e-${PORTVERSION}-${RPMVERSION}
 CONFLICTS=	linux-openssl-[0-9]* linux-f8-openssl-[0-9]* linux-f10-openssl-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_RPM=	yes
 RPMVERSION=	17.el6.centos.2
 USE_LDCONFIG=	yes

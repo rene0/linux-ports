@@ -14,7 +14,7 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/centos/${LINUX_DIST_VER}
 CONFLICTS=	linux-jpeg-[0-9]* linux-f10-jpeg-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_RPM=	yes
 RPMVERSION=	1.el6
 LINUX_NAME=	lib${PORTNAME}
