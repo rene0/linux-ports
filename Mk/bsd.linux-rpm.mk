@@ -42,17 +42,18 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
-.  if ${ARCH} == "powerpc"
+.	if ${ARCH} == "powerpc"
 LINUX_RPM_ARCH?=	ppc
-.  else
-LINUX_RPM_ARCH?=	${ARCH}
-.  endif
-
-. if ${USE_LINUX} == "c6"
+.	else
+.		if ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-. else
+.		elif ${USE_LINUX} = "f10"
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
-. endif
+.		else
+LINUX_RPM_ARCH?=	${ARCH}
+. 		endif
+
+.	endif
 
 .endif
 
