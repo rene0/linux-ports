@@ -42,17 +42,17 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
-.  if ${ARCH} == "amd64"
-.    if ${USE_LINUX} == "c6"
-LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-.    else
-LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
-.    endif
-.  elif ${ARCH} == "powerpc"
+.  if ${ARCH} == "powerpc"
 LINUX_RPM_ARCH?=	ppc
 .  else
 LINUX_RPM_ARCH?=	${ARCH}
 .  endif
+
+. if ${USE_LINUX} == "c6"
+LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
+. else
+LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
+. endif
 
 .endif
 
@@ -119,7 +119,7 @@ PKGNAMEPREFIX?=			linux-${USE_LINUX}-
 
 # DISTFILES and SRC_DISTFILES assume that there is only one bindist
 # and one src file.
-# Please, define them n the Makefile of the port in case this assumption
+# Please, define them in the Makefile of the port in case this assumption
 # is not true.
 
 DISTVERSION=	${PORTVERSION}-${RPMVERSION}
@@ -160,11 +160,13 @@ linux-rpm-clean-portdocs:
 
 .  if defined(AUTOMATIC_PLIST)
 
-.    if ${USE_LINUX} == "f10" || ${USE_LINUX:L} == "yes"
+.	if ${USE_LINUX} == "f10" || ${USE_LINUX:L} == "yes"
 _LINUX_BASE_SUFFIX=		f10
-.    else
+.	elif ${USE_LINUX} == "c6"
+_LINUX_BASE_SUFFIX=		c6
+.	else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\" and \"f10\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"f10\" and \"c6\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
