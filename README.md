@@ -23,9 +23,11 @@ Installing CentOS 6.5 ports
 First you should uninstall linux-f10* ports and its dependencies. To make it easier,
 you can use pkg(8) for that purpose:
 ```
-    # pkg delete -f linux-f10-*
+    # pkg delete -f linux-f10-\*
     # pkg delete -f linux_base-f10
 ```
+
+This part is not needed anymore but kept for compat reasons for a week or so:
 There will be some preparation needed before the actual install can start.
 Be sure that you add both lines to /etc/make.conf:
 ```
