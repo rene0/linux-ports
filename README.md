@@ -28,10 +28,11 @@ you can use pkg(8) for that purpose:
 ```
 
 This part is not needed anymore but kept for compat reasons for a week or so:
+
 There will be some preparation needed before the actual install can start.
 Be sure that you add both lines to /etc/make.conf:
 ```
-    OVERRIDE_LINUX_BASE_PORTS=c6
+    OVERRIDE_LINUX_BASE_PORT=c6
     OVERRIDE_LINUX_NONBASE_PORTS=c6
 ```
 
