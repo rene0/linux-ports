@@ -54,6 +54,18 @@ To make the change permanent, add this sysctl(8) variable to /etc/sysctl.conf:
     # echo 'compat.linux.osrelease=2.6.18' >> /etc/sysctl.conf
 ```
 
+Now, install the actual linux base - `emulators/linux_base-c6`:
+```
+    # make -C /usr/ports/emulators/linux_base-c6 config install clean
+```
+
+
+Congratulations, you can now chroot into `/compat/linux` and play around with
+it.
+```
+    # chroot /compat/linux /bin/sh
+```
+
 Specific Skype requirements
 ---------------------------
 
