@@ -35,8 +35,16 @@ Be sure that you add both lines to /etc/make.conf:
     OVERRIDE_LINUX_BASE_PORT=c6
     OVERRIDE_LINUX_NONBASE_PORTS=c6
 ```
+First, load the linux kernel module:
+```
+    # kldload linux
+```
+To make the change permanent, add the module to your `/etc/rc.conf` kld_list:
+```
+    # echo 'kld_list="linux" >> /etc/rc.conf
+```
 
-Change the compatibility level of the Linux kernel OS release by running the
+Proceed to change the compatibility level of the Linux kernel OS release by running the
 following command:
 ```
     # sysctl compat.linux.osrelease=2.6.18
