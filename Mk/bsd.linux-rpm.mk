@@ -47,7 +47,7 @@ LINUX_RPM_ARCH?=	ppc
 .	else
 .		if ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-.		elif ${USE_LINUX} = "f10"
+.		elif ${USE_LINUX} == "f10"
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .		else
 LINUX_RPM_ARCH?=	${ARCH}
