@@ -51,7 +51,7 @@ IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
 .    endif
 .  else
 # default
-LINUX_DIST_SUFFIX=	-f10
+LINUX_DIST_SUFFIX=	-c6
 .  endif
 
 WEB_AUTH=			nvu
