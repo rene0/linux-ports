@@ -67,7 +67,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound
 # 2.6.16 components
 _LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
 			libasyncns libidn libssh2 libv4l nspr nss openal-soft \
-			openldap pulseaudio-libs qt45 sqlite3 tcl84 tk84 qt47 qt47-x11 qt47-webkit
+			openldap pulseaudio-libs qt45 sqlite3 tcl85 tk85 qt47 qt47-x11 qt47-webkit
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
@@ -113,7 +113,7 @@ atk_PORT=			${PORTSDIR}/accessibility/linux${LINUX_DIST_SUFFIX}-atk
 blt_f10_FILE=		${LINUXBASE}/usr/lib/libBLT24.so
 blt_DETECT=		${blt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 blt_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-blt
-blt_DEPENDS=		tcl84 tk84 xorglibs
+blt_DEPENDS=		tcl85 tk85 xorglibs
 
 cairo_f10_FILE=		${LINUXBASE}/usr/lib/libcairo.so.2.10800.0
 cairo_c6_FILE=		${LINUXBASE}/usr/lib/libcairo.so.2.10800.8
@@ -379,10 +379,10 @@ sqlite3_c6_FILE=	${LINUXBASE}/usr/lib/libsqlite3.so.0
 sqlite3_DETECT=		${sqlite3${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sqlite3_PORT=		${PORTSDIR}/databases/linux${LINUX_DIST_SUFFIX}-sqlite3
 
-# XXX: tcl85!!!
-tcl84_f10_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
-tcl84_DETECT=		${tcl84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-tcl84_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl85
+tcl85_f10_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
+tcl85_c6_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
+tcl85_DETECT=		${tcl85${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tcl85_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl85
 
 tiff_f10_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.8.2
 tiff_c6_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.9.4
@@ -390,11 +390,11 @@ tiff_DETECT=		${tiff${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 tiff_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-tiff
 tiff_DEPENDS=		jpeg
 
-# XXX: tk85!!!
-tk84_f10_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
-tk84_DETECT=		${tk84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-tk84_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk85
-tk84_DEPENDS=		xorglibs
+tk85_f10_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
+tk85_c6_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
+tk85_DETECT=		${tk84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tk85_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk85
+tk85_DEPENDS=		xorglibs
 
 xorglibs_f10_FILE=	${LINUXBASE}/usr/lib/libXrandr.so.2.1.0
 xorglibs_c6_FILE=	${LINUXBASE}/usr/lib/libXrandr.so.2.2.0
