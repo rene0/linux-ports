@@ -16,7 +16,7 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	openssl nspr nss gtk2 alsalib curl #cyrus-sasl2 libssh2 openldap -alsalib
+USE_LINUX_APPS=	openssl nspr nss gtk2 alsalib curl cyrus-sasl2 #libssh2 openldap -alsalib
 WANT_GNOME=	yes
 
 RESTRICTED=	Redistribution not allowed
