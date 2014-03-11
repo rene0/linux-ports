@@ -186,7 +186,7 @@ gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
 gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
 
 gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
-gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1800.9
+gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2000.1
 gtk2_DETECT=		${gtk2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
 gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
