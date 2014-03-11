@@ -1,9 +1,9 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD: head/games/linux-spheresofchaos-demo/Makefile 343630 2014-02-10 13:27:09Z bapt $
+# $FreeBSD$
 
 PORTNAME=	spheresofchaos
 PORTVERSION=	2.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://people.FreeBSD.org/~roam/games/ \
 		${MASTER_SITE_LOCAL}
@@ -18,15 +18,14 @@ COMMENT=	An unusual and spectacular shoot-em-up for the PC
 DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2014-03-10
 
-USE_ZIP=	yes
+USES=	zip
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/Chaosl ${PREFIX}/bin
-	${BRANDELF} -t Linux ${PREFIX}/bin/Chaosl
+	${BRANDELF} -t Linux ${WRKDIR}/Chaosl
+	${INSTALL_PROGRAM} ${WRKDIR}/Chaosl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

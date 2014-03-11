@@ -1,9 +1,9 @@
 # Created by: alepulver
-# $FreeBSD: head/games/linux-enemyterritory-jaymod-21/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://etmod.googlecode.com/files/ \
 		http://www.zenenterprises.biz/bud/jaymod/ \
@@ -21,6 +21,7 @@ PKGNAMESUFFIX=	-${VERSTR}
 PLIST_SUB=	VERSTR="${VERSTR}"
 
 USE_LINUX=	yes
+USES=	shebangfix
 
 OPTIONS_DEFINE=	DOCS OMNIBOT
 OMNIBOT_DESC=	Install Omni-Bot 0.660 for bot support
@@ -31,7 +32,6 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB+=	CLIENT_PK3="${CLIENT_PK3}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOMNIBOT}
@@ -48,15 +48,15 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} *.cfg ${DATADIR}
-	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} *.cfg ${STAGEDIR}${DATADIR}
+	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

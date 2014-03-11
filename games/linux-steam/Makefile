@@ -1,5 +1,5 @@
 # Created by: hideki
-# $FreeBSD: head/games/linux-steam/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	steam
 PORTVERSION=	1.1
@@ -12,8 +12,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	chris@easymac.org
 COMMENT=	Half Life and Source dedicated server using steam
-
-BUILD_DEPENDS=	${LINUX_BASE_PORT}
 
 IS_INTERACTIVE=	yes
 USE_LINUX=	yes

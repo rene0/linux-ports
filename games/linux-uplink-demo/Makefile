@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org>
-# $FreeBSD: head/games/linux-uplink-demo/Makefile 340092 2014-01-17 18:09:49Z mva $
+# $FreeBSD$
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55
@@ -34,7 +34,7 @@ NVIDIA_DESC=	support for nvidia
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
-USE_LINUX_APPS+=dri
+USE_LINUX_APPS+=	dri
 .endif
 
 do-extract:

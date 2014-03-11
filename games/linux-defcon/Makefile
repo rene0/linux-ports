@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org
-# $FreeBSD: head/games/linux-defcon/Makefile 340092 2014-01-17 18:09:49Z mva $
+# $FreeBSD$
 
 PORTNAME=	defcon
 PORTVERSION=	1.42

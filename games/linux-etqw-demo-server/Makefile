@@ -1,8 +1,9 @@
 # Created by: ayu <ayunyan@gmail.com>
-# $FreeBSD: head/games/linux-etqw-demo-server/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	etqw
 PORTVERSION=	2.0.r1
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|etqw/|}
 PKGNAMEPREFIX=	linux-
@@ -23,8 +24,8 @@ USE_ZIP=	yes
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -37,28 +38,28 @@ post-patch:
 	@${SED} -e 's|@ETQWDIR@|${ETQWDIR}|' ${FILESDIR}/etqwded-demo.in > ${WRKSRC}/etqwded-demo
 
 do-install:
-	@${MKDIR} ${ETQWDIR}
+	@${MKDIR} ${STAGEDIR}${ETQWDIR}
 
-	${INSTALL_PROGRAM} ${WRKSRC}/etqwded-demo ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/data/etqwded.x86 ${ETQWDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/etqwded-demo ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/data/etqwded.x86 ${STAGEDIR}${ETQWDIR}
 	@cd ${WRKSRC}/data && \
 		${FIND} -E . -type f -iregex ".*\.so\.[0-9]+" \
-			-exec ${INSTALL_DATA} "{}" "${ETQWDIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
 	@${MKDIR} ${ETQWDIR}/base/bots
 	@cd ${WRKSRC}/data && \
 		${FIND} base -type f \
-			-exec ${INSTALL_DATA} "{}" "${ETQWDIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
 	@${MKDIR} ${ETQWDIR}/pb/htm
 	@cd ${WRKSRC}/data && \
 		${FIND} pb -type f \
-			-exec ${INSTALL_DATA} "{}" "${ETQWDIR}/{}" \;
+			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
-.if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in EULA.txt README.txt copyrights.txt etqwtv.txt pb/PBEULA.txt
-	@${INSTALL_DATA} ${WRKSRC}/data/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/data/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD: head/games/linux-enemyterritory-jaymod/Makefile 327730 2013-09-20 17:36:33Z bapt $
+# $FreeBSD$
 
 PORTNAME=	jaymod
 PORTVERSION=	2.2.0
@@ -13,6 +13,7 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
+USES=	shebangfix
 USE_LINUX=	yes
 
 OPTIONS_DEFINE=	DOCS OMNIBOT
@@ -24,7 +25,6 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOMNIBOT}
@@ -40,26 +40,26 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${STAGEDIR}${DATADIR}
 .for f in jaymod.cfg server.cfg
-	${CP} -p ${WRKSRC}/${f} ${DATADIR}/${f}.sample
+	${CP} -p ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f}.sample
 .endfor
-	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
+	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
-	@if [ ! -f ${DATADIR}/jaymod.cfg ]; then \
-		${CP} -p ${DATADIR}/jaymod.cfg.sample ${DATADIR}/jaymod.cfg ; \
+	@if [ ! -f ${STAGEDIR}${DATADIR}/jaymod.cfg ]; then \
+		${CP} -p ${STAGEDIR}${DATADIR}/jaymod.cfg.sample ${STAGEDIR}${DATADIR}/jaymod.cfg ; \
 	fi
-	@if [ ! -f ${DATADIR}/server.cfg ]; then \
-		${CP} -p ${DATADIR}/server.cfg.sample ${DATADIR}/server.cfg ; \
+	@if [ ! -f ${STAGEDIR}${DATADIR}/server.cfg ]; then \
+		${CP} -p ${STAGEDIR}${DATADIR}/server.cfg.sample ${STAGEDIR}${DATADIR}/server.cfg ; \
 	fi
 
 .include <bsd.port.mk>

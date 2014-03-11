@@ -1,5 +1,5 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD: head/games/linux-rtcw/Makefile 347390 2014-03-07 14:36:03Z bapt $
+# $FreeBSD$
 
 PORTNAME=	rtcw
 DISTVERSION=	1.41b

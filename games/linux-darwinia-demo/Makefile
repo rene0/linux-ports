@@ -1,4 +1,4 @@
-# $FreeBSD: head/games/linux-darwinia-demo/Makefile 340092 2014-01-17 18:09:49Z mva $
+# $FreeBSD$
 
 PORTNAME=	darwinia-demo
 PORTVERSION=	1.3.0

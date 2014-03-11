@@ -1,8 +1,9 @@
 # Created by: alepulver
-# $FreeBSD: head/games/linux-enemyterritory-omni-bot/Makefile 340282 2014-01-19 13:29:53Z bar $
+# $FreeBSD$
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.831
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://googledrive.com/host/0BzZDKd40GAICUkZTaDJQQ2FKRTg/
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -14,7 +15,7 @@ COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-USE_ZIP=	yes
+USES=	zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

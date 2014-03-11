@@ -1,0 +1,22 @@
+# Makefile for defining variables used by other Quake3 related ports.  See
+# `games/quake2-data/Makefile.include' for extensive description and usage.
+
+Q3PKGNAMEPREFIX?=	quake3-
+Q3DIR?=		${LOCALBASE}/share/quake3
+
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${Q3PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
+.  error include before <bsd.port.options.mk> if using Q3PKGNAMEPREFIX
+.endif
+
+MAKE_ENV+=	Q3DIR="${Q3DIR}"
+PLIST_SUB+=	Q3DIR="${Q3DIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	Q3DIR="${Q3DIR}"
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${Q3DIR}/baseq3/pak1.pk3:${PORTSDIR}/games/quake3-data
+.endif
+
+# When extracting ZIP archives, ask it to convert text files to Unix style
+.if defined(USE_ZIP)
+EXTRACT_BEFORE_ARGS=	-aqo
+.endif

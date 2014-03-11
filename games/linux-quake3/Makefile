@@ -1,5 +1,5 @@
 # Created by: pat@databits.net
-# $FreeBSD: head/games/linux-quake3/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c
