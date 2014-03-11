@@ -6,7 +6,7 @@ PORTVERSION=	1.2.24
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Libraries for accessing D-BUS (Linux Fedora  ${LINUX_DIST_VER})
+COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes

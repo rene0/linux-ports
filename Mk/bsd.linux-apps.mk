@@ -82,6 +82,7 @@ _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 # component_DEPENDS	- A list of components the current component depends on.
 
 allegro_f10_FILE=	${LINUXBASE}/usr/lib/liballeg-4.2.2.so
+#FIXME: locate weird location for allegro c6 libs
 allegro_DETECT=		${allegro${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 allegro_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-allegro
 allegro_DEPENDS=	xorglibs
@@ -98,10 +99,12 @@ alsalib_DETECT=		${alsalib${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 alsalib_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-alsa-lib
 
 arts_f10_FILE=		${LINUXBASE}/usr/lib/libartsc.so.0
+arts_c6_FILE=		${LINUXBASE}/usr/lib/libartsc.so.0
 arts_DETECT=		${arts${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 arts_PORT=			${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-arts
 
 aspell_f10_FILE=	${LINUXBASE}/usr/lib/libaspell.so.15.1.4
+aspell_c6_FILE=		${LINUXBASE}/usr/lib/libaspell.so.15.1.4
 aspell_DETECT=		${aspell${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 aspell_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-aspell
 
@@ -110,7 +113,7 @@ atk_c6_FILE=		${LINUXBASE}/usr/lib/libatk-1.0.so.0.3009.1
 atk_DETECT=			${atk${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 atk_PORT=			${PORTSDIR}/accessibility/linux${LINUX_DIST_SUFFIX}-atk
 
-blt_f10_FILE=		${LINUXBASE}/usr/lib/libBLT24.so
+blt_f10_FILE=		${LINUXBASE}/usr/lib/libBLT24.so # FIXME: deprecated, merged into tcl/tk85
 blt_DETECT=		${blt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 blt_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-blt
 blt_DEPENDS=		tcl85 tk85 xorglibs
@@ -122,6 +125,7 @@ cairo_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-cairo
 cairo_DEPENDS=		fontconfig png xorglibs
 
 cups-libs_f10_FILE=	${LINUXBASE}/usr/lib/libcups.so.2
+cups-libs_c6_FILE=	${LINUXBASE}/usr/lib/libcups.so.2
 cups-libs_DETECT=	${cups-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 cups-libs_PORT=		${PORTSDIR}/print/linux${LINUX_DIST_SUFFIX}-cups-libs
 cups-libs_DEPENDS=	gnutls
@@ -130,9 +134,7 @@ curl_f10_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.1
 curl_c6_FILE=		${LINUXBASE}/usr/lib/libcurl.so.4.1.1
 curl_DETECT=		${curl${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 curl_PORT=		${PORTSDIR}/ftp/linux${LINUX_DIST_SUFFIX}-curl
-.  if ${LINUX_DIST_SUFFIX} == "-f10"
 curl_DEPENDS=		cyrus-sasl2 openldap
-.  endif
 
 cyrus-sasl2_f10_FILE=	${LINUXBASE}/usr/lib/libsasl2.so.2.0.22
 cyrus-sasl2_c6_FILE=	${LINUXBASE}/usr/lib/libsasl2.so.2.0.23
@@ -140,6 +142,7 @@ cyrus-sasl2_DETECT=	${cyrus-sasl2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 cyrus-sasl2_PORT=	${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-cyrus-sasl2
 
 dbusglib_f10_FILE=	${LINUXBASE}/usr/lib/libdbus-glib-1.so.2
+dbusglib_c6_FILE=	${LINUXBASE}/usr/lib/libdbus-glib-1.so.2
 dbusglib_DETECT=	${dbusglib${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 dbusglib_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-dbus-glib
 dbusglib_DEPENDS=	dbuslibs expat
@@ -156,6 +159,7 @@ dri_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-dri
 dri_DEPENDS=		xorglibs
 
 esound_f10_FILE=	${LINUXBASE}/usr/lib/libesd.so.0.2.39
+esound_c6_FILE=	${LINUXBASE}/usr/lib/libesd.so.0.2.39
 esound_DETECT=		${esound${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 esound_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-esound
 esound_DEPENDS=		libaudiofile
@@ -181,6 +185,7 @@ gdkpixbuf_DETECT=	${gdkpixbuf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
 
 gnutls_f10_FILE=	${LINUXBASE}/usr/lib/libgnutls.so.26.4.6
+gnutls_c6_FILE=		${LINUXBASE}/usr/lib/libgnutls.so.26.14.12
 gnutls_DETECT=		${gnutls${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
 gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
@@ -209,6 +214,7 @@ libasyncns_DETECT=	${libasyncns${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libasyncns_PORT=	${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libasyncns
 
 libaudiofile_f10_FILE=	${LINUXBASE}/usr/lib/libaudiofile.so.0.0.2
+libaudiofile_c6_FILE=	${LINUXBASE}/usr/lib/libaudiofile.so.0.0.2
 libaudiofile_DETECT=	${libaudiofile${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libaudiofile_PORT=	${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libaudiofile
 
@@ -217,6 +223,7 @@ libg2c_DETECT=		${libg2c${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libg2c_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-libg2c
 
 libgcrypt_f10_FILE=	${LINUXBASE}/lib/libgcrypt.so.11.5.2
+libgcrypt_c6_FILE=	${LINUXBASE}/lib/libgcrypt.so.11.5.3
 libgcrypt_DETECT=	${libgcrypt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libgcrypt_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libgcrypt
 
@@ -229,6 +236,7 @@ libglu_DETECT=		${libglu${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglu_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libGLU
 
 libgpg-error_f10_FILE=	${LINUXBASE}/lib/libgpg-error.so.0.4.0
+libgpg-error_c6_FILE=	${LINUXBASE}/lib/libgpg-error.so.0.5.0
 libgpg-error_DETECT=	${libgpg-error${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libgpg-error_PORT=	${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libgpg-error
 
@@ -267,6 +275,7 @@ libtasn1_DETECT=	${libtasn1${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libtasn1_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libtasn1
 
 libtheora_f10_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.3
+libtheora_c6_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.9
 libtheora_DETECT=	${libtheora${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libtheora_PORT=		${PORTSDIR}/multimedia/linux${LINUX_DIST_SUFFIX}-libtheora
 
@@ -277,14 +286,17 @@ libvorbis_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libvorbis
 libvorbis_DEPENDS=	libogg
 
 libxml2_f10_FILE=	${LINUXBASE}/usr/lib/libxml2.so.2.7.3
+libxml2_c6_FILE=	${LINUXBASE}/usr/lib/libxml2.so.2.7.6
 libxml2_DETECT=		${libxml2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libxml2_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-libxml2
 
 mikmod_f10_FILE=	${LINUXBASE}/usr/lib/libmikmod.so.3.0.0
+mikmod_c6_FILE=	${LINUXBASE}/usr/lib/libmikmod.so.3.0.0
 mikmod_DETECT=		${mikmod${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 mikmod_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-mikmod
 
 naslibs_f10_FILE=	${LINUXBASE}/usr/lib/libaudio.so.2
+naslibs_c6_FILE=	${LINUXBASE}/usr/lib/libaudio.so.2
 naslibs_DETECT=		${naslibs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 naslibs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-nas-libs
 naslibs_DEPENDS=	xorglibs
@@ -295,11 +307,13 @@ openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 
 openmotif_f10_FILE=	${LINUXBASE}/usr/lib/libXm.so.4
+openmotif_c6_FILE=	${LINUXBASE}/usr/lib/libXm.so.4.0.3
 openmotif_DETECT=	${openmotif${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openmotif_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-openmotif
 openmotif_DEPENDS=	xorglibs
 
 ncurses-base_f10_FILE=	${LINUXBASE}/lib/terminfo/a/ansi
+ncurses-base_c6_FILE=	${LINUXBASE}/lib/terminfo/a/ansi
 ncurses-base_DETECT=	${ncurses-base${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 ncurses-base_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-ncurses-base
 
@@ -360,11 +374,13 @@ sdl12_PORT=			${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-sdl12
 sdl12_DEPENDS=		xorglibs
 
 sdlimage_f10_FILE=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0.1.5
+sdlimage_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_image-1.2.so.0.8.2
 sdlimage_DETECT=	${sdlimage${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdlimage_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-sdl_image
 sdlimage_DEPENDS=	jpeg png sdl12 tiff
 
 sdlmixer_f10_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.2.6
+sdlmixer_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.10.1
 sdlmixer_DETECT=	${sdlmixer${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdlmixer_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-sdl_mixer
 sdlmixer_DEPENDS=	sdl12

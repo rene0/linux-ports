@@ -8,7 +8,7 @@ DISTNAME=	SDL-${PORTVERSION}-${RPMVERSION}
 SRC_DISTFILES=	SDL-1.2.14-3.el6.src.rpm
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Cross-platform multi-media development API (Linux Fedora 10)
+COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-sdl12-[0-9]* linux-f8-sdl12-[0-9]*
 

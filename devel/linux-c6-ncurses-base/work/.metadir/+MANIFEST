@@ -1,0 +1,15 @@
+name: linux-c6-ncurses-base
+version: 5.7
+origin: devel/linux-c6-ncurses-base
+comment: |
+  Terminfo database required by Linux ncurses programs
+maintainer: jwbacon@tds.net
+prefix: /compat/linux
+deps: 
+  linux_base-c6: {origin: emulators/linux_base-c6, version: "6.5"}
+categories: [devel,linux,]
+licenselogic: single
+licenses: []
+users: []
+groups: []
+options: {}
