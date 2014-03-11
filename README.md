@@ -94,3 +94,20 @@ Now you are ready to install `net-im/skype4`.
 ```
     # portmaster net-im/skype4
 ```
+
+Specific Flash requirements
+---------------------------
+
+I have not been able to test Flash in a clean room, so I'm assuming the kernel
+modules loaded for Skype are needed here too.
+
+Additionally, do a
+```
+    # portmaster www/linux-c6-flashplugin11 www/nspluginwrapper
+```
+and follow the instructions displayed after install. You'll have to run this for
+each user that is intended to run Flash:
+
+```
+    $ nspluginwrapper -v -a -i
+```
