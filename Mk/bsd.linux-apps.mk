@@ -242,6 +242,7 @@ libmng_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libmng
 libmng_DEPENDS=		jpeg
 
 libogg_f10_FILE=	${LINUXBASE}/usr/lib/libogg.so.0.5.3
+libogg_c6_FILE=		${LINUXBASE}/usr/lib/libogg.so.0.6.0
 libogg_DETECT=		${libogg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libogg_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libogg
 
@@ -261,6 +262,7 @@ libv4l_DETECT=		${libv4l${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libv4l_PORT=		${PORTSDIR}/multimedia/linux${LINUX_DIST_SUFFIX}-libv4l
 
 libtasn1_f10_FILE=	${LINUXBASE}/usr/lib/libtasn1.so.3.0.16
+libtasn1_c6_FILE=	${LINUXBASE}/usr/lib/libtasn1.so.3.1.6
 libtasn1_DETECT=	${libtasn1${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libtasn1_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libtasn1
 
@@ -269,6 +271,7 @@ libtheora_DETECT=	${libtheora${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libtheora_PORT=		${PORTSDIR}/multimedia/linux${LINUX_DIST_SUFFIX}-libtheora
 
 libvorbis_f10_FILE=	${LINUXBASE}/usr/lib/libvorbis.so.0.4.0
+libvorbis_c6_FILE=	${LINUXBASE}/usr/lib/libvorbis.so.0.4.3
 libvorbis_DETECT=	${libvorbis${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libvorbis_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libvorbis
 libvorbis_DEPENDS=	libogg
