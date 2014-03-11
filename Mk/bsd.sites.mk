@@ -262,6 +262,12 @@ MASTER_SITE_CENTOS_LINUX+= \
 	http://vault.centos.org/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_EPEL)
+MASTER_SITE_EPEL+= \
+	http://dl.fedoraproject.org/pub/epel/6/i386/ \
+	http://dl.fedoraproject.org/pub/epel/6/SRPMS/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
 MASTER_SITE_FEDORA_LINUX+= \
 	http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
