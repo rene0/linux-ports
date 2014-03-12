@@ -1,0 +1,10 @@
+bin/huludesktop
+etc/huludesktop/hd_keymap.ini
+libexec/huludesktop.bin
+share/applications/huludesktop.desktop
+share/pixmaps/huludesktop.png
+%%PORTDOCS%%%%DOCSDIR%%/EULA
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/huludesktop

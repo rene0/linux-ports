@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD: head/multimedia/linux-huludesktop/files/huludesktop.in 340872 2014-01-24 00:14:07Z mat $
+#
+# This scripts attempts to locate Flash on behalf of the Hulu Desktop.
+# Without this script, Hulu will be unable to find libflashplayer.so causing
+# each user to manually configure ~/.huludesktop manually.
+#
+
+PREFIX="%%PREFIX%%"
+
+if [ ! -e ~/.huludesktop ]
+	then
+	echo -e "[flash]" > ~/.huludesktop
+	echo -e "flash_location = `find ${PREFIX}/lib/npapi \
+		-type f -name libflashplayer.so`" >> ~/.huludesktop 
+fi
+
+${PREFIX}/libexec/huludesktop.bin &

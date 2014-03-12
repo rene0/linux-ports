@@ -57,12 +57,12 @@ LINUX_DIST_SUFFIX=	-c6
 WEB_AUTH=			nvu
 
 # Non-version specific components
-_LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound expat fontconfig \
-					freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
+_LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri devtools esound expat \
+					fontconfig freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
 					libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
 					libsigcpp20 libtasn1 libtheora libvorbis libxml2 mikmod naslibs \
 					ncurses-base openal openmotif openssl openssl-compat pango png scimgtk \
-					scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
+					scimlibs sdl12 sdlimage sdlmixer sdlttf tiff xorglibs ucl ungif upx webauth
 
 # 2.6.16 components
 _LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
@@ -154,12 +154,17 @@ dbuslibs_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-dbus-libs
 
 dri_f10_FILE=		${LINUXBASE}/usr/lib/libGL.so.1.2
 dri_c6_FILE=		${LINUXBASE}/usr/lib/libGL.so.1.2.0
-dri_DETECT=		${dri${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-dri_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-dri
+dri_DETECT=			${dri${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+dri_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-dri
 dri_DEPENDS=		xorglibs
 
+devtools_f10_FILE=	${LINUXBASE}/usr/bin/i386-redhat-linux-gcc
+devtools_c6_FILE=	${LINUXBASE}/usr/bin/gcc
+devtools_DETECT=	${devtools${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+devtools_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-devtools
+
 esound_f10_FILE=	${LINUXBASE}/usr/lib/libesd.so.0.2.39
-esound_c6_FILE=	${LINUXBASE}/usr/lib/libesd.so.0.2.39
+esound_c6_FILE=		${LINUXBASE}/usr/lib/libesd.so.0.2.39
 esound_DETECT=		${esound${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 esound_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-esound
 esound_DEPENDS=		libaudiofile
@@ -197,6 +202,7 @@ gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
 gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
 
 hicontheme_f10_FILE=	${LINUXBASE}/usr/share/icons/hicolor
+hicontheme_c6_FILE=	${LINUXBASE}/usr/share/icons/hicolor
 hicontheme_DETECT=	${hicontheme${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 hicontheme_PORT=	${PORTSDIR}/x11-themes/linux${LINUX_DIST_SUFFIX}-hicolor-icon-theme
 
@@ -384,6 +390,12 @@ sdlmixer_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_mixer-1.2.so.0.10.1
 sdlmixer_DETECT=	${sdlmixer${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdlmixer_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-sdl_mixer
 sdlmixer_DEPENDS=	sdl12
+
+sdlttf_f10_FILE=	${LINUXBASE}/usr/lib/libSDL_ttf-2.0.so.0.6.2
+sdlttf_c6_FILE=	${LINUXBASE}/usr/lib/libSDL_ttf-2.0.so.0.6.3
+sdlttf_DETECT=		${sdlttf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+sdlttf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-sdl_ttf
+sdlttf_DEPENDS=	sdl12
 
 scimgtk_f10_FILE=	${LINUXBASE}/usr/lib/gtk-2.0/immodules/im-scim.so
 scimgtk_DETECT=		${scimgtk${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
