@@ -3,7 +3,7 @@
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
@@ -13,8 +13,8 @@ COMMENT=	An rogue-like advanced rpg with color support (binary port)
 
 LICENSE=	unknown
 LICENSE_NAME=	The ADOM License
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror
 LICENSE_FILE=	${WRKSRC}/readme.1st
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror
 
 NO_CDROM=	Copy of CD must be sent to author
 
@@ -32,11 +32,9 @@ STRIP=		# empty: do not strip linux binary!
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/adom ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in readme.1st adomfaq.txt manual.doc
 	@${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

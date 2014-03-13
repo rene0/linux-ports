@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	linux-eagle5
-EAGLEBASEVERSION?=	5.12
-EAGLEBUGFIX?=	0
-EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
-DISTNAME=	eagle-${EAGLEVERSION}
-DISTFILES=	eagle-lin-${EAGLEVERSION}.run
+DISTNAME=	eagle-lin-${EAGLEVERSION}
+EXTRACT_SUFX=	.run
 
 MAINTAINER?=	thomas.e.zander@googlemail.com
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
@@ -27,6 +24,10 @@ NO_CDROM=	Sale for profit is not permitted
 
 CONFLICTS=	linux-eagle-* de-linux-eagle-*
 
+EAGLEBASEVERSION?=	5.12
+EAGLEBUGFIX?=	0
+EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs jpeg png
 NO_BUILD=	yes
@@ -37,7 +38,7 @@ CPIO?=		/usr/bin/cpio --quiet -pdum -R
 
 DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \
 			${DATADIR}/ulp/eagle.bmp \
-			"eagle" "Development;Electronics;Engineering;" "false"
+			"eagle" "Development;Electronics;Engineering;" false
 
 .include <bsd.port.pre.mk>
 

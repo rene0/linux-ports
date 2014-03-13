@@ -1,4 +1,4 @@
-# Created by: Johannes Meixner
+# Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD$
 
 PORTNAME=	dbus-glib
