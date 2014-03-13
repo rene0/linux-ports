@@ -6,6 +6,7 @@ PORTVERSION=	0.5
 CATEGORIES=	x11-themes linux
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+PKGNAMEPREFIX=	linux-f10-
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	High-color icon theme shell from the FreeDesktop project
@@ -16,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 NO_BUILD=	yes
 USE_LINUX=	f10
+USE_LINUX_PREFIX=	yes
 PLIST_FILES=	usr/share/icons/hicolor
 
 do-install:
