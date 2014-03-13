@@ -27,6 +27,7 @@ USE_LINUX_APPS=	xorglibs curl
 USES=		perl5 shared-mime-info desktop-file-utils
 USE_PERL5=	patch build
 
+#SUB_FILES=	bin/googleearth
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
@@ -36,6 +37,7 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 USE_LINUX_APPS+=	dri libpciaccess
+LIBGL_ALWAYS_SOFTWARE=LIBGL_ALWAYS_SOFTWARE=yes
 .endif
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
@@ -51,9 +53,10 @@ do-extract:
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
-	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
-	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
+	@${REINPLACE_CMD} -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|; \
+		s|%%LIBGL_ALWAYS_SOFTWARE%%|${LIBGL_ALWAYS_SOFTWARE}|' ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f ${LINUXBASE}\$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
