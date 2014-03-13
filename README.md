@@ -10,6 +10,10 @@ progresses I will fill this repo with more and more -c6 ports, all while
 maintaining compatibility with the Fedora 10 ports we already have inside
 of the ports infrastructure.
 
+For further details read the corresponding
+_Chapter 11.  Linux Binary Compatibility_
+of the FreeBSD Handbook.
+
 Installation
 ------------
 You will need to make sure you have latest ports tree before you attempt to
@@ -27,15 +31,7 @@ you can use pkg(8) for that purpose:
     # pkg delete -f linux_base-f10
 ```
 
-This part is not needed anymore but kept for compat reasons for a week or so:
-
-There will be some preparation needed before the actual install can start.
-Be sure that you add both lines to /etc/make.conf:
-```
-    OVERRIDE_LINUX_BASE_PORT=c6
-    OVERRIDE_LINUX_NONBASE_PORTS=c6
-```
-First, load the linux kernel module:
+If you have not yet worked with Linux emulation, load the linux kernel module:
 ```
     # kldload linux
 ```
@@ -44,8 +40,8 @@ To make the change permanent, add the module to your `/etc/rc.conf` kld_list:
     # echo 'kld_list="linux" >> /etc/rc.conf
 ```
 
-Proceed to change the compatibility level of the Linux kernel OS release by running the
-following command:
+Proceed to change the compatibility level of the Linux kernel OS release by running
+the following command: asdf
 ```
     # sysctl compat.linux.osrelease=2.6.18
 ```
@@ -54,11 +50,20 @@ To make the change permanent, add this sysctl(8) variable to /etc/sysctl.conf:
     # echo 'compat.linux.osrelease=2.6.18' >> /etc/sysctl.conf
 ```
 
-Now, install the actual linux base - `emulators/linux_base-c6`:
+Once these preliminaries are done, you will need to merge the linux-ports from
+this repo  into your portstree in  `/usr/ports` (without moving the .git
+subdirectory)  with the following command:
+
 ```
-    # make -C /usr/ports/emulators/linux_base-c6 config install clean
+    git clone https://github.com/xmj/linux-ports.git
+    rsync -av --exclude=.git/ linux-ports/ /usr/ports/
 ```
 
+
+Now, install the actual linux base - `emulators/linux_base-c6`:
+```
+    # portmaster emulators/linux_base-c6
+```
 
 Congratulations, you can now chroot into `/compat/linux` and play around with
 it.
@@ -66,15 +71,12 @@ it.
     # chroot /compat/linux /bin/sh
 ```
 
-Specific Skype requirements
----------------------------
+Kernel modules
+--------------
 
-Note that it's necessary to have enabled LBC before you can install
-`net-im/skype4` port. Read for further details the corresponding Chapter 11.
-Linux Binary Compatibility of the FreeBSD Handbook.
-
-As Skype depends on linprocfs(5) and linsysfs(5), check if they can
-be loaded and mounted by running:
+Many linux programs depend on linprocfs(5) or linsysfs(5), so it's advised to
+load both. Once the modules are loaded, you can mount the respective
+filesystems:
 
 ```
     # kldload linprocfs
@@ -83,25 +85,73 @@ be loaded and mounted by running:
     # mount -t linsysfs linsysfs /compat/linux/sys
 ```
 To make this change permanent, add these two lines to /etc/fstab:
+
 ```
     linprocfs      /compat/linux/proc     linprocfs         rw      0       0
-    linsysfs       /compat/linux/sys      linprocfs         rw      0       0
+    linsysfs       /compat/linux/sys      linsysfs         rw      0       0
 ```
-Once these preliminaries are done, You will need to merge the linux-ports into
-your portstree in  `/usr/ports` - like so: `cp -r linux-ports/* /usr/ports`
 
-Now you are ready to install `net-im/skype4`.
+and amend your `/etc/rc.conf` to include the modules:
+
+```
+    KLD_LIST="linux linsysfs linprocfs"
+```
+
+Configuring sound
+-----------------
+
+As I've received multiple reports of sound issues, here's how I setup sound with
+ALSA (on FreeBSD and Linux):
+
+First, install `audio/linux-c6-alsa-plugins-oss`:
+```
+    # portmaster audio/linux-c6-alsa-plugins-oss
+```
+
+Then, setup `/compat/linux/etc/alsa/pcm/pcm-oss.conf` to match your sound
+configuration. The following configuration works for me with `snd_hda`, you may
+have to adapt paths to /dev/dsp and /dev/mixer.
+
+```
+pcm.oss {
+    type oss
+    device /dev/dsp
+    hint {
+        description "Open Sound System"
+    }
+}
+
+ctl.oss {
+    type oss
+    device /dev/mixer0
+    hint {
+        description "Open Sound System"
+    }
+}
+```
+
+
+Specific Skype requirements
+---------------------------
+
+If you've followed this guide from top to bottom, you by now have copied the
+required ports into your tree, installed `linux_base-c6`, loaded kernel modules,
+and adapted your sound configuration.
+
+To install Skype, run
+
 ```
     # portmaster net-im/skype4
 ```
 
+
 Specific Flash requirements
 ---------------------------
 
-I have not been able to test Flash in a clean room, so I'm assuming the kernel
-modules loaded for Skype are needed here too.
+As with Skype, if you've followed this guide from top to bottom, you'll be all
+set.
 
-Additionally, do a
+To install Flash, run
 ```
     # portmaster www/linux-c6-flashplugin11 www/nspluginwrapper
 ```
@@ -111,3 +161,17 @@ each user that is intended to run Flash:
 ```
     $ nspluginwrapper -v -a -i
 ```
+or, if you are performing an upgrade,
+```
+    $ nspluginwrapper -v -a -u
+```
+
+Google Earth issues
+-------------------
+
+FreeBSD's Intel KMS drivers lack the Hardware Context required by `Mesa 9.2`.
+This is a work in progress and will be added in due time. Meanwhile, we do lack
+the Hardware Acceleration and Google Earth will be _painfully_ slow.
+
+Note: I'm not sure if this applies to NVIDIA or ATI boards as well. I appreciate every
+report to the contrary.
