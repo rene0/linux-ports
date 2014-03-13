@@ -35,7 +35,7 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 .if ${PORT_OPTIONS:MNVIDIA}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-USE_LINUX_APPS+=	dri
+USE_LINUX_APPS+=	dri libpciaccess
 .endif
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
