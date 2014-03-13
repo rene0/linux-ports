@@ -3,7 +3,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -91,8 +90,8 @@ do-install:
 .endfor
 
 post-install:
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
-	@${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g" \
+	@${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g; \
+		s:%%STAGEDIR%%:${STAGEDIR}:g" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
