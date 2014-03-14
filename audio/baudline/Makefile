@@ -1,5 +1,5 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/audio/baudline/Makefile 348148 2014-03-14 02:20:32Z db $
 
 PORTNAME=	baudline
 PORTVERSION=	1.08
@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	MPG123
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 .include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
@@ -49,4 +50,4 @@ do-install:
 .endif
 	@[ -f /compat/linux/proc/stat ] || ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
