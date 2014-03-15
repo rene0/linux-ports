@@ -79,18 +79,18 @@ do-install:
 .for dir in Controls Data Levels Demos Mods Scripts VirtualTrees
 	@cd ${CDROM_MOUNT}/Install && \
 		${FIND} ${dir} -type d -exec \
-			${MKDIR} "${DATADIR}/{}" \; && \
+			${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} ${dir} -type f -exec \
 			${INSTALL_DATA} "${CDROM_MOUNT}/Install/{}" "${STAGEDIR}${DATADIR}/{}" \;
 .endfor
 .for dir in Controls Data Help Players SaveGame Scripts Temp
 	@cd ${WRKSRC}/Data && \
 		${FIND} ${dir} -type d -exec \
-			${MKDIR} "${DATADIR}/{}" \; && \
+			${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} ${dir} -type f -exec \
 			${INSTALL_DATA} "${WRKSRC}/Data/{}" "${STAGEDIR}${DATADIR}/{}" \;
 .endfor
-	@${MKDIR} ${DATADIR}/Bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Bin
 	@cd ${WRKSRC}/Data && \
 		${FIND} Bin -type f -exec \
 			${INSTALL_PROGRAM} "${WRKSRC}/Data/{}" "${STAGEDIR}${DATADIR}/{}" \;
@@ -105,7 +105,7 @@ do-install:
 		>${WRKDIR}/tmp.txt; ${MV} ${WRKDIR}/tmp.txt '{}'" \;
 	@${ECHO} SERIOUS_MHZ=2000 > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 .if !exists(${PREFIX}/etc/${PORTNAME}.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
