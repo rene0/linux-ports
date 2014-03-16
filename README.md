@@ -103,32 +103,14 @@ Configuring sound
 As I've received multiple reports of sound issues, here's how I setup sound with
 ALSA (on FreeBSD and Linux):
 
-First, install `audio/linux-c6-alsa-plugins-oss`:
+Install `audio/linux-c6-alsa-plugins-oss`:
 ```
     # portmaster audio/linux-c6-alsa-plugins-oss
 ```
 
-Then, setup `/compat/linux/etc/alsa/pcm/pcm-oss.conf` to match your sound
-configuration. The following configuration works for me with `snd_hda`, you may
-have to adapt paths to /dev/dsp and /dev/mixer.
-
-```
-pcm.oss {
-    type oss
-    device /dev/dsp
-    hint {
-        description "Open Sound System"
-    }
-}
-
-ctl.oss {
-    type oss
-    device /dev/mixer0
-    hint {
-        description "Open Sound System"
-    }
-}
-```
+Then, customize `/compat/linux/etc/alsa/pcm/pcm-oss.conf` to match your sound
+configuration. The default should work on all systems, but you may have to adapt
+paths to /dev/dsp and /dev/mixer.
 
 
 Specific Skype requirements
