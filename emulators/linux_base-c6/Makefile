@@ -30,6 +30,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		elfutils-0.152-1.el6.${LINUX_RPM_ARCH}.rpm \
 		centos-release-6-5.el6.centos.11.1.${LINUX_RPM_ARCH}.rpm \
 		filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
+		findutils-4.4.2-6.el6.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.11-14.el6_3.1.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-36.el6.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.26.1-3.el6.${LINUX_RPM_ARCH}.rpm \
@@ -40,6 +41,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		keyutils-1.4-4.el6.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.4-4.el6.${LINUX_RPM_ARCH}.rpm \
 		krb5-libs-1.10.3-10.el6_4.6.${LINUX_RPM_ARCH}.rpm \
+		less-436-10.el6.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
 		libcom_err-1.41.12-18.el6.${LINUX_RPM_ARCH}.rpm \
@@ -58,6 +60,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
 		setup-2.8.14-20.el6_4.1.noarch.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
+		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
@@ -75,6 +78,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		elfutils-0.152-1.el6.src.rpm \
 		centos-release-6-5.el6.centos.11.1.src.rpm \
 		filesystem-2.4.30-3.el6.src.rpm \
+		findutils-4.4.2-6.el6.src.rpm \
 		freetype-2.3.11-14.el6_3.1.src.rpm \
 		gdbm-1.8.0-36.el6.src.rpm \
 		glib2-2.26.1-3.el6.src.rpm \
@@ -83,6 +87,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		texinfo-4.13a-8.el6.src.rpm \
 		keyutils-1.4-4.el6.src.rpm \
 		krb5-1.10.3-10.el6_4.6.src.rpm \
+		less-436-10.el6.src.rpm \
 		acl-2.2.49-6.el6.src.rpm \
 		attr-2.4.44-7.el6.src.rpm \
 		libcap-2.16-5.5.el6.src.rpm \
@@ -98,6 +103,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		setup-2.8.14-20.el6_4.1.src.rpm \
 		slang-2.2.1-1.el6.src.rpm \
 		util-linux-ng-2.17.2-12.14.el6.src.rpm \
+		which-2.19-6.el6.src.rpm \
 		zlib-1.2.3-29.el6.src.rpm
 
 ALWAYS_KEEP_DISTFILES=	yes

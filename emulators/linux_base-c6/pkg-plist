@@ -79,6 +79,9 @@ etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
 etc/profile.d/glib2.csh
 etc/profile.d/glib2.sh
+etc/profile.d/less.csh
+etc/profile.d/less.sh
+etc/profile.d/which2.sh
 etc/redhat-release
 etc/request-key.conf
 etc/rpc
@@ -319,6 +322,10 @@ usr/bin/install
 usr/bin/join
 usr/bin/ldd
 usr/bin/lddlibc4
+usr/bin/less
+usr/bin/lessecho
+usr/bin/lesskey
+usr/bin/lesspipe.sh
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logname
@@ -377,6 +384,7 @@ usr/bin/uniq
 usr/bin/users
 usr/bin/vdir
 usr/bin/wc
+usr/bin/which
 usr/bin/who
 usr/bin/whoami
 usr/bin/yes
@@ -796,6 +804,7 @@ usr/share/doc/libidn-1.18/FAQ
 usr/share/doc/libidn-1.18/NEWS
 usr/share/doc/libidn-1.18/README
 usr/share/doc/libidn-1.18/THANKS
+usr/share/doc/less-436/LICENSE
 usr/share/doc/ncurses-5.7/ANNOUNCE
 usr/share/doc/ncurses-5.7/AUTHORS
 usr/share/doc/ncurses-5.7/NEWS.bz2
@@ -826,6 +835,11 @@ usr/share/doc/slang-2.2.1/changes.txt
 usr/share/doc/slang-2.2.1/grammar.txt
 usr/share/doc/slang-2.2.1/slang.txt
 usr/share/doc/slang-2.2.1/slangfun.txt
+usr/share/doc/which-2.19/AUTHORS
+usr/share/doc/which-2.19/COPYING
+usr/share/doc/which-2.19/EXAMPLES
+usr/share/doc/which-2.19/NEWS
+usr/share/doc/which-2.19/README
 usr/share/doc/zlib-1.2.3/ChangeLog
 usr/share/doc/zlib-1.2.3/FAQ
 usr/share/doc/zlib-1.2.3/README
@@ -1354,6 +1368,7 @@ usr/share/info/info-stnd.info.gz
 usr/share/info/info.info.gz
 usr/share/info/libidn.info.gz
 usr/share/info/rluserman.info.gz
+usr/share/info/which.info.gz
 usr/share/keyutils/request-key-debug.sh
 usr/share/locale/af/LC_MESSAGES/bash.mo
 usr/share/locale/af/LC_MESSAGES/coreutils.mo
@@ -1779,6 +1794,9 @@ usr/share/man/man1/join.1.gz
 usr/share/man/man1/kerberos.1.gz
 usr/share/man/man1/keyctl.1.gz
 usr/share/man/man1/let.1.gz
+usr/share/man/man1/less.1.gz
+usr/share/man/man1/lessecho.1.gz
+usr/share/man/man1/lesskey.1.gz
 usr/share/man/man1/link.1.gz
 usr/share/man/man1/ln.1.gz
 usr/share/man/man1/local.1.gz
@@ -1875,6 +1893,7 @@ usr/share/man/man1/users.1.gz
 usr/share/man/man1/vdir.1.gz
 usr/share/man/man1/wait.1.gz
 usr/share/man/man1/wc.1.gz
+usr/share/man/man1/which.1.gz
 usr/share/man/man1/who.1.gz
 usr/share/man/man1/whoami.1.gz
 usr/share/man/man1/yes.1.gz
@@ -3176,6 +3195,7 @@ var/mail
 @dirrm usr/share/emacs/site-lisp
 @dirrm usr/share/emacs
 @dirrm usr/share/doc/zlib-1.2.3
+@dirrm usr/share/doc/which-2.19
 @dirrm usr/share/doc/slang-2.2.1
 @dirrm usr/share/doc/setup-2.8.14
 @dirrm usr/share/doc/setserial-2.17
@@ -3187,6 +3207,7 @@ var/mail
 @dirrm usr/share/doc/libgcc-4.4.7
 @dirrm usr/share/doc/libcom_err-1.41.12
 @dirrm usr/share/doc/libcap-2.16
+@dirrm usr/share/doc/less-436
 @dirrm usr/share/doc/krb5-libs-1.10.3
 @dirrm usr/share/doc/keyutils-1.4
 @dirrm usr/share/doc/keyutils-libs-1.4
