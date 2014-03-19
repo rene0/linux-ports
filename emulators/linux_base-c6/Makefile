@@ -4,7 +4,7 @@
 PORTNAME=		c6
 PORTVERSION=		6.5
 CATEGORIES=		emulators linux
-MASTER_SITES=	CENTOS_LINUX/6/os/i386/Packages
+MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/:bin
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=		${BIN_DISTFILES}
@@ -64,7 +64,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm:bin \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm:bin
 
 .if defined(PACKAGE_BUILDING)
-MASTER_SITES+=  http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
+MASTER_SITES+=  http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/:src
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm:src \
 		bash-4.1.2-15.el6_4.src.rpm:src \
