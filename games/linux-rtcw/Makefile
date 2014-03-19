@@ -28,6 +28,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
 NVIDIA_GL_DESC= Use GL driver from nvidia-driver
 
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MNVIDIA_GL}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else

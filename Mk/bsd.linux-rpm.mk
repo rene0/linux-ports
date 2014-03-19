@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: head/Mk/bsd.linux-rpm.mk 340032 2014-01-17 13:20:09Z rene $
+# $FreeBSD: head/Mk/bsd.linux-rpm.mk 348601 2014-03-18 22:19:01Z thierry $
 #
 
 # Variables:
@@ -74,8 +74,7 @@ LINUX_DIST_VER=	6.5
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 .    if ${LINUX_DIST} == "fedora"
-# we do not want to define MASTER_SITES and MASTER_SITE_*
-# if they are already defined
+# we do not want to define MASTER_SITES and MASTER_SITE_* if they are already defined
 # ex.: MASTER_SITES=file:///...
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
@@ -130,7 +129,7 @@ PKGNAMEPREFIX?=			linux-${USE_LINUX}-
 DISTVERSION=	${PORTVERSION}-${RPMVERSION}
 DISTNAME?=		${PORTNAME}-${DISTVERSION}
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-BIN_DISTFILES:=		${DISTFILES}
+BIN_DISTFILES:=		${_DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}
 EXTRACT_ONLY?=		${BIN_DISTFILES}
 

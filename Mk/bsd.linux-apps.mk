@@ -378,7 +378,6 @@ qt45_DEPENDS=		fontconfig libmng png
 
 sdl12_f10_FILE=		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.11.2
 sdl12_c6_FILE=		${LINUXBASE}/usr/lib/libSDL-1.2.so.0.11.3
-
 sdl12_DETECT=		${sdl12${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 sdl12_PORT=			${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-sdl12
 sdl12_DEPENDS=		xorglibs
