@@ -15,7 +15,7 @@ COMMENT=	Return to Castle Wolfenstein (Linux version)
 
 USES=		makeself
 USE_LINUX=	yes
-USE_LINUX_APPS=	dri xorglibs
+USE_LINUX_APPS=	xorglibs
 NO_WRKSUBDIR=	yes
 
 WRAPPERS=	wolf wolfded wolfsp
@@ -25,7 +25,14 @@ PORTSCOUT=	skipv:1.41-3
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC= Use GL driver from nvidia-driver
+
+.if ${PORT_OPTIONS:MNVIDIA_GL}
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+USE_LINUX_APPS+=	dri
+.endif
 
 # XXX: should probably be converted to use the LICENSE framework
 post-extract:
