@@ -256,15 +256,17 @@ MASTER_SITE_EXIM+= \
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
-	http://mirror.centos.org/centos/6/os/i386/Packages/:bin \
-	http://vault.centos.org/6.5/os/Source/SPackages/:src \
+	http://mirror.centos.org/centos/6/os/i386/Packages/ \
+	http://vault.centos.org/6.5/os/Source/SPackages/ \
+	http://mirror.centos.org/%SUBDIR%/ \
 	http://vault.centos.org/%SUBDIR%/
+
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)
 MASTER_SITE_EPEL+= \
-	http://dl.fedoraproject.org/pub/epel/6/i386/:bin \
-	http://dl.fedoraproject.org/pub/epel/6/SRPMS/:src
+	http://dl.fedoraproject.org/pub/epel/6/i386/ \
+	http://dl.fedoraproject.org/pub/epel/6/SRPMS/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
@@ -1528,7 +1530,8 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
 			SAVANNAH:${PORTNAME:L} \
 			SOURCEFORGE:${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION} \
-			RUBYFORGE:${PORTNAME:L}
+			RUBYFORGE:${PORTNAME:L} \
+			CENTOS_LINUX:/centos/${LINUX_DIST_VER}/os/i386/Packages/
 
 .if defined(MASTER_SITES) && ${MASTER_SITES:N*\:/*}
 

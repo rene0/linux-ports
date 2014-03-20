@@ -101,10 +101,11 @@ MASTER_SITES_SUBDIR=	/centos/5/os/i386/Packages/
 MASTER_SITES=	${MASTER_SITE_CENTOS_LINUX}
 .         if ${LINUX_DIST_VER} == "6.5"
 .           if ! defined(PACKAGE_BUILDING)
-MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/
+MASTER_SITES=	http://mirror.centos.org/%SUBDIR%/
+MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
 .           else
-MASTER_SITES?=  http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
-MASTER_SITES_SUBDIR=	/centos/6/os/os/Source/SPackages/
+MASTER_SITES?=  http://vault.centos.org/%SUBDIR%/
+MASTER_SITES_SUBDIR=	/6.5/os/Source/SPackages/
 .           endif
 
 .         else
