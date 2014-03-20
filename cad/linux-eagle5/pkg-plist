@@ -1,7 +1,9 @@
+@mode 0555
 bin/eagle
+%%DATADIR%%/bin/eagle
+@mode
 man/man1/eagle.1.gz
 %%DATADIR%%/bin/designlink22.png
-%%DATADIR%%/bin/eagle
 %%DATADIR%%/bin/eagle.def
 %%DATADIR%%/bin/eagle_de.htm
 %%DATADIR%%/bin/eagle_de.qm

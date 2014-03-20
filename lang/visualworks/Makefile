@@ -165,10 +165,6 @@ do-install:
 	@${LN} -s ${DATADIR}/${MY_STARTUP_SCRIPT} ${STAGEDIR}${PREFIX}/bin/visual
 
 post-install:
-	@${FIND} ${STAGEDIR}${DATADIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -d ${STAGEDIR}${DATADIR} -type d \
-	  | ${SED} -ne 's,^${DATADIR},@dirrm share/${PORTNAME},p' >> ${TMPPLIST}
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " --------------------------- Please note: ---------------------------"
 	@${ECHO_MSG} " "

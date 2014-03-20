@@ -1,8 +1,8 @@
 # Created by: Michael Durian <durian@shadetreesoftware.com>
-# $FreeBSD$
+# $FreeBSD: head/cad/linux-eagle5/Makefile 348405 2014-03-16 13:28:54Z riggs $
 
 PORTNAME=	eagle5
-PORTVERSION=	${EAGLEVERSION:S/r/./}
+PORTVERSION=	${EAGLEVERSION}
 PORTREVISION=	4
 CATEGORIES=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
@@ -22,14 +22,13 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/lin-//}
 
-DATADIR=	${PREFIX}/share/${PORTNAME:S/linux-//}
 EXTRACT_CMD=	${SED}
 EXTRACT_BEFORE_ARGS=	-e '1,/^__DATA__$$/d'
 EXTRACT_AFTER_ARGS=	| ${BZCAT} -c 2>/dev/null | ${TAR} -xf -
 
 RESTRICTED=	Usage permitted for non-commercial purposes only
 NO_CDROM=	Sale for profit is not permitted
-NO_PACKAGE=	Copying the software is only allowed back-up by an individual licensee
+NO_PACKAGE=	Copying the software is only allowed for backup by an individual licensee
 
 EAGLEBASEVERSION=	5.12
 EAGLEBUGFIX=	0
@@ -46,12 +45,9 @@ DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \
 			"eagle" "Development;Electronics;Engineering;" false
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@ cd ${WRKSRC} && ${FIND} * -type f -print | \
-		${CPIO} --quiet -pdum -R ${BINOWN}:${BINGRP} ${STAGEDIR}${DATADIR}
-	@ cd ${STAGEDIR}${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
-	@${INSTALL_MAN} ${STAGEDIR}${DATADIR}/doc/eagle.1 ${STAGEDIR}${PREFIX}/man/man1/eagle.1
-	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${STAGEDIR}${PREFIX}/bin/eagle
-	@${CHMOD} 0555 ${STAGEDIR}${PREFIX}/bin/eagle
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	${INSTALL_MAN} ${STAGEDIR}${DATADIR}/doc/eagle.1 ${STAGEDIR}${PREFIX}/man/man1/eagle.1
+	${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${STAGEDIR}${PREFIX}/bin/eagle
 
 .include <bsd.port.mk>
