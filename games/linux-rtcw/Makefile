@@ -3,6 +3,7 @@
 
 PORTNAME=	rtcw
 DISTVERSION=	1.41b
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	wolf/linux
@@ -26,7 +27,7 @@ PORTSCOUT=	skipv:1.41-3
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NVIDIA_GL
-NVIDIA_GL_DESC= Use GL driver from nvidia-driver
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
 .include <bsd.port.options.mk>
 
