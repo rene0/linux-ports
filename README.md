@@ -148,6 +148,16 @@ or, if you are performing an upgrade,
     $ nspluginwrapper -v -a -u
 ```
 
+Installing Sublime
+------------------
+
+Besides following the CentOS 6.5 installation described above, I'm not aware of
+any additional steps.
+
+```
+    # portmaster editors/sublime
+```
+
 Google Earth issues
 -------------------
 
