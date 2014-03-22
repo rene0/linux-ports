@@ -649,12 +649,16 @@ usr/lib/gconv/libKSC.so
 usr/lib/gio/modules/libgiofam.so
 usr/lib/krb5/plugins/kdb/db2.so
 usr/lib/libdb-4.7.so
+usr/lib/libfam.so.0
+usr/lib/libfam.so.0.0.0
 usr/lib/libform.so.5
 usr/lib/libform.so.5.7
 usr/lib/libformw.so.5
 usr/lib/libformw.so.5.7
 usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.3.22
+usr/lib/libgamin-1.so.0
+usr/lib/libgamin-1.so.0.1.10
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
 usr/lib/libhistory.so.6
@@ -696,6 +700,7 @@ usr/lib/libverto.so
 usr/lib/libverto.so.0
 usr/lib/libverto.so.0.0
 usr/lib/locale/locale-archive.tmpl
+usr/libexec/gam_server
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
 usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
 usr/libexec/getconf/POSIX_V7_ILP32_OFF32
@@ -762,6 +767,33 @@ usr/share/doc/freetype-2.3.11/README
 usr/share/doc/freetype-2.3.11/VERSION.DLL
 usr/share/doc/freetype-2.3.11/formats.txt
 usr/share/doc/freetype-2.3.11/ft2faq.html
+usr/share/doc/gamin-0.1.10/AUTHORS
+usr/share/doc/gamin-0.1.10/COPYING
+usr/share/doc/gamin-0.1.10/ChangeLog
+usr/share/doc/gamin-0.1.10/Copyright
+usr/share/doc/gamin-0.1.10/FAQ.html
+usr/share/doc/gamin-0.1.10/NEWS
+usr/share/doc/gamin-0.1.10/README
+usr/share/doc/gamin-0.1.10/TODO
+usr/share/doc/gamin-0.1.10/callbacks.gif
+usr/share/doc/gamin-0.1.10/client_server.gif
+usr/share/doc/gamin-0.1.10/config.html
+usr/share/doc/gamin-0.1.10/contacts.html
+usr/share/doc/gamin-0.1.10/debug.html
+usr/share/doc/gamin-0.1.10/debugging.txt
+usr/share/doc/gamin-0.1.10/devel.html
+usr/share/doc/gamin-0.1.10/differences.html
+usr/share/doc/gamin-0.1.10/downloads.html
+usr/share/doc/gamin-0.1.10/gamin.html
+usr/share/doc/gamin-0.1.10/index.html
+usr/share/doc/gamin-0.1.10/internals.html
+usr/share/doc/gamin-0.1.10/news.html
+usr/share/doc/gamin-0.1.10/overview.html
+usr/share/doc/gamin-0.1.10/python.html
+usr/share/doc/gamin-0.1.10/security.html
+usr/share/doc/gamin-0.1.10/server_structs.gif
+usr/share/doc/gamin-0.1.10/socket.txt
+usr/share/doc/gamin-0.1.10/using.html
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
@@ -3270,6 +3302,7 @@ var/mail
 @dirrm usr/share/doc/glibc-2.12
 @dirrm usr/share/doc/glib2-2.26.1
 @dirrm usr/share/doc/gdbm-1.8.0
+@dirrm usr/share/doc/gamin-0.1.10
 @dirrm usr/share/doc/freetype-2.3.11
 @dirrm usr/share/doc/findutils-4.4.2
 @dirrm usr/share/doc/elfutils-0.152
