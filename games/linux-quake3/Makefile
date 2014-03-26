@@ -1,5 +1,5 @@
 # Created by: pat@databits.net
-# $FreeBSD$
+# $FreeBSD: head/games/linux-quake3/Makefile 347760 2014-03-10 14:49:26Z bapt $
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c
@@ -14,7 +14,7 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
-USE_ZIP=	yes
+USES=		zip:infozip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

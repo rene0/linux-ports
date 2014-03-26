@@ -24,6 +24,4 @@ post-patch:
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/
 
-
-
 .include <bsd.port.mk>

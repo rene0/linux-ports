@@ -28,7 +28,6 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=	dri
 .endif
 
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/virtual-jay-peak ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/soulride-static ${STAGEDIR}${PREFIX}/libexec

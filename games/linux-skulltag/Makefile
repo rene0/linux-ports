@@ -35,5 +35,4 @@ do-install:
 post-install:
 	${CAT} ${WRKDIR}/pkg-message
 
-
 .include <bsd.port.mk>
