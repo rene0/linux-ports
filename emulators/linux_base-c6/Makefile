@@ -58,9 +58,12 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		pcre-7.8-6.el6.${LINUX_RPM_ARCH}.rpm \
 		popt-1.13-7.el6.${LINUX_RPM_ARCH}.rpm \
 		readline-6.0-4.el6.${LINUX_RPM_ARCH}.rpm \
+		redhat-lsb-core-4.0-7.el6.centos.${LINUX_RPM_ARCH}.rpm \
+		sed-4.2.1-10.el6.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
 		setup-2.8.14-20.el6_4.1.noarch.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
+		util-linux-ng-2.17.2-12.14.el6.${LINUX_RPM_ARCH}.rpm \
 		which-2.19-6.el6.${LINUX_RPM_ARCH}.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
@@ -101,6 +104,8 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		pcre-7.8-6.el6.src.rpm \
 		popt-1.13-7.el6.src.rpm \
 		readline-6.0-4.el6.src.rpm \
+		redhat-lsb-4.0-7.el6.centos.src.rpm \
+		sed-4.2.1-10.el6.src.rpm \
 		setserial-2.17-25.el6.src.rpm \
 		setup-2.8.14-20.el6_4.1.src.rpm \
 		slang-2.2.1-1.el6.src.rpm \
