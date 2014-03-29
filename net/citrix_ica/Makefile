@@ -50,7 +50,7 @@ pre-fetch:
 .endif
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
 	@if (test -d "${CDIR}") ; \
 	then \
 		${ECHO} "-----------------------------------------------------------" ; \
@@ -65,8 +65,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wfcmgr ${STAGEDIR}${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKDIR}/wfica ${STAGEDIR}${PREFIX}/bin/wfica
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
+	${MKDIR} ${STAGEDIR}${CDIR}
+	${MKDIR} ${STAGEDIR}${CDIR}/config
+	cd ${WRKDIR}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
+	cp ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
 
 .if defined(ICA_CERTS)
+	${MKDIR} ${STAGEDIR}${CERTDIR}
 .for f in ${ICA_CERTS}
 	${INSTALL_DATA} ${DISTDIR}/${f} ${STAGEDIR}${CERTDIR}
 .endfor
