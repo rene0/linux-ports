@@ -428,7 +428,7 @@ tiff_DEPENDS=		jpeg
 
 tk85_f10_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
 tk85_c6_FILE=		${LINUXBASE}/usr/lib/libtk8.5.so
-tk85_DETECT=		${tk84${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tk85_DETECT=		${tk85${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 tk85_PORT=		${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-tk85
 tk85_DEPENDS=		xorglibs
 
