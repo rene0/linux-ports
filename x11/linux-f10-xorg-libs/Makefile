@@ -90,6 +90,7 @@ CONFLICTS=		linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Xorg libraries (Linux Fedora 10)
 
+USE_LINUX=	f10
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		fontconfig
 

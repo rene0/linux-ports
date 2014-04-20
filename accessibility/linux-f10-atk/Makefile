@@ -13,7 +13,7 @@ COMMENT=	Accessibility Toolkit, Linux/i386 binary (Linux Fedora 10)
 CONFLICTS=	linux-atk-[0-9]* linux-f8-atk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.fc10

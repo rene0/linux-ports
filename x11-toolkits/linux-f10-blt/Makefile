@@ -11,7 +11,7 @@ COMMENT=	BLT widget extension to Tcl/Tk scripting language development (Linux Fe
 
 USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	tcl84 tk84 xorglibs
+USE_LINUX_APPS=	tcl85 tk85 xorglibs
 
 RPMVERSION=	28.z.fc10
 USE_LDCONFIG=	yes
