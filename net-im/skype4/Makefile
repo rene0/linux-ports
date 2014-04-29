@@ -13,15 +13,12 @@ COMMENT=	P2P VoIP software
 
 CONFLICTS=	skype-devel-[0-9]*
 
-OPTIONS_DEFINE=	VIDEO #NVIDIA_GL
-#NVIDIA_GL_DESC=	libGL provided by NVidia binary drivers
-
+OPTIONS_DEFINE=	VIDEO
 OPTIONS_DEFAULT=	VIDEO
 
 NO_BUILD=	yes
 
-USES=		desktop-file-utils
-USE_BZIP2=	yes
+USES=		desktop-file-utils tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS+=alsalib alsa-plugins-oss fontconfig xorglibs qt47 qt47-x11 qt47-webkit openssl-compat
 RESTRICTED=	Redistribution prohibited.
