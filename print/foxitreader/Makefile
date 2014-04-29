@@ -22,8 +22,7 @@ NO_BUILD=	yes
 
 PLIST_SUB=	NLS="${NLS}"
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	cups-libs gtk2
 
