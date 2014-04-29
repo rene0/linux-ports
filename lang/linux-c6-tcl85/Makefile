@@ -10,7 +10,7 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Tool Command Language (Linux CentOS ${LINUX_DIST_VER})
 
 # XXX: someone should make libarchive be quiet about symlinks
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 EXTRACT_CMD=	rpm2cpio.pl
 EXTRACT_BEFORE_ARGS:=
