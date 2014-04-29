@@ -22,9 +22,9 @@ RUN_DEPENDS=	acroreadwrapper>=0.0.20100806:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
+USES=	tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	cups-libs gtk2 pango libgcrypt libgpg-error
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
@@ -80,8 +80,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
-.if ${ADOBE_LANG:U} != ENU
 post-install:
+	#XXX: Find more elegant version of making this StageDir-proof
+	${REINPLACE_CMD} -i "" -e "s,${STAGEDIR},," \
+		${STAGEDIR}${INSTALLDIR}/${ACROBASE}/Reader/GlobalPrefs/.config
+.if ${ADOBE_LANG:U} != ENU
 	@${CAT} ${PKGMESSAGE}
 .endif
 

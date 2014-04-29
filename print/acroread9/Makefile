@@ -3,6 +3,7 @@
 
 PORTNAME=	acroread9
 PORTVERSION?=	9.5.5
+PORTREVISION=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -21,7 +22,7 @@ RUN_DEPENDS=	acroreadwrapper>=0.0.20110529:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_LINUX=	yes
 .if ${USE_LINUX} == "f10"
 USE_LINUX_APPS=	cups-libs gdkpixbuf gtk2 libgcrypt libgpg-error libxml2 pango
@@ -94,6 +95,9 @@ do-install:
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
 post-install: post-man-install
+	# XXX: Find more elegant version of making this StageDir-proof
+	${REINPLACE_CMD} -i "" -e "s,${STAGEDIR},," \
+		${STAGEDIR}${INSTALLDIR}/${ACROBASE}/Reader/GlobalPrefs/.config
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
