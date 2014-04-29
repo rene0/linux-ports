@@ -263,6 +263,12 @@ MASTER_SITE_CENTOS_LINUX+= \
 
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
+MASTER_SITE_CENTOS_LINUX_UPDATES+= \
+	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
+	http://vault.centos.org/6.5/updates/Source/SPackages/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_EPEL)
 MASTER_SITE_EPEL+= \
 	http://dl.fedoraproject.org/pub/epel/6/i386/ \
