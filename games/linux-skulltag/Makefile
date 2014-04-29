@@ -13,10 +13,10 @@ COMMENT=	Doom/Doom2/Heretic engine
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmodapi
 
+USES=	tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
-ONLY_FOR_ARCHS=	i386
-USE_BZIP2=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
 SUB_FILES=	skulltag.sh pkg-message

@@ -15,8 +15,8 @@ MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
+USES=	zip:infozip
 USE_LINUX=	yes
-USE_ZIP=	yes
 NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}

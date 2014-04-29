@@ -11,7 +11,7 @@ COMMENT=	Arkanoid and space game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes

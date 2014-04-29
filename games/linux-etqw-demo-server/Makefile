@@ -19,8 +19,8 @@ NO_PACKAGE=	Package will be 428MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
+USES=		zip:infozip
 USE_LINUX=	yes
-USE_ZIP=	yes
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
@@ -46,21 +46,19 @@ do-install:
 		${FIND} -E . -type f -iregex ".*\.so\.[0-9]+" \
 			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
-	@${MKDIR} ${ETQWDIR}/base/bots
+	@${MKDIR} ${STAGEDIR}${ETQWDIR}/base/bots
 	@cd ${WRKSRC}/data && \
 		${FIND} base -type f \
 			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
-	@${MKDIR} ${ETQWDIR}/pb/htm
+	@${MKDIR} ${STAGEDIR}${ETQWDIR}/pb/htm
 	@cd ${WRKSRC}/data && \
 		${FIND} pb -type f \
 			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in EULA.txt README.txt copyrights.txt etqwtv.txt pb/PBEULA.txt
 	@${INSTALL_DATA} ${WRKSRC}/data/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
