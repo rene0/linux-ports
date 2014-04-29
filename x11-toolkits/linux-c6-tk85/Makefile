@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD: head/x11-toolkits/linux-f10-tk85/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD$
 
 PORTNAME=	tk
 PORTVERSION=	8.5.7
@@ -10,7 +10,7 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL (Linux CentOS ${LINUX_DIST_VER})
 
 # XXX: someone should make libarchive be quiet about symlinks
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 EXTRACT_CMD=	rpm2cpio.pl
 EXTRACT_BEFORE_ARGS:=
