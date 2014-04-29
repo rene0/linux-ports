@@ -11,6 +11,7 @@ DISTNAME=	qt-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux Fedora 10)
 
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig libmng png
 LINUX_NAME=	qt
