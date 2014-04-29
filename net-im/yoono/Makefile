@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS_REASON=	binary distribution
 SUB_FILES=	${PORTNAME} pkg-message
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs

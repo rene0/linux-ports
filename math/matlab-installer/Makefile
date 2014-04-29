@@ -11,13 +11,13 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
 		auto-ask:${PORTSDIR}/sysutils/auto-admin \
 		webbrowser:${PORTSDIR}/www/webbrowser \
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_LINUX=	yes
 USE_LINUX_APPS=	ncurses-base dri devtools
 USE_JAVA=	yes
