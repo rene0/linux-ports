@@ -8,7 +8,8 @@ MAINTAINER=	emulation@FreeBSD.org
 
 COMMENT=	RPM of QT4 (Linux CentOS 5)
 
-MASTER_SITES=	http://dl.atrpms.net/el5-i386/atrpms/testing/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	xmj
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 SRC_DISTFILES:=		# unretrievable

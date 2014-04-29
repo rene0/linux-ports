@@ -11,7 +11,8 @@ CATEGORIES=	devel linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux CentOS 5)
 
-MASTER_SITES=	http://dl.atrpms.net/el5-i386/atrpms/testing/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	xmj
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
