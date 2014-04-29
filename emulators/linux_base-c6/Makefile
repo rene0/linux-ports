@@ -124,6 +124,10 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.12"
+USES=	shebangfix
+SHEBANG_FILES=	bin/redhat_lsb_init sbin/mount.tmpfs
+# bash scripts need to work in chroot /compat/linux, so use env instead.
+bash_CMD=	/usr/bin/env bash
 
 # TODO:
 # - move master sites to bsd.sites.mk
