@@ -46,8 +46,16 @@ NO_BUILD=			yes
 LINUX_RPM_ARCH?=	ppc
 .	else
 .		if ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
+# Do not build CentOS 6.5 ports if overridden by f10
+.		if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
+IGNORE=		This port requires CentOS 6.5. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
+.		endif
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
 .		elif ${USE_LINUX} == "f10"
+# Do not build Fedora 10 ports unless specifically overridden.
+.		if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
+IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
+.		endif
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .		else
 LINUX_RPM_ARCH?=	${ARCH}
@@ -73,47 +81,47 @@ LINUX_DIST_VER=	6.5
 .  if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
-.    if ${LINUX_DIST} == "fedora"
+.		if ${LINUX_DIST} == "fedora"
 # we do not want to define MASTER_SITES and MASTER_SITE_* if they are already defined
 # ex.: MASTER_SITES=file:///...
-.      ifndef MASTER_SITES
+.			ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
-.        if ${LINUX_DIST_VER} == 10
+.				if ${LINUX_DIST_VER} == 10
 MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
 			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
 				../updates/${LINUX_DIST_VER}/SRPMS
-.        else
+.				else
 MASTER_SITE_SUBDIR?=	${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
 			updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	${LINUX_DIST_VER}/SRPMS \
 				updates/${LINUX_DIST_VER}/SRPMS
-.        endif
-.      endif
-.    elif ${LINUX_DIST} == "centos"
+.				endif
+.			endif
+.		elif ${LINUX_DIST} == "centos"
 MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
-.      if ${LINUX_DIST_VER} == "5" #needed for Qt...
+.			if ${LINUX_DIST_VER} == "5" #needed for Qt...
 LINUX_RPM_ARCH=	i386
 MASTER_SITES_SUBDIR=	/centos/5/os/i386/Packages/
-.      endif
+.			endif
 
-.      ifndef MASTER_SITES
+.			ifndef MASTER_SITES
 MASTER_SITES=	${MASTER_SITE_CENTOS_LINUX}
-.         if ${LINUX_DIST_VER} == "6.5"
-.           if ! defined(PACKAGE_BUILDING)
+.				if ${LINUX_DIST_VER} == "6.5"
+.					if ! defined(PACKAGE_BUILDING)
 MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/
 MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
-.           else
+.					else
 MASTER_SITES?=  http://vault.centos.org/%SUBDIR%/
 MASTER_SITES_SUBDIR=	/6.5/os/Source/SPackages/
-.           endif
+.					endif
 
-.         else
+.				else
 MASTER_SITES=	http://vault.centos.org/${LINUX_DIST_VER}/os/i386/Packages/
-.         endif
-.      endif
+.				endif
+.			endif
 
-.    endif
+.		endif
 .  endif
 
 
@@ -132,7 +140,7 @@ DISTNAME?=		${PORTNAME}-${DISTVERSION}
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 BIN_DISTFILES:=		${_DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}
-EXTRACT_ONLY?=		${BIN_DISTFILES}
+EXTRACT_ONLY?=          ${BIN_DISTFILES:C/:[^:]+$//}
 
 .  if defined(PACKAGE_BUILDING)
 DISTFILES+=		${SRC_DISTFILES}

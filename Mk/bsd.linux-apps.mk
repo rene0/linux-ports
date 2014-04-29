@@ -10,7 +10,7 @@
 # 
 # Ports can use this as follows:
 #
-# USE_LINUX_APPS=    esound xorglibs
+# USE_LINUX_APPS=	esound xorglibs
 #
 # .include <bsd.port.mk>
 #
@@ -40,15 +40,15 @@ Linux_APPS_Pre_Include=			bsd.linux-apps.mk
 Linux_APPS_Post_Include=	bsd.linux-apps.mk
 
 .  if defined(OVERRIDE_LINUX_NONBASE_PORTS)
-.    if ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
+.	if ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 LINUX_DIST_SUFFIX=	-f10
-.    else
+.	else
 .		if ${OVERRIDE_LINUX_NONBASE_PORTS} == "c6"
 LINUX_DIST_SUFFIX=	-c6
 .		else
 IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
 .		endif
-.    endif
+.	endif
 .  else
 # default
 LINUX_DIST_SUFFIX=	-c6
@@ -344,6 +344,7 @@ openal_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-openal
 openal_DEPENDS=		alsalib arts esound libaudiofile libvorbis sdl12
 
 openal-soft_f10_FILE=	${LINUXBASE}/usr/lib/libopenal.so.1.8.466
+openal-soft_c6_FILE=	${LINUXBASE}/usr/lib/libopenal.so.1.12.854
 openal-soft_DETECT=	${openal-soft${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openal-soft_PORT=	${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-openal-soft
 openal-soft_DEPENDS=	alsalib arts esound
@@ -472,28 +473,28 @@ qt47-webkit_PORT=		${PORTSDIR}/www/linux${LINUX_DIST_SUFFIX}-qt47-webkit
 
 # Let's check if components from USE_LINUX_APPS exist at _LINUX_APPS_ALL
 .  for component in ${USE_LINUX_APPS}
-.    if ${_LINUX_APPS_ALL:M${component}}==""
+.	if ${_LINUX_APPS_ALL:M${component}}==""
 IGNORE=	bsd.linux-apps.mk test failed: Invalid component USE_LINUX_APPS=${component}
-.    endif
+.	endif
 .  endfor
 
 # Let's check if components from USE_LINUX_APPS have corresponding <app>_DETECT
 # i.e. if a corresponding <app>_FILE defined for given LINUX_DIST_SUFFIX
 .  for component in ${USE_LINUX_APPS}
-.    if ${${component}_DETECT}==""
-.      if defined(${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE)
+.	if ${${component}_DETECT}==""
+.	  if defined(${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE)
 IGNORE=	bsd.linux-apps.mk test failed: The component ${component} is empty for LINUX_DIST_SUFFIX=${LINUX_DIST_SUFFIX} (the corresponding variable ${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE is empty)
-.      else
+.	  else
 IGNORE=	bsd.linux-apps.mk test failed: The component ${component} is not defined for LINUX_DIST_SUFFIX=${LINUX_DIST_SUFFIX} (the corresponding variable ${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE is not defined). This usually means that the current port should be used with non default linux base and/or infrastructure port(s)
-.      endif
-.    endif
+.	  endif
+.	endif
 .  endfor
 
 # Recursively expand all dependencies for each app at _LINUX_APPS_ALL
 .  for component in ${_LINUX_APPS_ALL}
-.    for subcomponent in ${${component}_DEPENDS}
+.	for subcomponent in ${${component}_DEPENDS}
 ${component}_DEPENDS+=${${subcomponent}_DEPENDS}
-.    endfor
+.	endfor
 .  endfor
 
 # Use just expanded dependencies (<app>_DEPENDS) to expand USE_LINUX_APPS
@@ -503,10 +504,10 @@ _USE_LINUX_APPS+=${${component}_DEPENDS} ${component}
 
 # Set dependencies for _USE_LINUX_APPS which exists at _LINUX_APPS_ALL
 .  for component in ${_LINUX_APPS_ALL}
-.    if ${_USE_LINUX_APPS:M${component}}!=""
-.      if defined(${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE)
+.	if ${_USE_LINUX_APPS:M${component}}!=""
+.	  if defined(${component}${LINUX_DIST_SUFFIX:S/-/_/}_FILE)
 RUN_DEPENDS+=   ${${component}_DETECT}:${${component}_PORT}
-.      endif
-.    endif
+.	  endif
+.	endif
 .  endfor
 .endif
