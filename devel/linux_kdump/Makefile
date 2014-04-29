@@ -11,6 +11,7 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor
 
+USE_LINUX=	yes
 USE_LINUX_APPS=	devtools
 BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
 
@@ -31,7 +32,7 @@ IGNORE=	requires kernel source present in ${SRC_BASE}/sys
 IGNORE=	requires ktrace source present in ${SRC_BASE}/usr.bin/ktrace
 .endif
 .if ! (exists(${LINUXBASE}/etc/fedora-release) || exists(${LINUXBASE}/etc/centos-release))
-IGNORE=	does not build without the default linux base, use the package instead
+IGNORE=	does not build without a linux base, use the package instead
 .endif
 
 .include <bsd.port.post.mk>

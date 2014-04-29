@@ -12,7 +12,7 @@ COMMENT=	Netscape Portable Runtime (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-nspr-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	1.fc10.1
