@@ -25,6 +25,7 @@ NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-dr
 USE_LINUX_APPS=	fontconfig png  xorglibs png alsalib  jpeg tiff qt47
 USE_LINUX_RPM=	yes
 RPMVERSION=	1_18.el5
+LINUX_RPM_ARCH=	i386
 
 .include <bsd.port.options.mk>
 
