@@ -803,7 +803,7 @@ usr/lib/libverto-k5ev.so.0.0
 usr/lib/libverto.so
 usr/lib/libverto.so.0
 usr/lib/libverto.so.0.0
-usr/lib/locale/locale-archive.tmpl
+usr/lib/locale/locale-archive
 usr/lib/lsb/install_initd
 usr/lib/lsb/remove_initd
 usr/libexec/gam_server
