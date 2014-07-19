@@ -37,7 +37,7 @@ If you have not yet worked with Linux emulation, load the linux kernel module:
 ```
 To make the change permanent, add the module to your `/etc/rc.conf` kld_list:
 ```
-    # echo 'kld_list="linux" >> /etc/rc.conf
+    # echo 'kld_list="linux"' >> /etc/rc.conf
 ```
 
 Proceed to change the compatibility level of the Linux kernel OS release by running
