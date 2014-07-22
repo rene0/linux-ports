@@ -193,6 +193,10 @@ do-build:
 # Restore the status quo for usr/bin/*db4* files
 #	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
 
+# Install locales
+	@${MV} ${WRKSRC}/usr/lib/locale/locale-archive.tmpl \
+		${WRKSRC}/usr/lib/locale/locale-archive
+
 do-install:
 #
 # Do install without using linux rpm system
