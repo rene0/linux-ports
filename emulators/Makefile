@@ -1,4 +1,4 @@
-# $FreeBSD: head/emulators/Makefile 349056 2014-03-24 19:51:54Z rene $
+# $FreeBSD: head/emulators/Makefile 361537 2014-07-11 14:16:35Z kmoore $
 #
 
     COMMENT = Emulators for other operating systems
@@ -33,7 +33,6 @@
     SUBDIR += dynamips-community
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
-    SUBDIR += extract-xiso
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
@@ -50,7 +49,6 @@
     SUBDIR += gns3
     SUBDIR += gnuboy
     SUBDIR += gxemul
-    SUBDIR += gxmame
     SUBDIR += hatari
     SUBDIR += hercules
     SUBDIR += higan
@@ -85,19 +83,6 @@
     SUBDIR += mess
     SUBDIR += minivmac
     SUBDIR += mtools
-    SUBDIR += mupen64
-    SUBDIR += mupen64-base
-    SUBDIR += mupen64-dummyaudio
-    SUBDIR += mupen64-glide
-    SUBDIR += mupen64-gln64
-    SUBDIR += mupen64-input
-    SUBDIR += mupen64-rice
-    SUBDIR += mupen64-rsp
-    SUBDIR += mupen64-sdlaudio
-    SUBDIR += mupen64-sdlinput
-    SUBDIR += mupen64-softgfx
-    SUBDIR += mupen64-sound
-    SUBDIR += mupen64-tr64
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-core
@@ -122,13 +107,13 @@
     SUBDIR += pcemu
     SUBDIR += pcsxr
     SUBDIR += pearpc
-    SUBDIR += prodosemu
+    SUBDIR += pipelight
     SUBDIR += psim-freebsd
-    SUBDIR += pyxmame
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
+    SUBDIR += qemu-user-static
     SUBDIR += qmc2
     SUBDIR += qtemu
     SUBDIR += quasi88
@@ -143,7 +128,6 @@
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
-    SUBDIR += svr4_base
     SUBDIR += swine
     SUBDIR += tiemu3
     SUBDIR += tilem
@@ -182,8 +166,6 @@
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xhomer
-    SUBDIR += xmame
-    SUBDIR += xmess
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yabause
