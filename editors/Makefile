@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/Makefile 343218 2014-02-07 12:41:40Z bapt $
+# $FreeBSD: head/editors/Makefile 361687 2014-07-13 14:53:17Z marino $
 #
 
     COMMENT = Editors
@@ -9,10 +9,7 @@
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel
-    SUBDIR += apel-emacs21
-    SUBDIR += apel-emacs22
     SUBDIR += asedit
-    SUBDIR += axe
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit
@@ -58,18 +55,12 @@
     SUBDIR += e93
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
-    SUBDIR += elvis
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += emacs21
-    SUBDIR += emacs22
     SUBDIR += emacs23
     SUBDIR += fb
     SUBDIR += flim
-    SUBDIR += flim-emacs21
-    SUBDIR += flim-emacs22
-    SUBDIR += flim-xemacs21-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += fxite
@@ -82,7 +73,6 @@
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gobby
-    SUBDIR += gummi
     SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse
@@ -129,7 +119,7 @@
     SUBDIR += libreoffice-brx
     SUBDIR += libreoffice-bs
     SUBDIR += libreoffice-ca
-    SUBDIR += libreoffice-ca_XV
+    SUBDIR += libreoffice-ca_valencia
     SUBDIR += libreoffice-cs
     SUBDIR += libreoffice-cy
     SUBDIR += libreoffice-da
@@ -157,10 +147,10 @@
     SUBDIR += libreoffice-ka
     SUBDIR += libreoffice-kk
     SUBDIR += libreoffice-km
+    SUBDIR += libreoffice-kmr_Latn
     SUBDIR += libreoffice-kn
     SUBDIR += libreoffice-kok
     SUBDIR += libreoffice-ks
-    SUBDIR += libreoffice-ku
     SUBDIR += libreoffice-lb
     SUBDIR += libreoffice-lo
     SUBDIR += libreoffice-lt
@@ -187,13 +177,13 @@
     SUBDIR += libreoffice-sa_IN
     SUBDIR += libreoffice-sat
     SUBDIR += libreoffice-sd
-    SUBDIR += libreoffice-sh
     SUBDIR += libreoffice-si
     SUBDIR += libreoffice-sid
     SUBDIR += libreoffice-sk
     SUBDIR += libreoffice-sl
     SUBDIR += libreoffice-sq
     SUBDIR += libreoffice-sr
+    SUBDIR += libreoffice-sr_Latn
     SUBDIR += libreoffice-ss
     SUBDIR += libreoffice-st
     SUBDIR += libreoffice-sv
@@ -226,7 +216,6 @@
     SUBDIR += nedit
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
-    SUBDIR += nxml
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
@@ -244,9 +233,6 @@
     SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
-    SUBDIR += semi-emacs21
-    SUBDIR += semi-emacs22
-    SUBDIR += semi-xemacs21-mule
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += softmaker-office
@@ -266,7 +252,6 @@
     SUBDIR += textedit
     SUBDIR += textroom
     SUBDIR += texworks
-    SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += tpad
     SUBDIR += tree-widget
@@ -274,7 +259,6 @@
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap
-    SUBDIR += ved
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
@@ -283,12 +267,6 @@
     SUBDIR += wordgrinder
     SUBDIR += xcoral
     SUBDIR += xed
-    SUBDIR += xemacs
-    SUBDIR += xemacs-devel
-    SUBDIR += xemacs-devel-mule
-    SUBDIR += xemacs-mule-packages
-    SUBDIR += xemacs-packages
-    SUBDIR += xemacs21-mule
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yasnippet

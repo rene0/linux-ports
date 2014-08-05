@@ -1,4 +1,4 @@
-# $FreeBSD: head/sysutils/Makefile 349137 2014-03-25 12:56:05Z cy $
+# $FreeBSD: head/sysutils/Makefile 363937 2014-08-03 21:08:11Z marino $
 #
 
     COMMENT = System utilities
@@ -56,6 +56,7 @@
     SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
+    SUBDIR += bamf
     SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
@@ -82,9 +83,9 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdmoted
+    SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
-    SUBDIR += bubblemon2
     SUBDIR += bulk_extractor
     SUBDIR += busybox
     SUBDIR += busybox-unstable
@@ -110,6 +111,7 @@
     SUBDIR += cfengine33
     SUBDIR += cfengine34
     SUBDIR += cfengine35
+    SUBDIR += cfengine36
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
@@ -119,6 +121,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
+    SUBDIR += clsync
     SUBDIR += cmdwatch
     SUBDIR += cmogstored
     SUBDIR += cmospwd
@@ -134,6 +137,7 @@
     SUBDIR += consolehm
     SUBDIR += consolekit
     SUBDIR += contool
+    SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
     SUBDIR += cotty
@@ -141,7 +145,6 @@
     SUBDIR += cpu
     SUBDIR += cpuburn
     SUBDIR += cpulimit
-    SUBDIR += cpupowerd
     SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += createrepo
@@ -155,7 +158,9 @@
     SUBDIR += dae
     SUBDIR += daedalus
     SUBDIR += daemontools
+    SUBDIR += daemontools-encore
     SUBDIR += dar
+    SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
@@ -187,7 +192,6 @@
     SUBDIR += downtime
     SUBDIR += downtimed
     SUBDIR += dt
-    SUBDIR += dtc
     SUBDIR += dtpstree
     SUBDIR += du2ps
     SUBDIR += duff
@@ -205,13 +209,11 @@
     SUBDIR += e2fsprogs
     SUBDIR += ec2-scripts
     SUBDIR += edid-decode
-    SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += endian
     SUBDIR += enteruser
     SUBDIR += entr
     SUBDIR += env4801
-    SUBDIR += epylog
     SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate
@@ -318,7 +320,6 @@
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
     SUBDIR += gkrellflynn
-    SUBDIR += gkrellm
     SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop
@@ -346,13 +347,13 @@
     SUBDIR += grub2
     SUBDIR += grub2-bhyve
     SUBDIR += grub2-efi
+    SUBDIR += grub2-pcbsd
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
     SUBDIR += gstreamer-plugins-hal
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
-    SUBDIR += gtk-send-pr
     SUBDIR += hachoir-metadata
     SUBDIR += hachoir-subfile
     SUBDIR += hachoir-urwid
@@ -382,12 +383,12 @@
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat
-    SUBDIR += hyperic-sigar
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
     SUBDIR += installwatch
     SUBDIR += intel-pcm
+    SUBDIR += iocage
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping
@@ -463,21 +464,17 @@
     SUBDIR += linux-f10-procps
     SUBDIR += linux-nero
     SUBDIR += linuxfdisk
-    SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += lmon
     SUBDIR += log_analysis
     SUBDIR += loganalyzer
-    SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
-    SUBDIR += lookupd
-    SUBDIR += lookupd_ldap
     SUBDIR += lsof
     SUBDIR += ltrace
     SUBDIR += luckybackup
@@ -498,6 +495,7 @@
     SUBDIR += mcelog
     SUBDIR += mcollective
     SUBDIR += mcollective-nrpe-agent
+    SUBDIR += mcollective-puppet-agent
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
@@ -519,6 +517,7 @@
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
+    SUBDIR += mnrpes
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
@@ -544,9 +543,9 @@
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += mybashburn
+    SUBDIR += n98-magerun
     SUBDIR += nagios-statd
     SUBDIR += namefix
-    SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
     SUBDIR += ncdu
     SUBDIR += nepomuk-core
@@ -626,7 +625,6 @@
     SUBDIR += p5-Sys-Load
     SUBDIR += p5-Sys-Syslog
     SUBDIR += p5-Sys-User-UIDhelper
-    SUBDIR += p5-Sys-Utmp
     SUBDIR += p5-Sysadm-Install
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tail-Stat
@@ -650,7 +648,6 @@
     SUBDIR += patchelf
     SUBDIR += pax-utils
     SUBDIR += pbimaker
-    SUBDIR += pc-sysinstall
     SUBDIR += pcbsd-utils
     SUBDIR += pcbsd-utils-qt4
     SUBDIR += pcfclock
@@ -708,10 +705,10 @@
     SUBDIR += procenv
     SUBDIR += procmap
     SUBDIR += progsreiserfs
-    SUBDIR += psgconf
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
+    SUBDIR += pstacku
     SUBDIR += pstree
     SUBDIR += ptools
     SUBDIR += puppet
@@ -727,12 +724,18 @@
     SUBDIR += py-bcfg2
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
+    SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-halite
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-ploy
+    SUBDIR += py-ploy_ansible
+    SUBDIR += py-ploy_ec2
+    SUBDIR += py-ploy_ezjail
+    SUBDIR += py-ploy_fabric
     SUBDIR += py-plumbum
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
@@ -745,6 +748,7 @@
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += pydf
+    SUBDIR += qchroot
     SUBDIR += qjail
     SUBDIR += qjail2
     SUBDIR += qlogtools
@@ -761,7 +765,6 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
-    SUBDIR += readlink
     SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
@@ -781,6 +784,7 @@
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog7
     SUBDIR += rsyslog7-devel
+    SUBDIR += rsyslog8
     SUBDIR += rsyslog8-devel
     SUBDIR += rtty
     SUBDIR += ruby-quota
@@ -826,6 +830,8 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-yell
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
@@ -841,6 +847,7 @@
     SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen
+    SUBDIR += screen-legacy
     SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += scterc
@@ -849,7 +856,6 @@
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
-    SUBDIR += sensors-applet
     SUBDIR += serpentine
     SUBDIR += setcdboot
     SUBDIR += setquota
@@ -892,23 +898,20 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
-    SUBDIR += synergy-devel
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
-    SUBDIR += syslog-ng2
     SUBDIR += syslog-ng33
     SUBDIR += syslog-ng34
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
-    SUBDIR += sysupdate
     SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
+    SUBDIR += tartarus
     SUBDIR += tbku
     SUBDIR += tclsyslog
     SUBDIR += tcplist
@@ -977,6 +980,7 @@
     SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vcp
+    SUBDIR += vhdtool
     SUBDIR += videogen
     SUBDIR += vii
     SUBDIR += vils
@@ -1012,7 +1016,6 @@
     SUBDIR += wmfire
     SUBDIR += wmflame
     SUBDIR += wmmemfree
-    SUBDIR += wmmemload
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += worldtools
@@ -1029,6 +1032,7 @@
     SUBDIR += xen-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
+    SUBDIR += xfce4-bsdcpufreq-plugin
     SUBDIR += xfce4-cpugraph-plugin
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
@@ -1052,7 +1056,6 @@
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap
-    SUBDIR += yawho
     SUBDIR += yum
     SUBDIR += zeitgeist
     SUBDIR += zeroer

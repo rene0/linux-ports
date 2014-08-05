@@ -1,4 +1,4 @@
-# $FreeBSD: head/x11-toolkits/Makefile 349050 2014-03-24 18:31:25Z linimon $
+# $FreeBSD: head/x11-toolkits/Makefile 363254 2014-07-28 20:43:56Z rakuco $
 #
 
     COMMENT = X11 toolkits
@@ -27,7 +27,6 @@
     SUBDIR += gal2
     SUBDIR += gal2-reference
     SUBDIR += gdl
-    SUBDIR += gigi
     SUBDIR += girara
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
@@ -48,6 +47,7 @@
     SUBDIR += gtk30
     SUBDIR += gtk30-reference
     SUBDIR += gtkada
+    SUBDIR += gtkada3
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra2
     SUBDIR += gtkglarea2
@@ -92,14 +92,12 @@
     SUBDIR += libXt
     SUBDIR += libbonoboui
     SUBDIR += libbonoboui-reference
-    SUBDIR += libgail-gnome
     SUBDIR += libgdiplus
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintuimm
     SUBDIR += libgnomeui
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
-    SUBDIR += libgtk-java
     SUBDIR += libgtksourceviewmm
     SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm
@@ -107,6 +105,7 @@
     SUBDIR += libsexymm
     SUBDIR += libunique3
     SUBDIR += libwnck
+    SUBDIR += libwnck3
     SUBDIR += libwnck-reference
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
@@ -197,7 +196,6 @@
     SUBDIR += py-gui
     SUBDIR += py-kivy
     SUBDIR += py-kiwi
-    SUBDIR += py-pyqwt
     SUBDIR += py-qt4-gui
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
@@ -206,10 +204,11 @@
     SUBDIR += py-traitsgui
     SUBDIR += py-vte
     SUBDIR += py-wax
-    SUBDIR += py-wmdockapps
+    SUBDIR += py-wxPython-common
     SUBDIR += py-wxPython28
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython28-unicode
+    SUBDIR += py-wxPython30
     SUBDIR += py-xlib
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
@@ -217,6 +216,7 @@
     SUBDIR += qt5-declarative
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick
+    SUBDIR += qt5-quickcontrols
     SUBDIR += qt5-widgets
     SUBDIR += qtada
     SUBDIR += qwt5
@@ -256,7 +256,6 @@
     SUBDIR += unique
     SUBDIR += v
     SUBDIR += vdk
-    SUBDIR += vdkbuilder
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte-reference

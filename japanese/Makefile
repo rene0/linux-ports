@@ -1,4 +1,4 @@
-# $FreeBSD: head/japanese/Makefile 347936 2014-03-11 21:49:40Z adamw $
+# $FreeBSD: head/japanese/Makefile 362702 2014-07-23 14:41:30Z antoine $
 #
 
     COMMENT = Japanese support
@@ -8,7 +8,6 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += VTPSfont
-    SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
@@ -24,8 +23,6 @@
     SUBDIR += awffull
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
-    SUBDIR += bugzilla40
-    SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += calligra-l10n
     SUBDIR += canna-lib
@@ -33,7 +30,6 @@
     SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw
-    SUBDIR += chasen
     SUBDIR += chasen-base
     SUBDIR += cmigemo
     SUBDIR += cmigemo-dict
@@ -43,7 +39,6 @@
     SUBDIR += ddskk
     SUBDIR += devil-fpw
     SUBDIR += dvi2tty
-    SUBDIR += dvipsk
     SUBDIR += e2ps
     SUBDIR += eb
     SUBDIR += ebd-fpw
@@ -58,15 +53,12 @@
     SUBDIR += egg-canna
     SUBDIR += eijiro-fpw
     SUBDIR += elisa8x8
-    SUBDIR += elvis
-    SUBDIR += emacs-emcws
     SUBDIR += epwutil
     SUBDIR += esecanna
     SUBDIR += esecanna-module-vje25
     SUBDIR += esecanna-module-vje30
     SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
-    SUBDIR += exmh2
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
     SUBDIR += flex-sdk
@@ -85,6 +77,7 @@
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
     SUBDIR += font-ricty
+    SUBDIR += font-ricty-discord
     SUBDIR += font-sazanami
     SUBDIR += font-shinonome
     SUBDIR += font-std
@@ -112,7 +105,6 @@
     SUBDIR += ipadic
     SUBDIR += ja6
     SUBDIR += jacode.pl
-    SUBDIR += jadetex-ptex
     SUBDIR += japana
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
@@ -148,7 +140,6 @@
     SUBDIR += kpcal
     SUBDIR += kterm
     SUBDIR += lambdamoo
-    SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libreoffice
@@ -157,7 +148,6 @@
     SUBDIR += libtomoe-gtk
     SUBDIR += lipsf
     SUBDIR += lookup
-    SUBDIR += lookup-emacs21
     SUBDIR += lsd-fpw
     SUBDIR += lynx
     SUBDIR += lynx-current
@@ -173,10 +163,8 @@
     SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
-    SUBDIR += migemo-emacs21
-    SUBDIR += migemo-emacs22
     SUBDIR += migemo-emacs23
-    SUBDIR += migemo-xemacs-devel-mule
+    SUBDIR += migemo.el
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
     SUBDIR += ming
@@ -189,7 +177,6 @@
     SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt-devel
-    SUBDIR += mypaedia-fpw
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
@@ -229,7 +216,6 @@
     SUBDIR += p5-Unicode-Japanese
     SUBDIR += p5-WWW-2ch
     SUBDIR += p5-WWW-MobileCarrierJP
-    SUBDIR += p5-manual
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
     SUBDIR += php5-mecab
@@ -237,15 +223,11 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-japanese
-    SUBDIR += platex-jsclasses
-    SUBDIR += platex-otf
-    SUBDIR += platex209
     SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict
     SUBDIR += prime-el
     SUBDIR += prn
-    SUBDIR += ptex
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
@@ -279,7 +261,6 @@
     SUBDIR += scim-tomoe
     SUBDIR += scim-uim
     SUBDIR += seaside
-    SUBDIR += sed
     SUBDIR += sj3-lib
     SUBDIR += sj3-server
     SUBDIR += skk
@@ -293,14 +274,12 @@
     SUBDIR += slimeforest
     SUBDIR += slrn
     SUBDIR += spamassassin
-    SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += suikyo
     SUBDIR += t2ps
     SUBDIR += tcl80
     SUBDIR += tdiary
-    SUBDIR += teTeX
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex
@@ -328,8 +307,6 @@
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
-    SUBDIR += xdvik
-    SUBDIR += xemacs21-canna
     SUBDIR += xgate
     SUBDIR += xjtext
     SUBDIR += xlockmore

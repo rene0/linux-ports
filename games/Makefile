@@ -1,4 +1,4 @@
-# $FreeBSD: head/games/Makefile 349234 2014-03-26 08:27:51Z antoine $
+# $FreeBSD: head/games/Makefile 364069 2014-08-05 00:18:17Z amdmi3 $
 #
 
     COMMENT = Games
@@ -7,6 +7,7 @@
     SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
+    SUBDIR += 3omns
     SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += CaribbeanStud
@@ -215,6 +216,7 @@
     SUBDIR += duke3d-data
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
+    SUBDIR += dustrac
     SUBDIR += eboard
     SUBDIR += edge
     SUBDIR += editss
@@ -246,7 +248,6 @@
     SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += ezquake
-    SUBDIR += f1lt
     SUBDIR += f1spirit-remake
     SUBDIR += fairymax
     SUBDIR += falconseye
@@ -267,6 +268,7 @@
     SUBDIR += flightgear-data
     SUBDIR += flightgear-mb339-pan
     SUBDIR += flobopuyo
+    SUBDIR += flukz
     SUBDIR += flyhard
     SUBDIR += flying
     SUBDIR += fmars
@@ -339,7 +341,6 @@
     SUBDIR += gnarr
     SUBDIR += gno3dtet
     SUBDIR += gnome-games
-    SUBDIR += gnome-games-extra-data
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
@@ -396,7 +397,6 @@
     SUBDIR += hinversi
     SUBDIR += hitori
     SUBDIR += hllib
-    SUBDIR += hlstats
     SUBDIR += hlstatsx
     SUBDIR += hohlin
     SUBDIR += hoichess
@@ -542,7 +542,6 @@
     SUBDIR += linux-savage
     SUBDIR += linux-skulltag
     SUBDIR += linux-sof
-    SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-steam
@@ -579,7 +578,6 @@
     SUBDIR += maitretarot
     SUBDIR += manaplus
     SUBDIR += mangband
-    SUBDIR += mangos
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
@@ -683,6 +681,7 @@
     SUBDIR += openpref
     SUBDIR += opensfx
     SUBDIR += opensonic
+    SUBDIR += openspades
     SUBDIR += openssn
     SUBDIR += opensurge
     SUBDIR += openttd
@@ -765,9 +764,6 @@
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
-    SUBDIR += pysol
-    SUBDIR += pysol-cardsets
-    SUBDIR += pysol-music
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
     SUBDIR += pysycache
@@ -835,6 +831,7 @@
     SUBDIR += rftg
     SUBDIR += ri-li
     SUBDIR += rnd_jue
+    SUBDIR += robocalypto
     SUBDIR += robocode
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
@@ -921,7 +918,6 @@
     SUBDIR += sudoku-sensei
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
-    SUBDIR += sumwars
     SUBDIR += super_mario_bros_python
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
@@ -990,7 +986,6 @@
     SUBDIR += twitch
     SUBDIR += tycho
     SUBDIR += typespeed
-    SUBDIR += tyrquake
     SUBDIR += ufoai
     SUBDIR += ufoai-data
     SUBDIR += uhexen
@@ -1003,7 +998,6 @@
     SUBDIR += untahris
     SUBDIR += uqm
     SUBDIR += urbanterror-data
-    SUBDIR += utserver
     SUBDIR += valyriatear
     SUBDIR += vamos
     SUBDIR += vavoom
@@ -1069,6 +1063,7 @@
     SUBDIR += xdesktopwaves
     SUBDIR += xdigger
     SUBDIR += xdino
+    SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
@@ -1165,7 +1160,6 @@
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee
-    SUBDIR += yamsweeper
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz

@@ -1,10 +1,9 @@
-# $FreeBSD: head/accessibility/Makefile 349046 2014-03-24 18:11:44Z swills $
+# $FreeBSD: head/accessibility/Makefile 362408 2014-07-21 08:39:11Z rene $
 #
 
     COMMENT = Ports to help disabled users
 
     SUBDIR += accerciser
-    SUBDIR += at-poke
     SUBDIR += at-spi
     SUBDIR += at-spi-reference
     SUBDIR += at-spi2-atk

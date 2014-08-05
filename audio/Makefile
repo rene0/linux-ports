@@ -1,4 +1,4 @@
-# $FreeBSD: head/audio/Makefile 348843 2014-03-23 08:59:35Z antoine $
+# $FreeBSD: head/audio/Makefile 362861 2014-07-25 00:44:01Z kmoore $
 #
 
     COMMENT = Audio tools
@@ -52,13 +52,11 @@
     SUBDIR += beast
     SUBDIR += beets
     SUBDIR += blop
-    SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += btc
     SUBDIR += calf
     SUBDIR += cam
-    SUBDIR += cantus_3
     SUBDIR += caps-plugins
     SUBDIR += ccaudio2
     SUBDIR += cd-console
@@ -181,10 +179,8 @@
     SUBDIR += ghostess
     SUBDIR += gigedit
     SUBDIR += gimmix
-    SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmss2
-    SUBDIR += gkrellmvolume
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
     SUBDIR += glurp
@@ -296,6 +292,7 @@
     SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
     SUBDIR += hydrogen
+    SUBDIR += hydrogen-devel
     SUBDIR += icecast-kh
     SUBDIR += icecast2
     SUBDIR += icegenerator
@@ -307,9 +304,9 @@
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
+    SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += ipod-sharp
-    SUBDIR += istream
     SUBDIR += jack
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
@@ -360,11 +357,13 @@
     SUBDIR += libcoverart
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
+    SUBDIR += libebur128
     SUBDIR += libechonest
     SUBDIR += libfishsound
     SUBDIR += libgig
     SUBDIR += libgme
     SUBDIR += libgpod
+    SUBDIR += libgroove
     SUBDIR += libid3tag
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
@@ -379,7 +378,6 @@
     SUBDIR += libmpd
     SUBDIR += libmpdclient
     SUBDIR += libmusicbrainz3
-    SUBDIR += libmusicbrainz4
     SUBDIR += libmusicbrainz5
     SUBDIR += libnjb
     SUBDIR += libnoise
@@ -390,7 +388,6 @@
     SUBDIR += libsamplerate
     SUBDIR += libshairport
     SUBDIR += libshout
-    SUBDIR += libshout2
     SUBDIR += libsidplay
     SUBDIR += libsidplay2
     SUBDIR += libsidplayfp
@@ -402,7 +399,6 @@
     SUBDIR += libworkman
     SUBDIR += libxmp
     SUBDIR += lingot
-    SUBDIR += linnya
     SUBDIR += linux-f10-alsa-lib
     SUBDIR += linux-f10-alsa-plugins-oss
     SUBDIR += linux-f10-arts
@@ -489,8 +485,8 @@
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpiosh
+    SUBDIR += mps
     SUBDIR += msilbc
-    SUBDIR += muine
     SUBDIR += mumble
     SUBDIR += murmur
     SUBDIR += muse
@@ -594,6 +590,7 @@
     SUBDIR += py-cddb
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
+    SUBDIR += py-eyed3-06
     SUBDIR += py-fastaudio
     SUBDIR += py-id3
     SUBDIR += py-karaoke
@@ -613,11 +610,11 @@
     SUBDIR += py-speex
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
-    SUBDIR += py-xmms
     SUBDIR += py-xmms2
-    SUBDIR += pysol-sound-server
+    SUBDIR += py3-pylast
     SUBDIR += pytone
     SUBDIR += qjackctl
+    SUBDIR += qmidinet
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth
@@ -642,7 +639,6 @@
     SUBDIR += rsynth
     SUBDIR += rubberband
     SUBDIR += ruby-audiofile
-    SUBDIR += ruby-esound
     SUBDIR += ruby-freedb
     SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
@@ -667,6 +663,7 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
+    SUBDIR += shout-idjc
     SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplay2
@@ -711,7 +708,6 @@
     SUBDIR += stymulator
     SUBDIR += sweep
     SUBDIR += swhplugins
-    SUBDIR += tagger
     SUBDIR += taglib
     SUBDIR += taglib-extras
     SUBDIR += taglib-sharp
@@ -722,8 +718,6 @@
     SUBDIR += tcd
     SUBDIR += tclmidi
     SUBDIR += teamspeak3-server
-    SUBDIR += teamspeak_client
-    SUBDIR += teamspeak_server
     SUBDIR += tempest_for_eliza
     SUBDIR += tepsonic
     SUBDIR += terminatorx
@@ -795,8 +789,8 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms-ahx
-    SUBDIR += xmms-bonk
     SUBDIR += xmms-curses
+    SUBDIR += xmms-faad
     SUBDIR += xmms-festalon
     SUBDIR += xmms-flac
     SUBDIR += xmms-gbsplay
@@ -808,7 +802,6 @@
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf
-    SUBDIR += xmms-sexyspc
     SUBDIR += xmms-shn
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm

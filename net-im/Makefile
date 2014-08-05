@@ -1,12 +1,10 @@
-# $FreeBSD: head/net-im/Makefile 345901 2014-02-24 21:57:29Z thierry $
+# $FreeBSD: head/net-im/Makefile 363198 2014-07-28 16:38:08Z rene $
 #
 
     COMMENT = Instant messaging
 
-    SUBDIR += ari-yahoo
     SUBDIR += ayttm
     SUBDIR += bsflite
-    SUBDIR += centericq
     SUBDIR += centerim
     SUBDIR += centerim-devel
     SUBDIR += chattahoochie
@@ -29,7 +27,6 @@
     SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gloox
-    SUBDIR += gtkyahoo
     SUBDIR += gyach
     SUBDIR += hotot
     SUBDIR += icb
@@ -76,12 +73,10 @@
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
-    SUBDIR += mercury
     SUBDIR += mikutter
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += openfire
-    SUBDIR += openfire-devel
     SUBDIR += p5-AnyEvent-XMPP
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
@@ -106,7 +101,6 @@
     SUBDIR += pidgin-audacious-remote
     SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
-    SUBDIR += pidgin-facebookchat
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
@@ -140,7 +134,6 @@
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
-    SUBDIR += qxmpp-leechcraft
     SUBDIR += ramblercontacts
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
@@ -163,20 +156,18 @@
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
     SUBDIR += tkabber
-    SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
     SUBDIR += tox
+    SUBDIR += toxic
     SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail
     SUBDIR += vacuum-im
     SUBDIR += venom
-    SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
-    SUBDIR += ysm
     SUBDIR += zephyr
     SUBDIR += skype4
 

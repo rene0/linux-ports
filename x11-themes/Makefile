@@ -1,4 +1,4 @@
-# $FreeBSD: head/x11-themes/Makefile 348843 2014-03-23 08:59:35Z antoine $
+# $FreeBSD: head/x11-themes/Makefile 363860 2014-08-03 09:03:15Z olivierd $
 #
 
     COMMENT = X11 themes
@@ -126,7 +126,6 @@
     SUBDIR += kde4-wallpapers-freebsd
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
-    SUBDIR += kde4-windeco-nitrogen
     SUBDIR += kdeartwork4
     SUBDIR += linux-f10-hicolor-icon-theme
     SUBDIR += linux-f10-qtcurve-gtk2
@@ -154,6 +153,7 @@
     SUBDIR += nimbus
     SUBDIR += numix-theme
     SUBDIR += openbox-themes
+    SUBDIR += plank-theme-moka
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle

@@ -1,4 +1,4 @@
-# $FreeBSD: head/multimedia/Makefile 349218 2014-03-26 03:33:37Z acm $
+# $FreeBSD: head/multimedia/Makefile 362269 2014-07-19 16:40:37Z sunpoet $
 #
 
     COMMENT = Multimedia software
@@ -18,6 +18,10 @@
     SUBDIR += avbin
     SUBDIR += avidemux2
     SUBDIR += avidemux2-plugins
+    SUBDIR += avidemux26
+    SUBDIR += avidemux26-cli
+    SUBDIR += avidemux26-plugins
+    SUBDIR += avidemux26-qt4
     SUBDIR += avinfo
     SUBDIR += bangarang
     SUBDIR += banshee
@@ -78,7 +82,6 @@
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
-    SUBDIR += gopchop
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
@@ -169,6 +172,7 @@
     SUBDIR += libfame
     SUBDIR += libkate
     SUBDIR += libmatroska
+    SUBDIR += libmediainfo
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
@@ -189,6 +193,7 @@
     SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
+    SUBDIR += libzen
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer
@@ -232,11 +237,13 @@
     SUBDIR += mplayer2
     SUBDIR += mplayerxp
     SUBDIR += mplex
+    SUBDIR += mps-youtube
     SUBDIR += mpv
     SUBDIR += msdl
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
+    SUBDIR += naludump
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
@@ -289,6 +296,7 @@
     SUBDIR += py-periscope
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
+    SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
     SUBDIR += pyjama
@@ -296,6 +304,7 @@
     SUBDIR += qmmp
     SUBDIR += qmmp-plugin-pack
     SUBDIR += qt-faststart
+    SUBDIR += qt4-mobility
     SUBDIR += qt4-multimedia
     SUBDIR += qt5-multimedia
     SUBDIR += quark
@@ -311,7 +320,6 @@
     SUBDIR += rubygem-gstreamer
     SUBDIR += sabbu
     SUBDIR += schroedinger
-    SUBDIR += shell-fm
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer
@@ -341,6 +349,7 @@
     SUBDIR += umph
     SUBDIR += umplayer
     SUBDIR += umr
+    SUBDIR += universal-media-server
     SUBDIR += v4l-utils
     SUBDIR += v4l_compat
     SUBDIR += vamps
@@ -387,12 +396,10 @@
     SUBDIR += xbmc
     SUBDIR += xbmc-addon-pvr
     SUBDIR += xfce4-parole
-    SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
     SUBDIR += xmms
     SUBDIR += xmms-skins
     SUBDIR += xmms-skins-huge
-    SUBDIR += xmms-weasel
     SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid

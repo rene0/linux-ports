@@ -1,4 +1,4 @@
-# $FreeBSD: head/databases/Makefile 349129 2014-03-25 11:28:38Z marino $
+# $FreeBSD: head/databases/Makefile 364034 2014-08-04 17:49:50Z antoine $
 #
 
     COMMENT = Databases
@@ -16,8 +16,6 @@
     SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
-    SUBDIR += aolserver-nsmysql
-    SUBDIR += aolserver-nspostgres
     SUBDIR += apq
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc
@@ -68,8 +66,6 @@
     SUBDIR += evolution-data-server
     SUBDIR += exist
     SUBDIR += fastdb
-    SUBDIR += firebird20-client
-    SUBDIR += firebird20-server
     SUBDIR += firebird21-client
     SUBDIR += firebird21-server
     SUBDIR += firebird25-client
@@ -93,6 +89,7 @@
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
+    SUBDIR += galera
     SUBDIR += gdbm
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
@@ -106,6 +103,7 @@
     SUBDIR += gtksql
     SUBDIR += hamsterdb
     SUBDIR += hashtypes
+    SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hk_classes
     SUBDIR += hs-mysql
@@ -136,21 +134,13 @@
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
+    SUBDIR += leo_center
+    SUBDIR += leofs
     SUBDIR += leveldb
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
-    SUBDIR += libgda2
-    SUBDIR += libgda2-reference
-    SUBDIR += libgda3
-    SUBDIR += libgda3-firebird
-    SUBDIR += libgda3-freetds
-    SUBDIR += libgda3-ldap
-    SUBDIR += libgda3-mdb
-    SUBDIR += libgda3-mysql
-    SUBDIR += libgda3-odbc
-    SUBDIR += libgda3-postgresql
-    SUBDIR += libgda3-reference
+    SUBDIR += libdrizzle-redux
     SUBDIR += libgda4
     SUBDIR += libgda4-bdb
     SUBDIR += libgda4-jdbc
@@ -169,8 +159,6 @@
     SUBDIR += libgda5-ui
     SUBDIR += libgdamm
     SUBDIR += libgdamm5
-    SUBDIR += libgnomedb
-    SUBDIR += libgnomedb-reference
     SUBDIR += libhsclient
     SUBDIR += libiodbc
     SUBDIR += libmemcache
@@ -203,7 +191,6 @@
     SUBDIR += memcached
     SUBDIR += memcachedb
     SUBDIR += memcacheq
-    SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
@@ -247,10 +234,12 @@
     SUBDIR += mysqltuner
     SUBDIR += mytop
     SUBDIR += mywwwatcher
+    SUBDIR += nagios-check_mongodb
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
     SUBDIR += ntdb
+    SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
@@ -274,6 +263,7 @@
     SUBDIR += p5-Bucardo
     SUBDIR += p5-CDB_File
     SUBDIR += p5-CDB_File-Generator
+    SUBDIR += p5-CGI-Session-Driver-memcached
     SUBDIR += p5-Cache-BDB
     SUBDIR += p5-Cache-Memcached
     SUBDIR += p5-Cache-Memcached-Fast
@@ -316,12 +306,14 @@
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
+    SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
+    SUBDIR += p5-DBD-Pg32
     SUBDIR += p5-DBD-PgLite
     SUBDIR += p5-DBD-PgPP
     SUBDIR += p5-DBD-SQLite
@@ -346,6 +338,7 @@
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
     SUBDIR += p5-DBIx-Class-AsFdat
+    SUBDIR += p5-DBIx-Class-BitField
     SUBDIR += p5-DBIx-Class-Candy
     SUBDIR += p5-DBIx-Class-Cursor-Cached
     SUBDIR += p5-DBIx-Class-CustomPrefetch
@@ -497,7 +490,6 @@
     SUBDIR += p5-Tie-LevelDB
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
-    SUBDIR += p5-hp200lx-db
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-qdbm
     SUBDIR += p5-tokyotyrant
@@ -575,6 +567,7 @@
     SUBDIR += pgpool-II-22
     SUBDIR += pgpool-II-23
     SUBDIR += pgpool-II-30
+    SUBDIR += pgpool-II-33
     SUBDIR += pgpoolAdmin
     SUBDIR += pgrouting
     SUBDIR += pgsphere
@@ -637,6 +630,7 @@
     SUBDIR += php55-pdo_pgsql
     SUBDIR += php55-pdo_sqlite
     SUBDIR += php55-pgsql
+    SUBDIR += php55-redis
     SUBDIR += php55-sqlite3
     SUBDIR += php55-sybase_ct
     SUBDIR += phpminiadmin
@@ -695,6 +689,14 @@
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
     SUBDIR += postgresql93-server
+    SUBDIR += postgresql94-client
+    SUBDIR += postgresql94-contrib
+    SUBDIR += postgresql94-docs
+    SUBDIR += postgresql94-pgtcl
+    SUBDIR += postgresql94-plperl
+    SUBDIR += postgresql94-plpython
+    SUBDIR += postgresql94-pltcl
+    SUBDIR += postgresql94-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql
@@ -702,6 +704,7 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
+    SUBDIR += puppetdb-terminus
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
@@ -718,7 +721,6 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cdb
-    SUBDIR += py-cmemcache
     SUBDIR += py-couchdb
     SUBDIR += py-cql
     SUBDIR += py-dbf
@@ -728,6 +730,8 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py-geoalchemy
+    SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
     SUBDIR += py-htsql
     SUBDIR += py-htsql-mysql
@@ -736,9 +740,11 @@
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
     SUBDIR += py-mssql
+    SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
+    SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
     SUBDIR += py-pgxnclient
@@ -751,11 +757,11 @@
     SUBDIR += py-pylibmc
     SUBDIR += py-pymysql
     SUBDIR += py-pytc
+    SUBDIR += py-python-rrdtool
     SUBDIR += py-qt4-sql
     SUBDIR += py-redis
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl
-    SUBDIR += py-simplecouchdb
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlalchemy-devel
@@ -800,6 +806,7 @@
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += riak
+    SUBDIR += rocksdb
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool
@@ -832,6 +839,7 @@
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel3
+    SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest
@@ -862,6 +870,7 @@
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-jdbc-mysql
+    SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql
@@ -876,9 +885,9 @@
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-tarantool
+    SUBDIR += sfcgal
     SUBDIR += sharedance
     SUBDIR += skytools
-    SUBDIR += slony1
     SUBDIR += slony1v2
     SUBDIR += soci
     SUBDIR += spatialite
@@ -894,6 +903,7 @@
     SUBDIR += sqlite3
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
+    SUBDIR += sqliteodbc
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
@@ -909,7 +919,7 @@
     SUBDIR += tokyotyrant
     SUBDIR += tora
     SUBDIR += tuning-primer
-    SUBDIR += typhoon
+    SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += useracc
     SUBDIR += usogres
@@ -921,7 +931,6 @@
     SUBDIR += xapian-bindings
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
-    SUBDIR += xmbase-grok
     SUBDIR += xtrabackup
     SUBDIR += yasql
     SUBDIR += zodb3

@@ -1,4 +1,4 @@
-# $FreeBSD: head/astro/Makefile 331188 2013-10-21 20:25:23Z rene $
+# $FreeBSD: head/astro/Makefile 363837 2014-08-02 19:48:36Z danfe $
 #
 
     COMMENT = Astronomical ports
@@ -19,10 +19,10 @@
     SUBDIR += foxtrotgps
     SUBDIR += garmindev
     SUBDIR += gkrellmoon2
-    SUBDIR += glunarclock
     SUBDIR += gmapcatcher
     SUBDIR += google-earth
     SUBDIR += gpsbabel
+    SUBDIR += gpsbabel14
     SUBDIR += gpscorrelate
     SUBDIR += gpsd
     SUBDIR += gpsdrive
@@ -101,6 +101,7 @@
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
+    SUBDIR += stellarium-qt4
     SUBDIR += sunclock
     SUBDIR += swe
     SUBDIR += tclgeomap

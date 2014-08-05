@@ -1,4 +1,4 @@
-# $FreeBSD: head/mail/Makefile 349056 2014-03-24 19:51:54Z rene $
+# $FreeBSD: head/mail/Makefile 363942 2014-08-03 21:40:02Z marino $
 #
 
     COMMENT = Electronic mail utilities
@@ -10,7 +10,6 @@
     SUBDIR += akpop3d
     SUBDIR += alpine
     SUBDIR += altermime
-    SUBDIR += althea
     SUBDIR += amavis-logwatch
     SUBDIR += annoyance-filter
     SUBDIR += anomy-sanitizer
@@ -18,6 +17,7 @@
     SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += archiveopteryx
+    SUBDIR += archiveopteryx-devel
     SUBDIR += archivesmtp
     SUBDIR += archmbox
     SUBDIR += ask
@@ -33,7 +33,6 @@
     SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
-    SUBDIR += biffer
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bogofilter-sqlite
@@ -42,7 +41,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
-    SUBDIR += c-sig-emacs21
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += claws-mail
@@ -56,6 +54,7 @@
     SUBDIR += claws-mail-fancy
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gdata
+    SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-mailmbox
     SUBDIR += claws-mail-newmail
     SUBDIR += claws-mail-notification
@@ -70,7 +69,6 @@
     SUBDIR += claws-mail-vcalendar
     SUBDIR += clawsker
     SUBDIR += cone
-    SUBDIR += contact-lookup-applet
     SUBDIR += coolmail
     SUBDIR += courier
     SUBDIR += courier-authlib-vchkpw
@@ -80,8 +78,6 @@
     SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
-    SUBDIR += cyrus-imapd2
-    SUBDIR += cyrus-imapd22
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
     SUBDIR += cyrus2courier
@@ -96,6 +92,7 @@
     SUBDIR += dkfilter
     SUBDIR += dkimproxy
     SUBDIR += dma
+    SUBDIR += dot-forward
     SUBDIR += dovecot
     SUBDIR += dovecot-antispam
     SUBDIR += dovecot-managesieve
@@ -114,7 +111,6 @@
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emh
-    SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += enma
     SUBDIR += eps
@@ -127,7 +123,6 @@
     SUBDIR += exilog
     SUBDIR += exim
     SUBDIR += exim-doc-html
-    SUBDIR += exim-doc-info
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap2
@@ -145,6 +140,7 @@
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web
     SUBDIR += faces
+    SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
     SUBDIR += filtermail
@@ -154,7 +150,6 @@
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gensig
-    SUBDIR += getlive
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld
@@ -189,14 +184,12 @@
     SUBDIR += horde3-mimp
     SUBDIR += horde3-turba
     SUBDIR += horde3-vacation
-    SUBDIR += hotwayd
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
     SUBDIR += hs-mime-mail
     SUBDIR += hs-mime-types
     SUBDIR += ifile
     SUBDIR += ilohamail
-    SUBDIR += ilohamail-devel
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
@@ -235,10 +228,8 @@
     SUBDIR += lookout
     SUBDIR += lurker
     SUBDIR += mail-notification
-    SUBDIR += mail2procmailrc
     SUBDIR += mail2sms
     SUBDIR += mailagent
-    SUBDIR += mailcrypt
     SUBDIR += maildirsync
     SUBDIR += maildrop
     SUBDIR += mailfmt
@@ -350,10 +341,10 @@
     SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
+    SUBDIR += p5-Email-Simple-FromHandle
     SUBDIR += p5-Email-Stuff
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
-    SUBDIR += p5-FuzzyOcr
     SUBDIR += p5-FuzzyOcr-devel
     SUBDIR += p5-GMail-IMAPD
     SUBDIR += p5-IMAP-Admin
@@ -431,6 +422,7 @@
     SUBDIR += p5-Net-SMTP-TLS
     SUBDIR += p5-Net-SMTP-TLS-ButMaintained
     SUBDIR += p5-Net-SMTP_auth
+    SUBDIR += p5-Net-SMTPS
     SUBDIR += p5-Net-SenderBase
     SUBDIR += p5-Net-Server-Mail
     SUBDIR += p5-POE-Component-Client-POP3
@@ -457,6 +449,7 @@
     SUBDIR += pear-Horde_Kolab_Storage
     SUBDIR += pear-Horde_ListHeaders
     SUBDIR += pear-Horde_Mail
+    SUBDIR += pear-Horde_Mapi
     SUBDIR += pear-Horde_Mime
     SUBDIR += pear-Horde_Mime_Viewer
     SUBDIR += pear-Horde_Smtp
@@ -510,13 +503,14 @@
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
+    SUBDIR += postfix-tls
     SUBDIR += postfix210
-    SUBDIR += postfix27
     SUBDIR += postfix28
     SUBDIR += postfix29
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postpals
+    SUBDIR += postsrsd
     SUBDIR += prayer
     SUBDIR += premail
     SUBDIR += prepflog
@@ -592,6 +586,7 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-contextmenu
     SUBDIR += roundcube-groupvice
+    SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-login_info
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
@@ -617,7 +612,6 @@
     SUBDIR += rubygem-vmail
     SUBDIR += sa-stats
     SUBDIR += sa-utils
-    SUBDIR += sastatd
     SUBDIR += scam-backscatter
     SUBDIR += sccmilter
     SUBDIR += sendmail
@@ -632,7 +626,6 @@
     SUBDIR += simscan
     SUBDIR += slapd-cyrus
     SUBDIR += sma
-    SUBDIR += smail
     SUBDIR += smfsav
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
@@ -732,9 +725,6 @@
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-devel
-    SUBDIR += wanderlust-emacs21
-    SUBDIR += wanderlust-emacs22
-    SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff

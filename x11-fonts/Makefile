@@ -1,8 +1,9 @@
-# $FreeBSD: head/x11-fonts/Makefile 344028 2014-02-12 23:05:10Z rakuco $
+# $FreeBSD: head/x11-fonts/Makefile 362183 2014-07-18 07:27:19Z pi $
 #
 
     COMMENT = X11 fonts and font utilities
 
+    SUBDIR += alef
     SUBDIR += alegreya-sans
     SUBDIR += alfont
     SUBDIR += andika
@@ -23,8 +24,11 @@
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += comfortaa-ttf
+    SUBDIR += comic-neue
     SUBDIR += consolamono-ttf
     SUBDIR += croscorefonts-fonts-ttf
+    SUBDIR += crosextrafonts-caladea-ttf
+    SUBDIR += crosextrafonts-carlito-ttf
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
@@ -97,6 +101,7 @@
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gohufont
     SUBDIR += hanazono-fonts-ttf
+    SUBDIR += hasklig
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf
@@ -130,6 +135,7 @@
     SUBDIR += montecarlo_fonts
     SUBDIR += moveable-type-fonts
     SUBDIR += nexfontsel
+    SUBDIR += noto
     SUBDIR += nucleus
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF
@@ -152,7 +158,6 @@
     SUBDIR += stix-fonts
     SUBDIR += suxus
     SUBDIR += terminus-font
-    SUBDIR += texcm-ttf
     SUBDIR += tkfont
     SUBDIR += tmu
     SUBDIR += ttmkfdir

@@ -1,4 +1,4 @@
-# $FreeBSD: head/print/Makefile 347742 2014-03-10 11:50:26Z rene $
+# $FreeBSD: head/print/Makefile 363761 2014-08-01 20:06:11Z antoine $
 #
 
     COMMENT = Desktop publishing
@@ -27,26 +27,26 @@
     SUBDIR += cdlabelgen
     SUBDIR += cloudprint
     SUBDIR += cm-super
-    SUBDIR += cpp2latex
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-bjnp
     SUBDIR += cups-client
     SUBDIR += cups-cloud-print
+    SUBDIR += cups-filters
+    SUBDIR += cups-fxlinuxprint
     SUBDIR += cups-image
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
+    SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
     SUBDIR += detex
     SUBDIR += dk-acroread8
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
-    SUBDIR += dvipdfmx
     SUBDIR += dvips
     SUBDIR += dvips2ascii
-    SUBDIR += dvipsk-tetex
     SUBDIR += dviselect
     SUBDIR += dvisvg
     SUBDIR += easylatex
@@ -70,7 +70,6 @@
     SUBDIR += foxitreader
     SUBDIR += fpdf
     SUBDIR += freetype
-    SUBDIR += freetype-tools
     SUBDIR += freetype2
     SUBDIR += frescobaldi
     SUBDIR += ft2demos
@@ -86,7 +85,6 @@
     SUBDIR += ghostscript9-agpl
     SUBDIR += ghostscript9-agpl-nox11
     SUBDIR += ghostscript9-nox11
-    SUBDIR += ghostview
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
@@ -97,7 +95,6 @@
     SUBDIR += gspdf
     SUBDIR += gsview
     SUBDIR += gtklp
-    SUBDIR += guitartex
     SUBDIR += gutenprint
     SUBDIR += gutenprint-base
     SUBDIR += gutenprint-cups
@@ -113,49 +110,21 @@
     SUBDIR += html2latex
     SUBDIR += html2ps
     SUBDIR += hyperlatex
-    SUBDIR += ifxetex
+    SUBDIR += indexinfo
     SUBDIR += it-acroread8
     SUBDIR += jabref
-    SUBDIR += jadetex
     SUBDIR += kde4-print-manager
     SUBDIR += kde_poster
     SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex
     SUBDIR += latex-aa
-    SUBDIR += latex-aastex
     SUBDIR += latex-acm
-    SUBDIR += latex-arydshln
     SUBDIR += latex-auto-greek
-    SUBDIR += latex-beamer
-    SUBDIR += latex-biblatex
-    SUBDIR += latex-biblist
-    SUBDIR += latex-bytefield
-    SUBDIR += latex-caption
-    SUBDIR += latex-chapterfolder
-    SUBDIR += latex-circ
-    SUBDIR += latex-cjk
-    SUBDIR += latex-csquotes
-    SUBDIR += latex-etoolbox
-    SUBDIR += latex-feynmf
-    SUBDIR += latex-ifluatex
-    SUBDIR += latex-keystroke
-    SUBDIR += latex-logpap
-    SUBDIR += latex-logreq
     SUBDIR += latex-ltablex
-    SUBDIR += latex-mathabx
-    SUBDIR += latex-nomencl
-    SUBDIR += latex-pgf
-    SUBDIR += latex-prettyref
     SUBDIR += latex-resume
-    SUBDIR += latex-subfloat
-    SUBDIR += latex-supertabular
-    SUBDIR += latex-svninfo
     SUBDIR += latex-timing
-    SUBDIR += latex-tipa
-    SUBDIR += latex-ucs
     SUBDIR += latex2rtf
-    SUBDIR += latex2slides
     SUBDIR += latexdiff
     SUBDIR += latexmk
     SUBDIR += lgrind
@@ -206,7 +175,6 @@
     SUBDIR += papersize-default-a4
     SUBDIR += papersize-default-letter
     SUBDIR += paps
-    SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pdf-renderer
     SUBDIR += pdf4tcl
@@ -216,7 +184,6 @@
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
-    SUBDIR += pdfmod
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pear-File_PDF
@@ -236,7 +203,6 @@
     SUBDIR += pkipplib
     SUBDIR += pkpgcounter
     SUBDIR += pmw
-    SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += ps2eps
     SUBDIR += pscal
@@ -249,6 +215,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
+    SUBDIR += py-preppy
     SUBDIR += py-pyscript
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
@@ -261,12 +228,12 @@
     SUBDIR += qt5-printsupport
     SUBDIR += rlpr
     SUBDIR += rprint
-    SUBDIR += rtf2latex
     SUBDIR += rtf2latex2e
     SUBDIR += ruby-panda
     SUBDIR += rubygem-afm
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
+    SUBDIR += rubygem-pdf-core
     SUBDIR += rubygem-pdf-reader
     SUBDIR += rubygem-pdfwriter
     SUBDIR += rubygem-prawn
@@ -286,9 +253,6 @@
     SUBDIR += sv-acroread8
     SUBDIR += system-config-printer
     SUBDIR += t1utils
-    SUBDIR += teTeX
-    SUBDIR += teTeX-base
-    SUBDIR += teTeX-texmf
     SUBDIR += tex
     SUBDIR += tex-aleph
     SUBDIR += tex-dvipdfmx
@@ -296,7 +260,6 @@
     SUBDIR += tex-formats
     SUBDIR += tex-jadetex
     SUBDIR += tex-luatex
-    SUBDIR += tex-mfpic
     SUBDIR += tex-omegaware-old
     SUBDIR += tex-ptexenc
     SUBDIR += tex-texmflocal
@@ -309,7 +272,6 @@
     SUBDIR += texlive-full
     SUBDIR += texlive-infra
     SUBDIR += texlive-texmf
-    SUBDIR += texpower
     SUBDIR += texvc
     SUBDIR += tgif2tex
     SUBDIR += transfig
@@ -320,12 +282,9 @@
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
-    SUBDIR += wprint
     SUBDIR += xdvi
-    SUBDIR += xdvik
     SUBDIR += xfce4-print
     SUBDIR += xmbibtex
-    SUBDIR += xmltex
     SUBDIR += xpp
     SUBDIR += xtexsh
     SUBDIR += yatex

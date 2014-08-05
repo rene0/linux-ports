@@ -1,4 +1,4 @@
-# $FreeBSD: head/math/Makefile 349190 2014-03-25 20:34:09Z swills $
+# $FreeBSD: head/math/Makefile 363814 2014-08-02 13:16:57Z pi $
 #
 
     COMMENT = Mathematics
@@ -107,7 +107,6 @@
     SUBDIR += eigen3
     SUBDIR += eispack
     SUBDIR += elmer-umfpack
-    SUBDIR += emacs-calc
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy
@@ -124,10 +123,10 @@
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
     SUBDIR += fityk
+    SUBDIR += foma
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
-    SUBDIR += freefem
     SUBDIR += freemat
     SUBDIR += fricas
     SUBDIR += fxt
@@ -164,6 +163,7 @@
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hexcalc
+    SUBDIR += hfst
     SUBDIR += hs-Agda
     SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
@@ -258,6 +258,7 @@
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
+    SUBDIR += mpir
     SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl
@@ -274,6 +275,7 @@
     SUBDIR += numdiff
     SUBDIR += nyh-hoc
     SUBDIR += ocaml-ocamlgraph
+    SUBDIR += ocaml-zarith
     SUBDIR += ocamlgsl
     SUBDIR += octave
     SUBDIR += octave-forge
@@ -517,6 +519,7 @@
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += parmgridgen
+    SUBDIR += pdal
     SUBDIR += pear-Math_BigInteger
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
@@ -536,7 +539,6 @@
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += plplot-ada
-    SUBDIR += polymake
     SUBDIR += primegen
     SUBDIR += prng
     SUBDIR += proofgeneral
@@ -556,7 +558,6 @@
     SUBDIR += py-gmpy
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
-    SUBDIR += py-graphtool
     SUBDIR += py-gsl
     SUBDIR += py-igraph
     SUBDIR += py-mathdom
@@ -599,7 +600,6 @@
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
     SUBDIR += rocs
-    SUBDIR += ros-geometry
     SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += rpy2
@@ -613,6 +613,8 @@
     SUBDIR += ruby-numru_units
     SUBDIR += rubygem-narray
     SUBDIR += rubygem-narray_miss
+    SUBDIR += rubygem-numru-misc
+    SUBDIR += rubygem-numru-units
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
@@ -625,6 +627,7 @@
     SUBDIR += sdpara
     SUBDIR += sedumi
     SUBDIR += sfft
+    SUBDIR += sfst
     SUBDIR += simd-viterbi
     SUBDIR += slatec
     SUBDIR += slgrace
@@ -652,7 +655,6 @@
     SUBDIR += truthtable
     SUBDIR += tvmet
     SUBDIR += ufc
-    SUBDIR += umatrix
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat
@@ -662,7 +664,8 @@
     SUBDIR += vtk6
     SUBDIR += wcalc
     SUBDIR += wfmath
-    SUBDIR += wingz
+    SUBDIR += why3
+    SUBDIR += why3-gpl
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima
@@ -671,7 +674,6 @@
     SUBDIR += xgraph
     SUBDIR += xlapack
     SUBDIR += xldlas
-    SUBDIR += xlispstat
     SUBDIR += xplot
     SUBDIR += xppaut
     SUBDIR += xspread

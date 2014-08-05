@@ -1,4 +1,4 @@
-# $FreeBSD: head/x11/Makefile 349046 2014-03-24 18:11:44Z swills $
+# $FreeBSD: head/x11/Makefile 362332 2014-07-20 16:13:50Z vg $
 #
 
     COMMENT = Ports to support the X window system
@@ -55,7 +55,6 @@
     SUBDIR += editres
     SUBDIR += efreet
     SUBDIR += emprint
-    SUBDIR += emu
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += evieext
@@ -135,6 +134,7 @@
     SUBDIR += keynav
     SUBDIR += kgamma
     SUBDIR += konsole
+    SUBDIR += leechcraft
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
@@ -169,7 +169,6 @@
     SUBDIR += libexo
     SUBDIR += libfm
     SUBDIR += libgnome
-    SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
@@ -429,7 +428,6 @@
     SUBDIR += xorg-apps
     SUBDIR += xorg-cf-files
     SUBDIR += xorg-docs
-    SUBDIR += xorg-edit
     SUBDIR += xorg-libraries
     SUBDIR += xorg-minimal
     SUBDIR += xplsprinters

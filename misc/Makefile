@@ -1,4 +1,4 @@
-# $FreeBSD: head/misc/Makefile 349126 2014-03-25 11:10:39Z garga $
+# $FreeBSD: head/misc/Makefile 363675 2014-07-31 20:44:58Z rene $
 #
 
     COMMENT = Miscellaneous utilities
@@ -25,7 +25,6 @@
     SUBDIR += bestfit
     SUBDIR += bibletime
     SUBDIR += biblical-curse
-    SUBDIR += bigboard
     SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort
@@ -34,7 +33,6 @@
     SUBDIR += boxquote.el
     SUBDIR += brs
     SUBDIR += buffer
-    SUBDIR += c-hey
     SUBDIR += callid
     SUBDIR += cave
     SUBDIR += cdcollect
@@ -91,10 +89,12 @@
     SUBDIR += figlet-fonts
     SUBDIR += findutils
     SUBDIR += firestring
+    SUBDIR += flag
     SUBDIR += floatator
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-culmea-culmilor
+    SUBDIR += fortune-mod-epictetus
     SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
@@ -119,7 +119,6 @@
     SUBDIR += freebsd-doc-tr
     SUBDIR += freebsd-doc-zh_cn
     SUBDIR += freebsd-doc-zh_tw
-    SUBDIR += freecode-submit
     SUBDIR += freeguide
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
@@ -142,14 +141,10 @@
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmbgchg2
-    SUBDIR += gkrellmfmonitor
-    SUBDIR += gkrellmlaunch
     SUBDIR += gkrellmlaunch2
-    SUBDIR += gkrellshoot
     SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info2
-    SUBDIR += gman
     SUBDIR += gnome-devel-docs
     SUBDIR += gnome-icon-theme
     SUBDIR += gnome-icon-theme-extras
@@ -326,6 +321,7 @@
     SUBDIR += p5-Geo-Coder-Multiple
     SUBDIR += p5-Geo-Coder-Navteq
     SUBDIR += p5-Geo-Coder-OSM
+    SUBDIR += p5-Geo-Coder-OpenCage
     SUBDIR += p5-Geo-Coder-Ovi
     SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Coder-TomTom
@@ -358,11 +354,11 @@
     SUBDIR += patchutils
     SUBDIR += pauker
     SUBDIR += pciids
-    SUBDIR += pdfmap
     SUBDIR += pdmenu
     SUBDIR += pear-Services_Weather
     SUBDIR += pear-Text_Figlet
     SUBDIR += pecl-timezonedb
+    SUBDIR += pfm
     SUBDIR += php5-calendar
     SUBDIR += php53-calendar
     SUBDIR += php55-calendar
@@ -389,7 +385,6 @@
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
-    SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += ree
@@ -401,12 +396,13 @@
     SUBDIR += ruby-progressbar
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
+    SUBDIR += rubygem-mime-types117
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
     SUBDIR += saaghar
-    SUBDIR += salias
     SUBDIR += seq2
     SUBDIR += shared-mime-info
     SUBDIR += shc
@@ -436,7 +432,6 @@
     SUBDIR += tet
     SUBDIR += tkcron
     SUBDIR += tkinfo
-    SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += toilet
@@ -444,9 +439,7 @@
     SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tvbrowser
-    SUBDIR += txt2regex
     SUBDIR += typetrainer
-    SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack
@@ -455,6 +448,7 @@
     SUBDIR += us-zipcodes
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
+    SUBDIR += valspeak
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += viz
@@ -462,8 +456,6 @@
     SUBDIR += window
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
-    SUBDIR += wmfirew
-    SUBDIR += wminfo
     SUBDIR += wmjulia
     SUBDIR += wmpal
     SUBDIR += wmtunlo
