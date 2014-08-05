@@ -45,7 +45,7 @@ NO_BUILD=			yes
 .	if ${ARCH} == "powerpc"
 LINUX_RPM_ARCH?=	ppc
 .	else
-.		if ${USE_LINUX} == "c6" || ${USE_LINUX:tl} == "yes"
+.		if ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
 # Do not build CentOS 6.5 ports if overridden by f10
 .		if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 IGNORE=		This port requires CentOS 6.5. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
