@@ -42,27 +42,26 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
-.	if ${ARCH} == "powerpc"
-LINUX_RPM_ARCH?=	ppc
-.	else
-.		if ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
+.	if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.		if ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes"
 # Do not build CentOS 6.5 ports if overridden by f10
-.		if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
+.			if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
 IGNORE=		This port requires CentOS 6.5. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
-.		endif
+.			endif
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
 .		elif ${USE_LINUX} == "f10"
 # Do not build Fedora 10 ports unless specifically overridden.
-.		if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
+.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
 IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
-.		endif
+.			endif
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .		else
 LINUX_RPM_ARCH?=	${ARCH}
 . 		endif
 
+.	elif ${ARCH} == "powerpc"
+LINUX_RPM_ARCH?=	ppc
 .	endif
-
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(Linux_RPM_Post_Include)
@@ -78,7 +77,7 @@ LINUX_DIST=	centos
 LINUX_DIST_VER=	6.5
 .endif
 
-.  if defined(LINUX_DIST)
+.	if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 .		if ${LINUX_DIST} == "fedora"
@@ -122,7 +121,7 @@ MASTER_SITES=	http://vault.centos.org/${LINUX_DIST_VER}/os/i386/Packages/
 .			endif
 
 .		endif
-.  endif
+.	endif
 
 
 #.if ${USE_LINUX:L} == "yes" #redundant with bsd.port.mk fu
@@ -140,13 +139,13 @@ DISTNAME?=		${PORTNAME}-${DISTVERSION}
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 BIN_DISTFILES:=		${_DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}
-EXTRACT_ONLY?=          ${BIN_DISTFILES:C/:[^:]+$//}
+EXTRACT_ONLY?=		${BIN_DISTFILES:C/:[^:]+$//}
 
-.  if defined(PACKAGE_BUILDING)
+.	if defined(PACKAGE_BUILDING)
 DISTFILES+=		${SRC_DISTFILES}
 MASTER_SITE_SUBDIR+=	${MASTER_SITE_SRC_SUBDIR}
 ALWAYS_KEEP_DISTFILES=	yes
-.  endif
+.	endif
 
 EXTRACT_CMD?=			${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
@@ -162,13 +161,13 @@ BRANDELF_FILES?=
 .  if defined(PORTDOCS) && defined(NOPORTDOCS)
 pre-patch: linux-rpm-clean-portdocs
 
-.    if !target(linux-rpm-clean-portdocs)
+.		if !target(linux-rpm-clean-portdocs)
 linux-rpm-clean-portdocs:
-.      for x in ${PORTDOCS}
+.			for x in ${PORTDOCS}
 	@${RM} -f ${WRKDIR}/${DOCSDIR_REL}/${x}
-.      endfor
+.			endfor
 	@${RMDIR} ${WRKDIR}/${DOCSDIR_REL}
-.    endif
+.		endif
 .  endif
 
 .  if defined(AUTOMATIC_PLIST)
@@ -181,20 +180,20 @@ _LINUX_BASE_SUFFIX=		c6
 .	else
 # other linux_base ports do not provide a pkg-plist file
 IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"f10\" and \"c6\"
-.    endif
+.  endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
 
 pre-install: linux-rpm-generate-plist
 
-.    if !target(linux-rpm-generate-plist)
+.  if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
 	cd ${WRKSRC} && \
 	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST} && \
 	${FIND} * ! -path "stage*" -type d | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
 	@${GREP} '^@dirrm' ${PORTSDIR}/emulators/linux_base-${_LINUX_BASE_SUFFIX}/pkg-plist | ${SED} 's:^@dirrmtry:@dirrm:g' | ${SORT} > ${PLIST}.shared-dirs
 	@${COMM} -1 -3 ${PLIST}.shared-dirs ${PLIST}.dirs | ${SORT} -r >> ${PLIST}
-.    endif
+.	endif
 .  endif
 
 .  if !target(do-install)
