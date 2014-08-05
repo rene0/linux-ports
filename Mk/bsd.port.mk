@@ -1,7 +1,7 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: head/Mk/bsd.port.mk 357579 2014-06-12 10:10:50Z bapt $
+# $FreeBSD: head/Mk/bsd.port.mk 363994 2014-08-04 12:12:55Z bapt $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -122,7 +122,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${DISTDIR} (see below).  Also they will be fetched in this
 #				  subdirectory from FreeBSD mirror sites.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
-# IGNOREFILES	- If set, don't perform checksum checks on these files.
 # NOFETCHFILES	- If set, don't download these files from the ${MASTER_SITES}
 #				  or ${MASTER_SITE_BACKUP} (but do from
 #				  ${MASTER_SITE_OVERRIDE})
@@ -583,11 +582,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  depending on the value of MANCOMPRESSED (see below).
 # COPYTREE_BIN
 # COPYTREE_SHARE
-#				- Similiar to INSTALL commands but working on whole
-#				  trees of directories, takes 3 arguments, last one is
-#				  find(1) arguments and optional.
+#				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
+#				  working on whole trees of directories, takes 3 arguments,
+#				  last one is find(1) arguments and optional.
 #				  Example use: 
-#				  cd ${WRKSRC}/doc && ${COPYTREE} . ${DOCSDIR} "! -name *.bak"
+#				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
@@ -854,7 +853,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${ARCH}-portbld-freebsd${OSREL}
+#				  Default: ${ARCH}-portbld-${OPSYS:tl}${OSREL}
 # GNU_CONFIGURE_PREFIX
 #				- The directory passed as prefix to the configure script if
 #				  GNU_CONFIGURE is set.
@@ -1119,6 +1118,12 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 NOTPHONY?=
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
+MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
+				XDG_CONFIG_HOME=${WRKDIR} \
+				HOME=${WRKDIR}
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
@@ -1128,6 +1133,11 @@ PKG_ENV+=		PORTSDIR=${PORTSDIR}
 .MAKE.EXPAND_VARIABLES= yes
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+.if defined(NO_STAGE)
+DEPRECATED?=		Not staged. See http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-May/000080.html
+EXPIRATION_DATE?=	2014-08-31
+.endif
 
 .if defined(X_BUILD_FOR)
 .if defined(NO_STAGE)
@@ -1233,7 +1243,7 @@ WITH_PKGNG?=	yes
 .endif
 
 .if !defined(WITH_PKGNG) && !defined(NO_WARNING_PKG_INSTALL_EOL)
-WARNING+=	"pkg_install EOL is scheduled for 2014-09-01. Please consider migrating to pkgng"
+WARNING+=	"pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng"
 WARNING+=	"http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/"
 WARNING+=	"If you do not want to see this message again set NO_WARNING_PKG_INSTALL_EOL=yes in your make.conf"
 .endif
@@ -1469,10 +1479,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.tex.mk"
 .endif
 
-.if defined(USE_DRUPAL)
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.endif
-
 .if defined(USE_GECKO)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
@@ -1504,8 +1510,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .if defined(USE_KDE4) || defined(KDE4_BUILDENV)
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
-
-.include "${PORTSDIR}/Mk/bsd.pbi.mk"
 
 .if !defined(UID)
 UID!=	${ID} -u
@@ -1590,8 +1594,7 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 PLIST_SUB_SED_MIN?=	2
 PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
-PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
-PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir "%D/\1" 2>/dev/null || true!
+PLIST_REINPLACE+=	stopdaemon rmtry
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1 forcestop 2>/dev/null || true!
 
@@ -2689,30 +2692,15 @@ patch-sites-default: patch-sites-DEFAULT
 master-sites: master-sites-DEFAULT
 patch-sites: patch-sites-DEFAULT
 
-.if defined(IGNOREFILES)
-.if !defined(CKSUMFILES)
-.  for _f in ${ALLFILES}
-.    if ! ${IGNOREFILES:M${_f}}
-CKSUMFILES+=	${_f}
-.   endif
-.  endfor
-.  undef _f
-.endif
-.else
 CKSUMFILES=		${ALLFILES}
-.endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
 .if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .endif
-.if defined(IGNOREFILES) && ${IGNOREFILES}!=""
-_IGNOREFILES?=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
-.endif
 .else
 _CKSUMFILES?=	${CKSUMFILES}
-_IGNOREFILES?=	${IGNOREFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -2768,7 +2756,7 @@ LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
@@ -2930,6 +2918,8 @@ INFO_PATH?=	info
 .endif
 
 .if defined(INFO)
+RUN_DEPENDS+=	indexinfo:${PORTSDIR}/print/indexinfo
+
 . for D in ${INFO:H}
 RD:=	${D}
 .  if ${RD} != "."
@@ -3266,6 +3256,8 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
+${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
+	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
 
@@ -3424,7 +3416,7 @@ do-fetch:
 	    fi; \
 	 done
 .if defined(PATCHFILES)
-	@cd ${_DISTDIR};\
+	cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
@@ -3496,10 +3488,11 @@ do-fetch:
 
 # Extract
 
+clean-wrkdir:
+	@${RM} -rf ${WRKDIR}
+
 .if !target(do-extract)
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
@@ -3920,9 +3913,8 @@ install-package:
 
 .if !target(check-already-installed)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-check-already-installed: ${TMPPLIST_SORT}
+check-already-installed: ${TMPPLIST_SORT} ${PKG_DBDIR}
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
-		${MKDIR} ${PKG_DBDIR}; \
 		already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
@@ -3962,8 +3954,7 @@ check-umask:
 .endif
 
 .if !target(install-mtree)
-install-mtree:
-	@${MKDIR} ${PREFIX}
+install-mtree: ${PREFIX}
 	@if [ ${UID} != 0 ]; then \
 		if [ -w ${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
@@ -4026,6 +4017,7 @@ install-ldconfig-file:
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -4042,12 +4034,13 @@ install-ldconfig-file:
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
-	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_32DIR}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 .endif
 .if defined(INSTALLS_SHLIB)
@@ -4206,14 +4199,14 @@ fix-plist-sequence: ${TMPPLIST}
 	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
 	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
 	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please consider migrating to pkgng" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/" >> ${TMPPLIST}
 .endif
 .endif
 
 .if !defined(DISABLE_SECURITY_CHECK)
 .if !target(security-check)
-security-check:
+security-check: ${TMPPLIST}
 # Scan PLIST for:
 #   1.  setugid files
 #   2.  accept()/recvfrom() which indicates network listening capability
@@ -4678,11 +4671,6 @@ makesum: check-checksum-algorithms
 			${ECHO_CMD} "SIZE ($$file) = `${STAT} -f \"%z\" $$file`" >> ${DISTINFO_FILE}; \
 		done \
 	)
-	@for file in ${_IGNOREFILES}; do \
-		for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${DISTINFO_FILE}; \
-		done; \
-	done
 .endif
 
 .if !target(checksum)
@@ -4710,13 +4698,6 @@ checksum: fetch check-checksum-algorithms
 					ignore="true"; \
 				fi; \
 				\
-				if [ "$$CKSUM" = "IGNORE" ]; then \
-					${ECHO_MSG} "=> $$alg Checksum for $$file is set to IGNORE in distinfo file even though"; \
-					${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-					ignore="true"; \
-					OK=${FALSE}; \
-				fi; \
-				\
 				if [ $$ignore = "false" ]; then \
 					match="false"; \
 					for chksum in $$CKSUM; do \
@@ -4741,42 +4722,6 @@ checksum: fetch check-checksum-algorithms
 			if [ $$ignored = "true" ]; then \
 				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
 				OK="${FALSE}"; \
-			fi; \
-			\
-		done; \
-		\
-		for file in ${_IGNOREFILES}; do \
-			_file=$${file#${DIST_SUBDIR}/*};	\
-			ignored="true"; \
-			alreadymatched="false"; \
-			for alg in ${CHECKSUM_ALGORITHMS:tu}; do \
-				ignore="false"; \
-				eval alg_executable=\$$$$alg; \
-				\
-				if [ $$alg_executable != "NO" ]; then \
-					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
-				else \
-					ignore="true"; \
-				fi; \
-				\
-				if [ $$ignore = "false" ]; then \
-					if [ -z "$$CKSUM" ]; then \
-						${ECHO_MSG} "=> No $$alg checksum for $$file recorded (expected IGNORE)"; \
-						OK="$$alreadymatched"; \
-					elif [ $$CKSUM != "IGNORE" ]; then \
-						${ECHO_MSG} "=> $$alg Checksum for $$file is not set to IGNORE in distinfo file even though"; \
-						${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
-						OK="false"; \
-					else \
-						ignored="false"; \
-						alreadymatched="true"; \
-					fi; \
-				fi; \
-			done; \
-			\
-			if ( [ $$ignored = "true" ]) ; then \
-				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
-				OK="false"; \
 			fi; \
 			\
 		done; \
@@ -4990,7 +4935,7 @@ ${deptype:tl}-depends:
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@set -e ; \
-	for i in ${LIB_DEPENDS:M*.so*\:*}; do \
+	for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*} ; \
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
@@ -5018,43 +4963,6 @@ lib-depends:
 		else \
 			${ECHO_MSG}; \
 		fi ; \
-	done
-	@set -e ; for i in ${LIB_DEPENDS:N*.so*\:*}; do \
-		lib=$${i%%:*}; \
-		pattern="`${ECHO_CMD} $$lib | ${SED} -E -e 's/\./\\\\./g' -e 's/(\\\\)?\+/\\\\+/g'`"\
-		dir=$${i#*:}; \
-		target=$${i##*:}; \
-		if ${TEST} $$dir = $$target; then \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		else \
-			dir=$${dir%%:*}; \
-		fi; \
-		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-		if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-			${ECHO_MSG} " - found"; \
-			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-				${ECHO_MSG} "       (but building it anyway)"; \
-				notfound=1; \
-			else \
-				notfound=0; \
-			fi; \
-		else \
-			${ECHO_MSG} " - not found"; \
-			notfound=1; \
-		fi; \
-		if [ $$notfound != 0 ]; then \
-			${ECHO_MSG} "===>    Verifying $$target for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$lib.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-				if ! ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
-					${FALSE}; \
-				fi; \
-			fi; \
-		fi; \
 	done
 .endif
 
@@ -5420,6 +5328,16 @@ missing:
 		fi; \
 	done
 
+# shwo missing dependencies by name
+missing-packages:
+	@_packages=$$(${PKG_INFO} -aq); \
+	for dir in $$(${ALL-DEPENDS-LIST}); do \
+		_p=$$(cd $$dir; ${MAKE} -VPKGNAME); \
+		if ! $$(${ECHO_CMD} $${_packages} | ${GREP} -q $${_p}); then \
+			${ECHO_CMD} $${_p}; \
+		fi; \
+	done
+
 ################################################################
 # Everything after here are internal targets and really
 # shouldn't be touched by anybody but the release engineers.
@@ -5558,7 +5476,7 @@ ${i:S/-//:tu}=	${WRKDIR}/${SUB_FILES:M${i}*}
 # files exist.
 
 .if !target(generate-plist)
-generate-plist:
+generate-plist: ${WRKDIR}
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `${DIRNAME} ${TMPPLIST}`
 	@if [ ! -f ${DESCR} ]; then ${ECHO_MSG} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
@@ -5714,21 +5632,21 @@ add-plist-buildinfo:
 .if !target(add-plist-info)
 .if defined(INFO)
 add-plist-info:
+	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
+		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
+		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
+	fi
 # Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
 .if defined(NO_STAGE)
-	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
+	indexinfo ${PREFIX}/${INFO_PATH}
 .endif
 .if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec [ \`info -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
-		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
 	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
-		>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
 .else
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* 2>/dev/null | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
 .endif
 .endfor
 .if defined(INFO_SUBDIR)
@@ -5739,9 +5657,9 @@ add-plist-info:
 .endif
 .endif
 .if (${PREFIX} != "/usr")
-	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${INFO_PATH}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -6446,7 +6364,11 @@ show-dev-warnings:
 	@${ECHO_MSG} "${m}"
 .endfor
 	@${ECHO_MSG}
+.if defined(DEV_WARNING_FATAL)
+	@${FALSE}
+.else
 	@sleep ${DEV_WARNING_WAIT}
+.endif
 .endif
 
 .if defined(DEV_ERROR)
@@ -6486,7 +6408,7 @@ _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch fetch-specials post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
-				pre-extract pre-extract-script do-extract \
+				clean-wrkdir ${WRKDIR} pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-shebang \
