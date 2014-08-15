@@ -8,7 +8,7 @@ MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 DISTNAME=	sublime_text_3_build_3059_x32
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	xmj@chaot.net
+MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
 USES=	tar:bzip2
