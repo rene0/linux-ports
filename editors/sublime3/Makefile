@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sublime
-PORTVERSION=	3.0.59
+PORTVERSION=	3.0.65
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
-DISTNAME=	sublime_text_3_build_3059_x32
+DISTNAME=	sublime_text_3_build_3065_x32
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	miguelmclara@gmail.com
@@ -15,7 +15,7 @@ USES=	tar:bzip2
 INSTALLS_ICONS=	yes
 WRKSRC=	${WRKDIR}/"sublime_text_3"
 
-CONFLITS=	linux-sublime[0-9]*
+CONFLITS=	linux-sublime-[0-9]*
 
 NO_BUILD=
 STRIP=	# don't strip linux binaries.
@@ -26,6 +26,7 @@ USE_LINUX_APPS=	xorglibs
 
 post-patch:
 	${BRANDELF} -t Linux ${WRKSRC}/sublime_text
+	${BRANDELF} -t Linux ${WRKSRC}/plugin_host
 	${RM} -rf ${WRKSRC}/lib
 
 do-install:
@@ -44,6 +45,7 @@ do-install:
 	@${RM} -rf ${WRKSRC}/Icon/
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/sublime_text
+	@${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host
 	@${INSTALL} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime
 
 .include <bsd.port.mk>
