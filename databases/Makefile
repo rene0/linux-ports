@@ -1,4 +1,4 @@
-# $FreeBSD: head/databases/Makefile 364034 2014-08-04 17:49:50Z antoine $
+# $FreeBSD: head/databases/Makefile 368156 2014-09-14 02:06:58Z swills $
 #
 
     COMMENT = Databases
@@ -26,6 +26,7 @@
     SUBDIR += buzhug
     SUBDIR += c3p0
     SUBDIR += cassandra
+    SUBDIR += cassandra2
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += couchdb
@@ -35,24 +36,12 @@
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cppdb
     SUBDIR += credis
-    SUBDIR += cyrus-imspd
     SUBDIR += dalmp
     SUBDIR += datamodeler
     SUBDIR += db
-    SUBDIR += db4
-    SUBDIR += db41
-    SUBDIR += db41-nocrypto
-    SUBDIR += db42
-    SUBDIR += db42-nocrypto
-    SUBDIR += db43
-    SUBDIR += db44
-    SUBDIR += db46
-    SUBDIR += db47
     SUBDIR += db48
-    SUBDIR += db4o-mono
     SUBDIR += db5
     SUBDIR += db6
-    SUBDIR += dbXML
     SUBDIR += dbconnect
     SUBDIR += dbf
     SUBDIR += dbf2mysql
@@ -64,14 +53,10 @@
     SUBDIR += epgsql
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
-    SUBDIR += exist
     SUBDIR += fastdb
-    SUBDIR += firebird21-client
-    SUBDIR += firebird21-server
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
     SUBDIR += flamerobin
-    SUBDIR += flare
     SUBDIR += fortytwo-bdb
     SUBDIR += fpc-dblib
     SUBDIR += fpc-fpindexer
@@ -86,7 +71,6 @@
     SUBDIR += freetds
     SUBDIR += freetds-devel
     SUBDIR += freetds-msdblib
-    SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += galera
@@ -105,7 +89,7 @@
     SUBDIR += hashtypes
     SUBDIR += hbase
     SUBDIR += hiredis
-    SUBDIR += hk_classes
+    SUBDIR += hs-esqueleto
     SUBDIR += hs-mysql
     SUBDIR += hs-persistent
     SUBDIR += hs-persistent-sqlite
@@ -118,7 +102,6 @@
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
-    SUBDIR += jasperserver
     SUBDIR += java-mybatis
     SUBDIR += jdb
     SUBDIR += jdbc-oracle10g
@@ -129,8 +112,6 @@
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
-    SUBDIR += kinterbasdb
-    SUBDIR += kumofs
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
@@ -175,7 +156,6 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
     SUBDIR += lmdb
-    SUBDIR += lsdb
     SUBDIR += luadbi
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
@@ -192,10 +172,9 @@
     SUBDIR += memcachedb
     SUBDIR += memcacheq
     SUBDIR += metakit
+    SUBDIR += monetdb
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
-    SUBDIR += msql
-    SUBDIR += msql3
     SUBDIR += mtop
     SUBDIR += my2cego
     SUBDIR += mydbf2mysql
@@ -224,7 +203,6 @@
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
     SUBDIR += mysqlbackup
-    SUBDIR += mysqlcppapi
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlreport
@@ -241,7 +219,6 @@
     SUBDIR += ntdb
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
-    SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += openark-kit
     SUBDIR += openbase-jdbc
@@ -304,7 +281,6 @@
     SUBDIR += p5-DBD-AnyData
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
-    SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
@@ -437,6 +413,7 @@
     SUBDIR += p5-Metadata
     SUBDIR += p5-MongoDB
     SUBDIR += p5-MySQL-Diff
+    SUBDIR += p5-Net-Async-CassandraCQL
     SUBDIR += p5-ORLite
     SUBDIR += p5-ORLite-Migrate
     SUBDIR += p5-Oryx
@@ -448,6 +425,7 @@
     SUBDIR += p5-PostgreSQL-PLPerl-Call
     SUBDIR += p5-PostgreSQL-PLPerl-Trace
     SUBDIR += p5-Prophet
+    SUBDIR += p5-Protocol-CassandraCQL
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-Redis
     SUBDIR += p5-Redis-hiredis
@@ -504,7 +482,6 @@
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
     SUBDIR += pear-DB_ldap2
-    SUBDIR += pear-Doctrine12
     SUBDIR += pear-DoctrineCommon
     SUBDIR += pear-DoctrineDBAL
     SUBDIR += pear-DoctrineORM
@@ -549,7 +526,6 @@
     SUBDIR += percona56-client
     SUBDIR += percona56-server
     SUBDIR += pg_activity
-    SUBDIR += pg_filedump
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
     SUBDIR += pg_statsinfo
@@ -633,6 +609,22 @@
     SUBDIR += php55-redis
     SUBDIR += php55-sqlite3
     SUBDIR += php55-sybase_ct
+    SUBDIR += php56-dba
+    SUBDIR += php56-interbase
+    SUBDIR += php56-mssql
+    SUBDIR += php56-mysql
+    SUBDIR += php56-mysqli
+    SUBDIR += php56-odbc
+    SUBDIR += php56-pdo
+    SUBDIR += php56-pdo_dblib
+    SUBDIR += php56-pdo_firebird
+    SUBDIR += php56-pdo_mysql
+    SUBDIR += php56-pdo_odbc
+    SUBDIR += php56-pdo_pgsql
+    SUBDIR += php56-pdo_sqlite
+    SUBDIR += php56-pgsql
+    SUBDIR += php56-sqlite3
+    SUBDIR += php56-sybase_ct
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
@@ -704,6 +696,7 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
+    SUBDIR += puppetdb
     SUBDIR += puppetdb-terminus
     SUBDIR += pure-sql3
     SUBDIR += puredb
@@ -713,6 +706,7 @@
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb51
     SUBDIR += py-MySQLdb55
+    SUBDIR += py-MySQLdb56
     SUBDIR += py-PyGreSQL
     SUBDIR += py-Pyrseas
     SUBDIR += py-alembic
@@ -785,6 +779,7 @@
     SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
+    SUBDIR += qof
     SUBDIR += qt4-ibase-plugin
     SUBDIR += qt4-mysql-plugin
     SUBDIR += qt4-odbc-plugin
@@ -820,19 +815,18 @@
     SUBDIR += ruby-dbd_sqlite
     SUBDIR += ruby-dbd_sqlite3
     SUBDIR += ruby-dbi
-    SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
-    SUBDIR += ruby-oci8
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-sybct
     SUBDIR += ruby-tokyocabinet
     SUBDIR += rubygem-activemodel
+    SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activerecord
+    SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-mysql-adapter
@@ -899,6 +893,7 @@
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
     SUBDIR += sqlite-ext-mobigroup
+    SUBDIR += sqlite-ext-pcre
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqliteman

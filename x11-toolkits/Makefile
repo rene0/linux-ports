@@ -1,4 +1,4 @@
-# $FreeBSD: head/x11-toolkits/Makefile 363254 2014-07-28 20:43:56Z rakuco $
+# $FreeBSD: head/x11-toolkits/Makefile 368191 2014-09-14 15:38:23Z hrs $
 #
 
     COMMENT = X11 toolkits
@@ -99,7 +99,6 @@
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtksourceviewmm
-    SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
@@ -172,6 +171,7 @@
     SUBDIR += p5-Tk-Sugar
     SUBDIR += p5-Tk-TableMatrix
     SUBDIR += p5-Tk-ToolBar
+    SUBDIR += p5-Tk-WaitBox
     SUBDIR += p5-Wx
     SUBDIR += p5-Wx-Perl-ProcessStream
     SUBDIR += pango
@@ -179,7 +179,6 @@
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += pangoxsl
-    SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += plib
     SUBDIR += pure-gtk

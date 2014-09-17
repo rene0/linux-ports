@@ -1,4 +1,4 @@
-# $FreeBSD: head/multimedia/Makefile 362269 2014-07-19 16:40:37Z sunpoet $
+# $FreeBSD: head/multimedia/Makefile 367495 2014-09-07 07:44:48Z antoine $
 #
 
     COMMENT = Multimedia software
@@ -33,7 +33,6 @@
     SUBDIR += cheese
     SUBDIR += clipgrab
     SUBDIR += clive
-    SUBDIR += clive1
     SUBDIR += clutter-gst
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
@@ -42,6 +41,7 @@
     SUBDIR += dirac
     SUBDIR += dragon
     SUBDIR += dtv
+    SUBDIR += dtv-scan-tables
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
     SUBDIR += dv2sub
@@ -124,6 +124,7 @@
     SUBDIR += gstreamer1-plugins-dts
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
+    SUBDIR += gstreamer1-plugins-gnonlin
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-kate
     SUBDIR += gstreamer1-plugins-mpeg2dec
@@ -213,6 +214,7 @@
     SUBDIR += minitube
     SUBDIR += miro
     SUBDIR += mjpegtools
+    SUBDIR += mjpg-streamer
     SUBDIR += mkclean
     SUBDIR += mkvalidator
     SUBDIR += mkvtoolnix
@@ -235,7 +237,6 @@
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplayer2
-    SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += mps-youtube
     SUBDIR += mpv
@@ -271,6 +272,7 @@
     SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
+    SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
@@ -279,14 +281,13 @@
     SUBDIR += ppm2fli
     SUBDIR += projectx
     SUBDIR += ptx-kmod
-    SUBDIR += pvr250
-    SUBDIR += pvrxxx
     SUBDIR += pwcbsd
     SUBDIR += pwcview
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg
     SUBDIR += py-gstreamer
     SUBDIR += py-guessit
+    SUBDIR += py-gstreamer1
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
@@ -299,6 +300,7 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
+    SUBDIR += py3-gstreamer1
     SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
@@ -317,6 +319,7 @@
     SUBDIR += rtmpdump
     SUBDIR += ruby-flvtool2
     SUBDIR += rubygem-clutter-gstreamer
+    SUBDIR += rubygem-flvtool2
     SUBDIR += rubygem-gstreamer
     SUBDIR += sabbu
     SUBDIR += schroedinger
@@ -344,7 +347,6 @@
     SUBDIR += totem-pl-parser
     SUBDIR += transcode
     SUBDIR += tstools
-    SUBDIR += tunapie
     SUBDIR += tvheadend
     SUBDIR += umph
     SUBDIR += umplayer
@@ -391,6 +393,7 @@
     SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
+    SUBDIR += x265
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xbmc

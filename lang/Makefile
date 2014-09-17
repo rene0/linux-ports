@@ -1,10 +1,9 @@
-# $FreeBSD: head/lang/Makefile 363758 2014-08-01 19:51:35Z rene $
+# $FreeBSD: head/lang/Makefile 367800 2014-09-10 07:51:20Z marino $
 #
 
     COMMENT = Programming languages
 
     SUBDIR += Gofer
-    SUBDIR += Sather
     SUBDIR += abcl
     SUBDIR += adacontrol
     SUBDIR += afnix
@@ -23,7 +22,6 @@
     SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
-    SUBDIR += caml-light
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
@@ -36,6 +34,7 @@
     SUBDIR += clang32
     SUBDIR += clang33
     SUBDIR += clang34
+    SUBDIR += clang35
     SUBDIR += clay
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
@@ -61,7 +60,6 @@
     SUBDIR += erlang-runtime17
     SUBDIR += execline
     SUBDIR += expect
-    SUBDIR += ezm3
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += ferite
@@ -86,7 +84,7 @@
     SUBDIR += gcc47-aux
     SUBDIR += gcc48
     SUBDIR += gcc49
-    SUBDIR += gcc410
+    SUBDIR += gcc5
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
@@ -98,7 +96,6 @@
     SUBDIR += gnatdroid-sysroot
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
-    SUBDIR += gnustep-guile
     SUBDIR += go
     SUBDIR += gprolog
     SUBDIR += groovy
@@ -106,8 +103,6 @@
     SUBDIR += guile
     SUBDIR += guile2
     SUBDIR += harbour
-    SUBDIR += haskell-mode.el
-    SUBDIR += hiphop-php
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
@@ -118,12 +113,12 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
-    SUBDIR += ifc
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += ironpython
     SUBDIR += itcl
+    SUBDIR += itcl4
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jimtcl
     SUBDIR += jruby
@@ -145,12 +140,10 @@
     SUBDIR += lua51
     SUBDIR += lua52
     SUBDIR += luajit
-    SUBDIR += lush
     SUBDIR += malbolge
     SUBDIR += maude
     SUBDIR += mawk
     SUBDIR += mdk
-    SUBDIR += metaocaml
     SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal
@@ -161,13 +154,11 @@
     SUBDIR += mono-basic
     SUBDIR += moscow_ml
     SUBDIR += mosh
-    SUBDIR += mpd
     SUBDIR += mtasc
     SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += nbc
     SUBDIR += nbfc
-    SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
     SUBDIR += newlisp-devel
@@ -180,17 +171,12 @@
     SUBDIR += nx
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
-    SUBDIR += ocaml-camlidl
-    SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
-    SUBDIR += ocs
     SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
-    SUBDIR += oorexx
     SUBDIR += opendylan
-    SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error
@@ -215,6 +201,7 @@
     SUBDIR += p5-Tcl
     SUBDIR += p5-Test-XPath
     SUBDIR += p5-Try-Tiny
+    SUBDIR += p5-Try-Tiny-Retry
     SUBDIR += p5-TryCatch
     SUBDIR += p5-ePerl
     SUBDIR += p5-signatures
@@ -239,6 +226,8 @@
     SUBDIR += php53-extensions
     SUBDIR += php55
     SUBDIR += php55-extensions
+    SUBDIR += php56
+    SUBDIR += php56-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
     SUBDIR += pike78
@@ -257,6 +246,7 @@
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-text
     SUBDIR += python-mode.el
+    SUBDIR += python-tools
     SUBDIR += python2
     SUBDIR += python27
     SUBDIR += python3
@@ -268,7 +258,6 @@
     SUBDIR += qt5-qml
     SUBDIR += racket
     SUBDIR += racket-minimal
-    SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
@@ -290,7 +279,6 @@
     SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
-    SUBDIR += scsh
     SUBDIR += sdcc
     SUBDIR += sdcc-devel
     SUBDIR += see
@@ -302,7 +290,6 @@
     SUBDIR += slib-guile
     SUBDIR += slisp
     SUBDIR += smalltalk
-    SUBDIR += sml-mode.el
     SUBDIR += smlnj
     SUBDIR += snobol4
     SUBDIR += spidermonkey17
@@ -312,12 +299,10 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
-    SUBDIR += sr
     SUBDIR += stalin
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl
-    SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
@@ -333,14 +318,12 @@
     SUBDIR += ucc
     SUBDIR += urweb
     SUBDIR += v8
+    SUBDIR += v8-devel
     SUBDIR += vala
     SUBDIR += vala-vapigen
     SUBDIR += visualworks
     SUBDIR += whitespace
     SUBDIR += x10
-    SUBDIR += xds
-    SUBDIR += xds-c
-    SUBDIR += xotcl
     SUBDIR += yabasic
     SUBDIR += yap
     SUBDIR += yap-devel

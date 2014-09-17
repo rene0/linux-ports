@@ -1,4 +1,4 @@
-# $FreeBSD: head/www/Makefile 364013 2014-08-04 14:25:43Z sem $
+# $FreeBSD: head/www/Makefile 368156 2014-09-14 02:06:58Z swills $
 #
 
     COMMENT = Ports related to the World Wide Web
@@ -10,7 +10,6 @@
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
-    SUBDIR += abyssws
     SUBDIR += ach
     SUBDIR += adzap
     SUBDIR += amphetadesk
@@ -26,14 +25,12 @@
     SUBDIR += apache22-worker-mpm
     SUBDIR += apache24
     SUBDIR += apercu
-    SUBDIR += aria
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += arora
     SUBDIR += asp2php
     SUBDIR += asql
     SUBDIR += asterisk-stat
-    SUBDIR += aswedit
     SUBDIR += atutor
     SUBDIR += august
     SUBDIR += autoindex2
@@ -50,28 +47,22 @@
     SUBDIR += bblog
     SUBDIR += bigbluebutton
     SUBDIR += bins
-    SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += blogsum
     SUBDIR += bluefish
-    SUBDIR += bluefish-devel
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
-    SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
-    SUBDIR += cacheboy16
     SUBDIR += cadaver
     SUBDIR += cakephp11
-    SUBDIR += cakephp12
     SUBDIR += cakephp13
     SUBDIR += cakephp21
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
-    SUBDIR += cas
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -117,6 +108,7 @@
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel
     SUBDIR += davical
+    SUBDIR += dddbl
     SUBDIR += decss
     SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
@@ -124,10 +116,8 @@
     SUBDIR += dhttpd
     SUBDIR += diamanda
     SUBDIR += dillo2
-    SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
-    SUBDIR += dokeos
     SUBDIR += dokuwiki
     SUBDIR += dotclear
     SUBDIR += dotproject
@@ -169,7 +159,6 @@
     SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dummyflash
-    SUBDIR += dwoo
     SUBDIR += e107
     SUBDIR += eaccelerator
     SUBDIR += edbrowse
@@ -178,7 +167,6 @@
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
-    SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
     SUBDIR += entrans
@@ -189,8 +177,6 @@
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += extjs
-    SUBDIR += eyeos
-    SUBDIR += eyeos-themes
     SUBDIR += fancybox
     SUBDIR += faup
     SUBDIR += fcgi
@@ -203,7 +189,6 @@
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
-    SUBDIR += firefox-remote
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
@@ -213,11 +198,9 @@
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
-    SUBDIR += foswiki-ModPerlEngineContrib
     SUBDIR += fpc-fastcgi
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
-    SUBDIR += free-sa
     SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
@@ -233,6 +216,7 @@
     SUBDIR += gecko-mediaplayer
     SUBDIR += gecko-sharp20
     SUBDIR += geeklog
+    SUBDIR += geeknote
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += geronimo
@@ -247,6 +231,7 @@
     SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
     SUBDIR += goose
+    SUBDIR += grafana
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
@@ -258,7 +243,6 @@
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += habari
-    SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += hastymail2
     SUBDIR += hastymail2-devel
@@ -271,12 +255,8 @@
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
-    SUBDIR += horde3-ansel
-    SUBDIR += horde3-base
-    SUBDIR += horde3-meta
-    SUBDIR += horde3-passwd
-    SUBDIR += horde3-trean
     SUBDIR += hotcrp
+    SUBDIR += hs-DAV
     SUBDIR += hs-HTTP
     SUBDIR += hs-activehs
     SUBDIR += hs-authenticate
@@ -286,11 +266,12 @@
     SUBDIR += hs-fastcgi
     SUBDIR += hs-gitit
     SUBDIR += hs-hS3
-    SUBDIR += hs-hamlet
     SUBDIR += hs-happstack
     SUBDIR += hs-happstack-server
     SUBDIR += hs-heist
     SUBDIR += hs-hjsmin
+    SUBDIR += hs-http-client
+    SUBDIR += hs-http-client-tls
     SUBDIR += hs-http-conduit
     SUBDIR += hs-http-date
     SUBDIR += hs-http-reverse-proxy
@@ -301,10 +282,6 @@
     SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
     SUBDIR += hs-shakespeare
-    SUBDIR += hs-shakespeare-css
-    SUBDIR += hs-shakespeare-i18n
-    SUBDIR += hs-shakespeare-js
-    SUBDIR += hs-shakespeare-text
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
     SUBDIR += hs-snap-server
@@ -313,12 +290,14 @@
     SUBDIR += hs-wai-app-static
     SUBDIR += hs-wai-extra
     SUBDIR += hs-wai-logger
-    SUBDIR += hs-wai-test
     SUBDIR += hs-warp
+    SUBDIR += hs-warp-tls
     SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
     SUBDIR += hs-yesod
     SUBDIR += hs-yesod-auth
+    SUBDIR += hs-yesod-auth-hashdb
+    SUBDIR += hs-yesod-bin
     SUBDIR += hs-yesod-core
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-persistent
@@ -332,7 +311,6 @@
     SUBDIR += html2wml
     SUBDIR += htmlcompressor
     SUBDIR += htmlcxx
-    SUBDIR += htmlobject
     SUBDIR += htmlpp
     SUBDIR += httest
     SUBDIR += http-analyze
@@ -380,6 +358,7 @@
     SUBDIR += libapreq2
     SUBDIR += libecap
     SUBDIR += libepc
+    SUBDIR += libevhtp
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
@@ -412,7 +391,6 @@
     SUBDIR += llgal
     SUBDIR += logtools
     SUBDIR += luakit
-    SUBDIR += lusca-head
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += magento
@@ -444,10 +422,8 @@
     SUBDIR += mod_auth_cas
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_external2
-    SUBDIR += mod_auth_form
     SUBDIR += mod_auth_imap2
     SUBDIR += mod_auth_kerb2
-    SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
@@ -481,9 +457,7 @@
     SUBDIR += mod_fcgid
     SUBDIR += mod_fileiri
     SUBDIR += mod_flickr
-    SUBDIR += mod_ftp
     SUBDIR += mod_geoip2
-    SUBDIR += mod_gnutls
     SUBDIR += mod_gzip2
     SUBDIR += mod_h264_streaming
     SUBDIR += mod_hosts_access
@@ -493,7 +467,6 @@
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit
     SUBDIR += mod_log_config-st
-    SUBDIR += mod_log_dbd
     SUBDIR += mod_log_firstbyte
     SUBDIR += mod_log_mysql
     SUBDIR += mod_log_sql2
@@ -506,10 +479,10 @@
     SUBDIR += mod_musicindex
     SUBDIR += mod_myvhost
     SUBDIR += mod_ntlm2
-    SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
     SUBDIR += mod_php5
     SUBDIR += mod_php55
+    SUBDIR += mod_php56
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
@@ -543,7 +516,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle24
     SUBDIR += moodle25
     SUBDIR += moodle26
     SUBDIR += moodle27
@@ -579,7 +551,6 @@
     SUBDIR += ocsigen
     SUBDIR += ojs2
     SUBDIR += ompload
-    SUBDIR += oops
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -842,6 +813,8 @@
     SUBDIR += p5-Dancer-Logger-Log4perl
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
+    SUBDIR += p5-Dancer-Plugin-Lexicon
+    SUBDIR += p5-Dancer-Plugin-REST
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
@@ -1027,6 +1000,7 @@
     SUBDIR += p5-HTTP-SimpleLinkChecker
     SUBDIR += p5-HTTP-Size
     SUBDIR += p5-HTTP-Tiny
+    SUBDIR += p5-HTTP-Tiny-SPDY
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-User-Manage
@@ -1044,6 +1018,7 @@
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
     SUBDIR += p5-LWP-Protocol-PSGI
+    SUBDIR += p5-LWP-Protocol-connect
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-UserAgent-Determined
@@ -1428,9 +1403,11 @@
     SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy
+    SUBDIR += php56-opcache
+    SUBDIR += php56-session
+    SUBDIR += php56-tidy   
     SUBDIR += phpbb
     SUBDIR += phpbb3
-    SUBDIR += phpgedview
     SUBDIR += phpgroupware
     SUBDIR += phpmp
     SUBDIR += phpmustache
@@ -1447,13 +1424,11 @@
     SUBDIR += pligg
     SUBDIR += plone
     SUBDIR += plugger
-    SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki
     SUBDIR += pnews
     SUBDIR += podcastamatic
     SUBDIR += polipo
     SUBDIR += pound
-    SUBDIR += prado
     SUBDIR += privoxy
     SUBDIR += protovis
     SUBDIR += pserv
@@ -1491,6 +1466,7 @@
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
     SUBDIR += py-django-appmedia
+    SUBDIR += py-django-assets
     SUBDIR += py-django-auth-ldap
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
@@ -1530,17 +1506,20 @@
     SUBDIR += py-django-subdomains
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
+    SUBDIR += py-django-taggit
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django14
     SUBDIR += py-django15
+    SUBDIR += py-django16
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
     SUBDIR += py-dojango
     SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
+    SUBDIR += py-evernote
     SUBDIR += py-falcon
     SUBDIR += py-fcgi
     SUBDIR += py-fedex
@@ -1683,6 +1662,7 @@
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
+    SUBDIR += py-slimit
     SUBDIR += py-slumber
     SUBDIR += py-splinter
     SUBDIR += py-surl
@@ -1701,6 +1681,7 @@
     SUBDIR += py-utidy
     SUBDIR += py-w3lib
     SUBDIR += py-waitress
+    SUBDIR += py-webassets
     SUBDIR += py-webhelpers
     SUBDIR += py-webkitgtk
     SUBDIR += py-webob
@@ -1720,7 +1701,6 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += quickie
-    SUBDIR += quixote
     SUBDIR += qupzilla
     SUBDIR += radicale
     SUBDIR += red5
@@ -1730,7 +1710,6 @@
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-sidebar_hide
-    SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += repos-style
@@ -1748,11 +1727,9 @@
     SUBDIR += rt38
     SUBDIR += rt40
     SUBDIR += rt42
-    SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
     SUBDIR += ruby-borges
-    SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
@@ -1760,6 +1737,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
+    SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-akami
@@ -1788,8 +1766,10 @@
     SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday_middleware
+    SUBDIR += rubygem-fcgi
     SUBDIR += rubygem-feed-normalizer
-    SUBDIR += rubygem-feedzirra
+    SUBDIR += rubygem-feedjira
+    SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
@@ -1803,15 +1783,19 @@
     SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
+    SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
-    SUBDIR += rubygem-httpi
+    SUBDIR += rubygem-http_router
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
+    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
+    SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-rails
+    SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jruby-rack
@@ -1855,7 +1839,9 @@
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-rails4
     SUBDIR += rubygem-railties
+    SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
@@ -1898,9 +1884,11 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
+    SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
+    SUBDIR += sams2
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
@@ -1924,7 +1912,6 @@
     SUBDIR += smarty3
     SUBDIR += smb_auth
     SUBDIR += snarf
-    SUBDIR += snownews
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
     SUBDIR += speedtest-mini
@@ -1939,7 +1926,6 @@
     SUBDIR += squidpurge
     SUBDIR += squidstats
     SUBDIR += squidview
-    SUBDIR += squirm
     SUBDIR += srg
     SUBDIR += subsonic
     SUBDIR += suphp
@@ -2100,6 +2086,7 @@
     SUBDIR += vee
     SUBDIR += vertx
     SUBDIR += videocache
+    SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
     SUBDIR += w3m
@@ -2111,7 +2098,6 @@
     SUBDIR += webalizer
     SUBDIR += webbrowser
     SUBDIR += webcalendar
-    SUBDIR += webcalendar-devel
     SUBDIR += webcheck
     SUBDIR += webcopy
     SUBDIR += webcrawl
@@ -2144,11 +2130,9 @@
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += www6to4
-    SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xapian-omega
-    SUBDIR += xapian-omega10
     SUBDIR += xaraya
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin

@@ -1,4 +1,4 @@
-#T $FreeBSD: head/ftp/Makefile 346583 2014-03-01 00:06:29Z rene $
+#T $FreeBSD: head/ftp/Makefile 367268 2014-09-04 14:24:25Z ale $
 #
 
     COMMENT = FTP client and server utilities
@@ -34,7 +34,6 @@
     SUBDIR += gstreamer1-plugins-curl
     SUBDIR += gwget
     SUBDIR += horde-gollem
-    SUBDIR += horde3-gollem
     SUBDIR += hs-curl
     SUBDIR += hsftp
     SUBDIR += jftp
@@ -70,6 +69,8 @@
     SUBDIR += php53-ftp
     SUBDIR += php55-curl
     SUBDIR += php55-ftp
+    SUBDIR += php56-curl
+    SUBDIR += php56-ftp
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
@@ -95,7 +96,6 @@
     SUBDIR += uftp
     SUBDIR += urlgfe
     SUBDIR += vsftpd
-    SUBDIR += vsftpd-ext
     SUBDIR += waiho
     SUBDIR += weex
     SUBDIR += wget

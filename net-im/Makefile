@@ -1,4 +1,4 @@
-# $FreeBSD: head/net-im/Makefile 363198 2014-07-28 16:38:08Z rene $
+# $FreeBSD: head/net-im/Makefile 367762 2014-09-09 18:48:01Z swills $
 #
 
     COMMENT = Instant messaging
@@ -27,15 +27,12 @@
     SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gloox
-    SUBDIR += gyach
     SUBDIR += hotot
     SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += imspector
-    SUBDIR += iserverd
     SUBDIR += jabber
-    SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
     SUBDIR += jabber.el
     SUBDIR += jabberd
@@ -44,7 +41,6 @@
     SUBDIR += jitsi
     SUBDIR += kde-telepathy
     SUBDIR += kmess-kde4
-    SUBDIR += komclean
     SUBDIR += kopete-kde4
     SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-approver
@@ -56,7 +52,6 @@
     SUBDIR += ktp-kded-integration-module
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
-    SUBDIR += libjingle
     SUBDIR += libjreen
     SUBDIR += libnice
     SUBDIR += libpurple
@@ -68,7 +63,7 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
-    SUBDIR += linpopup
+    SUBDIR += linux-instantbird
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber
@@ -137,6 +132,7 @@
     SUBDIR += ramblercontacts
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
+    SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
     SUBDIR += sendxmpp
@@ -164,6 +160,7 @@
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail
+    SUBDIR += uTox
     SUBDIR += vacuum-im
     SUBDIR += venom
     SUBDIR += vqcc-gtk

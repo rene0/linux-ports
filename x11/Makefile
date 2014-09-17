@@ -1,4 +1,4 @@
-# $FreeBSD: head/x11/Makefile 362332 2014-07-20 16:13:50Z vg $
+# $FreeBSD: head/x11/Makefile 367755 2014-09-09 17:50:06Z bapt $
 #
 
     COMMENT = Ports to support the X window system
@@ -129,6 +129,7 @@
     SUBDIR += kde4-workspace
     SUBDIR += kdelibs4
     SUBDIR += keybinder
+    SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast
     SUBDIR += keylaunch
     SUBDIR += keynav
@@ -191,6 +192,7 @@
     SUBDIR += listres
     SUBDIR += lsw
     SUBDIR += luit
+    SUBDIR += lumina
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxmenu-data
@@ -223,6 +225,7 @@
     SUBDIR += nvidia-driver-96
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
+    SUBDIR += nxcomp
     SUBDIR += ooxcb
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest
@@ -295,6 +298,7 @@
     SUBDIR += vdesk
     SUBDIR += videoproto
     SUBDIR += viewres
+    SUBDIR += virtualgl
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm
