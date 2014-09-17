@@ -274,6 +274,12 @@ MASTER_SITE_EPEL+= \
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
 MASTER_SITE_FEDORA_LINUX+= \
 	http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.pbone.net/vol4/archive.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirror.solarvps.com/fedora/archive/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.gmd.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirror.fraunhofer.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://linuxsoft.cern.ch/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp-mirror.bi.fraunhofer.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
@@ -283,7 +289,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	ftp://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	http://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
-	ftp://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
 	ftp://fedora.mirrors.tds.net/pub/fedora-core/%SUBDIR%/ \
 	http://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
@@ -342,7 +347,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/Linux/MIRROR.fedora/core/%SUBDIR%/ \
-	ftp://ftp.uni-muenster.de/pub/linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.uni-bayreuth.de/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.uni-bayreuth.de/pub/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/linux/fedora/core/%SUBDIR%/ \
@@ -502,7 +506,6 @@ MASTER_SITE_GENTOO+= \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	ftp://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/gentoo/%SUBDIR%/ \
-	ftp://ftp6.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/ \
 	ftp://ftp.tu-clausthal.de/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo/%SUBDIR%/ \
 	ftp://linux.rz.ruhr-uni-bochum.de/gentoo-mirror/%SUBDIR%/ \
@@ -1030,37 +1033,18 @@ MASTER_SITE_PHP+= \
 
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
 MASTER_SITE_PYTHON+= \
-	http://www.python.org/%SUBDIR%/ \
-	http://python.ilisys.com.au/%SUBDIR%/ \
-	http://www.linux.org.hk/mirror/python/%SUBDIR%/ \
-	http://mirrors.sunsite.dk/pythonwww/%SUBDIR%/ \
-	http://python.emdia.fi/%SUBDIR%/ \
-	http://SunSITE.Informatik.RWTH-Aachen.DE/python/%SUBDIR%/ \
-	http://www.auth.gr/mirrors/python/%SUBDIR%/ \
-	http://www.cwi.nl/www.python.org/%SUBDIR%/ \
-	http://gnu.kookel.org/ftp/www.python.org/%SUBDIR%/ \
-	http://python.holywar.net/%SUBDIR%/ \
-	http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/
+	http://www.python.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_QMAIL)
 MASTER_SITE_QMAIL+= \
-	http://qmail.geto.net/%SUBDIR%/ \
-	http://qmail.palomine.net/%SUBDIR%/ \
-	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
-	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
-	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
-	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
 
@@ -1531,7 +1515,6 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
 			PNET:${PNET_MASTER_SITE_SUBDIR} \
-			PYTHON:${PYTHON_MASTER_SITE_SUBDIR} \
 			RUBY_DBI:${RUBY_DBI_MASTER_SITE_SUBDIR} \
 			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
 			SAVANNAH:${PORTNAME:tl} \
