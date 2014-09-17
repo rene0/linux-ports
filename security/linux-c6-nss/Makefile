@@ -17,7 +17,7 @@ CONFLICTS=	linux-f10-nss-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 RPMVERSION=	15.el6
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_APPS=	nspr sqlite3
 
 USE_LINUX_RPM=	yes

@@ -11,7 +11,7 @@ COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-openmotif-[0-9]* linux-f8-openmotif-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 RPMVERSION=	6.1.el6_4
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs

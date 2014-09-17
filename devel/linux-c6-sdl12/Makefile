@@ -13,7 +13,7 @@ COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_V
 CONFLICTS=	linux-sdl12-[0-9]* linux-f8-sdl12-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 INSTALL_SHLIB=	yes

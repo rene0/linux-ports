@@ -10,7 +10,7 @@ COMMENT=	RPM of libglade2 (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-libglade2-[0-9]* linux-f10-libglade2-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	3.1.el6

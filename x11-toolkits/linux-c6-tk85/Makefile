@@ -9,16 +9,9 @@ PKGNAMESUFFIX=	85
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL (Linux CentOS ${LINUX_DIST_VER})
 
-# XXX: someone should make libarchive be quiet about symlinks
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
-EXTRACT_CMD=	rpm2cpio.pl
-EXTRACT_BEFORE_ARGS:=
-EXTRACT_AFTER_ARGS=	| cpio -idm --insecure
-
 CONFLICTS=	linux-f10-tk85-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 

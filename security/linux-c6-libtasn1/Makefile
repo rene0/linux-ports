@@ -8,7 +8,7 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	3.el6_2.1

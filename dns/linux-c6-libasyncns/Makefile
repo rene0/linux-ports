@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-c6-
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	C library for executing DNS queries asynchronously (Linux CentOS ${LINUX_DIST_VER})
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 RPMVERSION=	1.1.el6
 USE_LDCONFIG=	yes

@@ -4,16 +4,14 @@
 PORTNAME=	dbus-libs
 PORTVERSION=	1.2.24
 CATEGORIES=	devel linux
+SRC_DISTFILES=	dbus-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 
-.if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	dbus-1.2.24-7.el6_3.src.rpm
-.endif
 
 USE_LINUX_RPM=	yes
 RPMVERSION=	7.el6_3

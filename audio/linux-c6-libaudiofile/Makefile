@@ -11,7 +11,7 @@ COMMENT=	Implementation of the Audio File Library from SGI (Linux CentOS ${LINUX
 
 CONTFLICTS=	linux-libaudiofile-[0-9]* linux-f10-libaudiofile-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	11.1.el6

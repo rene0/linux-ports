@@ -8,7 +8,7 @@ CATEGORIES=	devel linux
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Terminfo database required by Linux ncurses programs
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 LINUX_NAME=	ncurses
 

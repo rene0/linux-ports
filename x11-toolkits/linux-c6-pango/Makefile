@@ -12,7 +12,7 @@ COMMENT=	Pango library (Linux  CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-pango-[0-9]* linux-f10-pango-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_APPS=	cairo expat fontconfig xorglibs
 USE_LINUX_RPM=	yes
 RPMVERSION=	7.el6_3

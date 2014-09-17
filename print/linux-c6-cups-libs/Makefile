@@ -8,7 +8,7 @@ CATEGORIES=	print linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common UNIX Printing System libraries
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	gnutls
 SRC_DISTFILES=	cups-${PORTVERSION}-${RPMVERSION}.src.rpm

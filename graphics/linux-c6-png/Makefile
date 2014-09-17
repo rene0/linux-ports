@@ -15,7 +15,7 @@ CONFLICTS=	linux-png-[0-9]* linux-f8-png-[0-9]* linux-f10-png-[0-9]*
 LINUX_NAME=	libpng
 ONLY_FOR_ARCHS=	i386 amd64
 RPMVERSION=	1.el6_2
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 

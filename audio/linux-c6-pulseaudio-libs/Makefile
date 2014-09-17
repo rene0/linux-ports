@@ -4,6 +4,7 @@
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.21
 CATEGORIES=	audio linux
+SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})

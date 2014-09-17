@@ -10,7 +10,7 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)(L
 
 CONTFLICTS=	linux-libsndfile-[0-9]* linux-f10-libsndfile-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	5.el6

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	devtools
-PORTVERSION=	10
+PORTVERSION=	6.5
 CATEGORIES=	devel
 DISTFILES=	binutils-2.20.51.0.2-5.36.el6.i686.rpm \
 		binutils-devel-2.20.51.0.2-5.36.el6.i686.rpm \
@@ -29,7 +29,7 @@ COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
 # LICENSE=	Various GNU
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 

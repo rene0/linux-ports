@@ -13,7 +13,7 @@ COMMENT=	Simple library to load True Type Fonts as SDL interfaces (Linux CentOS 
 CONFLICTS=	linux-sdl_ttf-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg png sdl12 tiff
 LINUX_NAME=	SDL_ttf

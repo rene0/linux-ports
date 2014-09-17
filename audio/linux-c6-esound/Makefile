@@ -11,7 +11,7 @@ COMMENT=	RPM of esound (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-esound-[0-9]* linux-f10-esound-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libaudiofile
 LINUX_NAME=	${PORTNAME}-libs

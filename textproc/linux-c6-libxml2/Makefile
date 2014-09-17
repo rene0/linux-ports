@@ -10,7 +10,7 @@ COMMENT=	Library providing XML and HTML support (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
 RPMVERSION=	14.el6

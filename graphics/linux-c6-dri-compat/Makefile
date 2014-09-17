@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dri
-PORTVERSION=	9.2
+PORTVERSION=	9.0
 CATEGORIES=	graphics linux
 DISTFILES=		mesa-libGL-9.0-0.7.el6.i686.rpm \
 		mesa-libGLU-9.0-0.7.el6.i686.rpm \
@@ -27,7 +27,7 @@ SRC_DISTFILES=	mesa-9.0-0.7.el6.src.rpm \
 		freeglut-2.6.0-1.el6.src.rpm
 .endif
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_APPS=	xorglibs
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes

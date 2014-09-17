@@ -13,7 +13,7 @@ COMMENT=	Simple library to load images as SDL interfaces (Linux CentOS ${LINUX_D
 CONFLICTS=	linux-sdl_image-[0-9]* linux-f8-sdl_image-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg png sdl12 tiff
 LINUX_NAME=	SDL_image

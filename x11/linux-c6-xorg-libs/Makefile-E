@@ -82,7 +82,7 @@ COMMENT=		Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=		linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]* linux-f10-xorg-libs-[0-9]*
 
-USE_LINUX=	c6
+USE_LINUX=	yes
 USE_LINUX_APPS=		fontconfig
 USE_LINUX_RPM=		yes
 USE_LDCONFIG=		yes

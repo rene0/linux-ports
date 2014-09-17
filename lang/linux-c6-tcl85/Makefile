@@ -20,7 +20,7 @@ CONFLICTS=	linux-f10-tcl85-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 RPMVERSION=	6.el6
 BRANDELF_FILES=	usr/bin/tclsh usr/bin/tclsh8.5

@@ -14,7 +14,7 @@ COMMENT=	RPM of QT4 (Linux CentOS 5)
 ONLY_FOR_ARCHS=	i386 amd64
 SRC_DISTFILES:=		# unretrievable.
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LDCONFIG=	yes
 LINUX_DIST_VER=	5
 

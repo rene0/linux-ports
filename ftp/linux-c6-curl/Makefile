@@ -15,7 +15,7 @@ CONFLICTS=	linux-curl-[0-9]* linux-f10-curl-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_APPS=	openldap libssh2 # cyrus-sasl2
 USE_LINUX_RPM=	yes
 RPMVERSION=	37.el6_4

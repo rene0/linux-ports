@@ -4,6 +4,7 @@
 PORTNAME=	tcp_wrappers-libs
 PORTVERSION=	7.6
 CATEGORIES=	audio linux
+SRC_DISTFILES=	tcp_wrappers-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})

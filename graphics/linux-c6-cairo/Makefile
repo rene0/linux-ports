@@ -12,7 +12,7 @@ COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-cairo-[0-9]* linux-f10-cairo-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig png xorglibs
 

@@ -11,7 +11,7 @@ COMMENT=	Lightweight Directory Access Protocol libraries (Linux CentOS ${LINUX_D
 CONFLICTS=	linux-f10-openldap-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
+USE_LINUX=	c6
 #USE_LINUX_APPS=	openssl
 RPMVERSION=	32.el6_4.1
 USE_LINUX_RPM=	yes
