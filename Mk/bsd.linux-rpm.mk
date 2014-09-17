@@ -51,9 +51,9 @@ IGNORE=		This port requires CentOS 6.5. Please remove OVERRIDE_LINUX_NONBASE_POR
 LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
 .		elif ${USE_LINUX} == "f10" || ${USE_LINUX} == "yes" # temporary default, move or clause to line 46
 # Do not build Fedora 10 ports unless specifically overridden.
-.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
-IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
-.			endif
+#.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
+#IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
+#.			endif
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .		else
 LINUX_RPM_ARCH?=	${ARCH}
