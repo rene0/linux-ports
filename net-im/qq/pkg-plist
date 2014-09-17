@@ -1,4 +1,0 @@
-bin/qq
-%%QQDIR%%/qq
-%%QQDIR%%/res.db
-@dirrm %%QQDIR%%
