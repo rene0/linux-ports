@@ -11,10 +11,6 @@ PKGNAMESUFFIX=	85
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Tool Command Language (Linux Fedora 10)
 
-EXTRACT_CMD=	rpm2cpio
-EXTRACT_BEFORE_ARGS:=
-EXTRACT_AFTER_ARGS=	| cpio -idm --insecure
-
 CONFLICTS=	linux-f8-tcl84-[0-9]* linux-c6-tcl85-[0-9]*
 
 USE_LINUX=	f10
