@@ -59,6 +59,12 @@ subdirectory)  with the following command:
     rsync -av --exclude=.git/ linux-ports/ /usr/ports/
 ```
 
+Amend `/etc/make.conf` to include the following lines:
+
+```
+    OVERRIDE_LINUX_BASE_PORT=c6
+    OVERRIDE_LINUX_NONBASE_PORTS=c6
+```
 
 Now, install the actual linux base - `emulators/linux_base-c6`:
 ```
@@ -167,3 +173,16 @@ the Hardware Acceleration and Google Earth will be _painfully_ slow.
 
 Note: I'm not sure if this applies to NVIDIA or ATI boards as well. I appreciate every
 report to the contrary.
+
+
+Notebook for upstreaming to ports/head:
+---------------------------------------
+astro/google-earth needs apps:libpciaccess, nvidia_gl and monkeypatching.
+
+devel/linux_kdump needs slight addition to recognize centos release
+
+math/matlab-installer requires devtools linux-app, only defined in c6 Mk/
+
+www/nspluginwrapper needs two additional lines in files/patch-src__npw-config.c
+
+www/linux-seamonkey/Makefile.common needs logic reversion when dealing with /f10/ NONBASE overrides.
