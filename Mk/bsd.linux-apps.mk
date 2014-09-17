@@ -57,17 +57,19 @@ LINUX_DIST_SUFFIX=	-c6
 WEB_AUTH=			nvu
 
 # Non-version specific components
-_LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri devtools esound expat \
-					fontconfig freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
-					libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg libpciaccess \
-					libsigcpp20 libtasn1 libtheora libvorbis libxml2 mikmod naslibs \
-					ncurses-base openal openmotif openssl openssl-compat pango png scimgtk \
-					scimlibs sdl12 sdlimage sdlmixer sdlttf tiff xorglibs ucl ungif upx webauth
+_LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
+					arts aspell atk cairo cups-libs curl dri devtools esound expat \
+					flac fontconfig freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
+					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
+					libpciaccess libsigcpp20 libsndfile libtasn1 libtheora libvorbis libxml2 mikmod \
+					naslibs ncurses-base openal openmotif openssl openssl-compat pango png \
+					pulseaudio-libs scimgtk scimlibs sdl12 sdlimage sdlmixer sdlttf tiff \
+					tcp_wrappers-libs xorglibs ucl ungif upx webauth
 
 # 2.6.16 components
-_LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
-			libasyncns libidn libssh2 libv4l nspr nss openal-soft \
-			openldap pulseaudio-libs qt45 sqlite3 tcl85 tk85 qt47 qt47-x11 qt47-webkit
+_LINUX_26_APPS=		 blt cyrus-sasl2 dbusglib dbuslibs \
+			libidn libssh2 libv4l nspr nss openal-soft \
+			openldap  qt45 sqlite3 tcl85 tk85 qt47 qt47-x11 qt47-webkit
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
 
@@ -92,6 +94,11 @@ alsa-plugins-oss_c6_FILE=	${LINUXBASE}/usr/lib/alsa-lib/libasound_module_pcm_oss
 alsa-plugins-oss_DETECT=	${alsa-plugins-oss${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 alsa-plugins-oss_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-alsa-plugins-oss
 alsa-plugins-oss_DEPENDS=	alsalib
+
+alsa-plugins-pulseaudio_c6_FILE=	${LINUXBASE}/usr/lib/alsa-lib/libasound_module_conf_pulse.so
+alsa-plugins-pulseaudio_DETECT=	${alsa-plugins-oss${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+alsa-plugins-pulseaudio_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-alsa-plugins-pulseaudio
+alsa-plugins-pulseaudio_DEPENDS=	alsalib
 
 alsalib_f10_FILE=	${LINUXBASE}/lib/libasound.so.2.0.0
 alsalib_c6_FILE=	${LINUXBASE}/lib/libasound.so.2.0.0
@@ -180,6 +187,10 @@ fontconfig_DETECT=	${fontconfig${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 fontconfig_PORT=	${PORTSDIR}/x11-fonts/linux${LINUX_DIST_SUFFIX}-fontconfig
 fontconfig_DEPENDS=	expat
 
+flac_c6_FILE=		${LINUXBASE}/usr/lib/libFLAC.so.8.2.0
+flac_DETECT=		${flac${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+flac_PORT=			${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-flac
+
 freealut_f10_FILE=	${LINUXBASE}/usr/lib/libalut.so.0.1.0
 freealut_DETECT=	${freealut${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 freealut_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-freealut
@@ -216,6 +227,7 @@ jpeg_DETECT=		${jpeg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 jpeg_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-jpeg
 
 libasyncns_f10_FILE=	${LINUXBASE}/usr/lib/libasyncns.so.0.3.1
+libasyncns_c6_FILE=	${LINUXBASE}/usr/lib/libasyncns.so.0.3.1
 libasyncns_DETECT=	${libasyncns${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libasyncns_PORT=	${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libasyncns
 
@@ -234,6 +246,7 @@ libgcrypt_DETECT=	${libgcrypt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libgcrypt_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libgcrypt
 
 libglade2_f10_FILE=	${LINUXBASE}/usr/lib/libglade-2.0.so.0.0.7
+libglade2_c6_FILE=	${LINUXBASE}/usr/lib/libglade-2.0.so.0.0.7
 libglade2_DETECT=	${libglade2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglade2_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libglade2
 
@@ -267,6 +280,10 @@ libpciaccess_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libpciaccess
 libsigcpp20_f10_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
 libsigcpp20_DETECT=	${libsigcpp20${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libsigcpp20_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libsigc++20
+
+libsndfile_c6_FILE=	${LINUXBASE}/usr/lib/libsndfile.so.1.0.20
+libsndfile_DETECT=	${libsndfile${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libsndfile_PORT=	${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libsndfile
 
 libssh2_f10_FILE=	${LINUXBASE}/usr/lib/libssh2.so.1
 libssh2_c6_FILE=	${LINUXBASE}/usr/lib/libssh2.so.1.0.1
@@ -370,6 +387,7 @@ png_DETECT=			${png${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 png_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-png
 
 pulseaudio-libs_f10_FILE=	${LINUXBASE}/usr/lib/libpulse.so.0
+pulseaudio-libs_c6_FILE=	${LINUXBASE}/usr/lib/libpulse.so.0.12.2
 pulseaudio-libs_DETECT=		${pulseaudio-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 pulseaudio-libs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-pulseaudio-libs
 
@@ -420,6 +438,10 @@ tcl85_f10_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
 tcl85_c6_FILE=		${LINUXBASE}/usr/lib/libtcl8.5.so
 tcl85_DETECT=		${tcl85${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 tcl85_PORT=		${PORTSDIR}/lang/linux${LINUX_DIST_SUFFIX}-tcl85
+
+tcp_wrappers-libs_c6_FILE=	${LINUXBASE}/lib/libwrap.so.0
+tcp_wrappers-libs_DETECT=	${tcp_wrappers-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+tcp_wrappers-libs_PORT=	${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-tcp_wrappers-libs
 
 tiff_f10_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.8.2
 tiff_c6_FILE=		${LINUXBASE}/usr/lib/libtiff.so.3.9.4
