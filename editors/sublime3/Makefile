@@ -13,9 +13,9 @@ COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
 USES=	tar:bzip2
 INSTALLS_ICONS=	yes
-WRKSRC=	${WRKDIR}/"sublime_text_3"
+WRKSRC=	${WRKDIR}/sublime_text_3
 
-CONFLITS=	linux-sublime-[0-9]*
+CONFLICTS=	linux-sublime-[0-9]*
 
 NO_BUILD=
 STRIP=	# don't strip linux binaries.

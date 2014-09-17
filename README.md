@@ -41,7 +41,7 @@ To make the change permanent, add the module to your `/etc/rc.conf` kld_list:
 ```
 
 Proceed to change the compatibility level of the Linux kernel OS release by running
-the following command: asdf
+the following command:
 ```
     # sysctl compat.linux.osrelease=2.6.18
 ```
