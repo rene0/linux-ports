@@ -1,7 +1,7 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	linux-f10-meta
+PORTNAME=	linux-f10
 PORTVERSION=	0.1
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
@@ -86,7 +86,6 @@ RUN_DEPENDS+=	dns/linux-f10-libasyncns>0:${PORTSDIR}/dns/linux-f10-libasyncns \
 		graphics/linux-f10-png>0:${PORTSDIR}/graphics/linux-f10-png \
 		graphics/linux-f10-sdl_ttf>0:${PORTSDIR}/graphics/linux-f10-sdl_ttf \
 		graphics/linux-f10-jpeg>0:${PORTSDIR}/graphics/linux-f10-jpeg \
-		graphics/linux-f10-libGLU>0:${PORTSDIR}/graphics/linux-f10-libGLU \
 		graphics/linux-f10-tiff>0:${PORTSDIR}/graphics/linux-f10-tiff \
 		graphics/linux-f10-dri>0:${PORTSDIR}/graphics/linux-f10-dri \
 		graphics/linux-f10-imlib>0:${PORTSDIR}/graphics/linux-f10-imlib \
@@ -95,13 +94,6 @@ RUN_DEPENDS+=	dns/linux-f10-libasyncns>0:${PORTSDIR}/dns/linux-f10-libasyncns \
 		graphics/linux-f10-sdl_image>0:${PORTSDIR}/graphics/linux-f10-sdl_image \
 		graphics/linux-f10-glew>0:${PORTSDIR}/graphics/linux-f10-glew \
 		graphics/linux-f10-cairo>0:${PORTSDIR}/graphics/linux-f10-cairo
+# don't pull in graphics/linux-f10-libGLU -- conflicts with graphics/linux-f10-dri
 
-.include <bsd.port.pre.mk>
-
-.if make(package)
-.if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
-DEPENDS_TARGET="package"
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

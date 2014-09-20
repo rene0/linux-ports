@@ -1,7 +1,7 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	linux-c6-meta
+PORTNAME=	linux-c6
 PORTVERSION=	0.1
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
@@ -87,13 +87,4 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo \
 		linux-c6-dri>0:${PORTSDIR}/graphics/linux-c6-dri
 
-.include <bsd.port.pre.mk>
-
-.if make(package)
-.if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
-DEPENDS_TARGET="package"
-.endif
-.endif
-
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>
