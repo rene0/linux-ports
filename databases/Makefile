@@ -149,8 +149,8 @@
     SUBDIR += libpbl
     SUBDIR += libsdb
     SUBDIR += libzdb
-    SUBDIR += linux-f10-sqlite3
     SUBDIR += linux-c6-sqlite3
+    SUBDIR += linux-f10-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
@@ -810,10 +810,8 @@
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
     SUBDIR += ruby-dbd_mysql
-    SUBDIR += ruby-dbd_odbc
     SUBDIR += ruby-dbd_pg
     SUBDIR += ruby-dbd_sqlite
-    SUBDIR += ruby-dbd_sqlite3
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql

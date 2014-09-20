@@ -246,6 +246,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += kamailio
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
     SUBDIR += kdenetwork4-strigi-analyzers
@@ -327,6 +328,8 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
+    SUBDIR += linux-c6-openldap
+    SUBDIR += linux-c6-tcp_wrappers-libs
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd
@@ -864,6 +867,7 @@
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
     SUBDIR += py-google
+    SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
     SUBDIR += py-ipaddress
@@ -975,9 +979,7 @@
     SUBDIR += rtpproxy
     SUBDIR += rtptools
     SUBDIR += ruby-dict
-    SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
-    SUBDIR += ruby-ldap
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amazon-ec2
@@ -1022,6 +1024,7 @@
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
@@ -1253,6 +1256,5 @@
     SUBDIR += zeroconf-ioslave
     SUBDIR += zillion
     SUBDIR += zsync
-    SUBDIR += linux-c6-openldap
 
 .include <bsd.port.subdir.mk>

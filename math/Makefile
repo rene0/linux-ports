@@ -1,4 +1,4 @@
-# $FreeBSD: head/math/Makefile 363814 2014-08-02 13:16:57Z pi $
+# $FreeBSD: head/math/Makefile 368187 2014-09-14 14:47:11Z swills $
 #
 
     COMMENT = Mathematics
@@ -63,11 +63,9 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += atlas-devel
     SUBDIR += bamg
     SUBDIR += bargraph
     SUBDIR += biggles
-    SUBDIR += bihar
     SUBDIR += blacs
     SUBDIR += blas
     SUBDIR += blitz++
@@ -168,45 +166,36 @@
     SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
-    SUBDIR += hs-comonad-transformers
-    SUBDIR += hs-comonads-fd
     SUBDIR += hs-contravariant
     SUBDIR += hs-data-lens
     SUBDIR += hs-data-lens-template
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
-    SUBDIR += hs-groupoids
     SUBDIR += hs-ieee754
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
     SUBDIR += hs-nats
     SUBDIR += hs-pointed
     SUBDIR += hs-probability
-    SUBDIR += hs-semigroupoid-extras
     SUBDIR += hs-semigroupoids
     SUBDIR += hs-semigroups
     SUBDIR += hs-statistics
     SUBDIR += hs-vector-space
     SUBDIR += igraph
+    SUBDIR += ipopt
     SUBDIR += isabelle
     SUBDIR += ised
-    SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jags
     SUBDIR += jakarta-commons-math
     SUBDIR += jakarta-commons-math3
     SUBDIR += jama
-    SUBDIR += javanns
-    SUBDIR += javaview
     SUBDIR += jeuclid
     SUBDIR += jlatexmath
-    SUBDIR += jsmath
     SUBDIR += jsmath-fonts
-    SUBDIR += jsmath-fonts-sprite
     SUBDIR += jtransforms
     SUBDIR += jts
     SUBDIR += kalgebra
-    SUBDIR += kash3
     SUBDIR += kbruch
     SUBDIR += kcalc
     SUBDIR += kig
@@ -245,7 +234,6 @@
     SUBDIR += mathomatic
     SUBDIR += matio
     SUBDIR += matlab-installer
-    SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += mbasecalc
     SUBDIR += metis
@@ -255,11 +243,11 @@
     SUBDIR += minisat
     SUBDIR += miracl
     SUBDIR += moo
+    SUBDIR += mosesdecoder
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mpir
-    SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl
     SUBDIR += mtrxmath
@@ -526,14 +514,16 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += pecl-trader
-    SUBDIR += petsc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
     SUBDIR += php53-bcmath
     SUBDIR += php53-gmp
     SUBDIR += php55-bcmath
     SUBDIR += php55-gmp
+    SUBDIR += php56-bcmath
+    SUBDIR += php56-gmp
     SUBDIR += physcalc
+    SUBDIR += picosat
     SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
@@ -575,6 +565,7 @@
     SUBDIR += py-plastex
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
+    SUBDIR += py-pycosat
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific
@@ -604,13 +595,8 @@
     SUBDIR += rpy
     SUBDIR += rpy2
     SUBDIR += ruby-algebra
-    SUBDIR += ruby-fftw3
-    SUBDIR += ruby-gnuplot
-    SUBDIR += ruby-gsl
-    SUBDIR += ruby-narray
-    SUBDIR += ruby-narray_miss
-    SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-narray
     SUBDIR += rubygem-narray_miss
     SUBDIR += rubygem-numru-misc
@@ -623,9 +609,7 @@
     SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt
     SUBDIR += sdpa
-    SUBDIR += sdpa-gmp
     SUBDIR += sdpara
-    SUBDIR += sedumi
     SUBDIR += sfft
     SUBDIR += sfst
     SUBDIR += simd-viterbi
@@ -657,7 +641,6 @@
     SUBDIR += ufc
     SUBDIR += ump
     SUBDIR += units
-    SUBDIR += unixstat
     SUBDIR += unuran
     SUBDIR += vtk5
     SUBDIR += vtk5-data

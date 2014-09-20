@@ -7,6 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype-${DISTVERSION}
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	xmj@chaot.net
 COMMENT=	P2P VoIP software

@@ -616,7 +616,6 @@
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
-    SUBDIR += p5-openxpki-client-html-mason
     SUBDIR += p5-openxpki-i18n
     SUBDIR += pad
     SUBDIR += pam-mysql
@@ -862,8 +861,6 @@
     SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += ruby-camellia
-    SUBDIR += ruby-crypt
-    SUBDIR += ruby-gpgme
     SUBDIR += ruby-hmac
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap

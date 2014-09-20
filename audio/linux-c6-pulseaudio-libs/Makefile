@@ -9,6 +9,7 @@ SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
+USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 

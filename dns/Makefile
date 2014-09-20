@@ -1,4 +1,4 @@
-# $FreeBSD: head/dns/Makefile 356309 2014-06-03 08:36:10Z miwi $
+# $FreeBSD: head/dns/Makefile 367789 2014-09-09 22:48:40Z marino $
 #
 
     COMMENT = Domain Name Service tools
@@ -21,6 +21,7 @@
     SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += ddns
+    SUBDIR += denominator
     SUBDIR += dhisd
     SUBDIR += djbdns
     SUBDIR += djbdns-tools
@@ -34,6 +35,7 @@
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnsflood
     SUBDIR += dnshijacker
+    SUBDIR += dnshistory
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsmasq-devel
@@ -58,6 +60,8 @@
     SUBDIR += ghtool
     SUBDIR += hesiod
     SUBDIR += hostdb
+    SUBDIR += hs-dns
+    SUBDIR += hs-gnuidn
     SUBDIR += idnkit
     SUBDIR += idnkit2
     SUBDIR += inadyn
@@ -71,7 +75,9 @@
     SUBDIR += libbind
     SUBDIR += libdjbdns
     SUBDIR += libidn
+    SUBDIR += linux-c6-libasyncns
     SUBDIR += linux-f10-libasyncns
+    SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += maradns1
     SUBDIR += mdnsd
@@ -136,8 +142,6 @@
     SUBDIR += pear-File_DNS
     SUBDIR += pear-Net_DNS
     SUBDIR += pear-Net_DNS2
-    SUBDIR += posadis
-    SUBDIR += poweradmin
     SUBDIR += powerdns
     SUBDIR += powerdns-devel
     SUBDIR += powerdns-recursor

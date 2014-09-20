@@ -13,6 +13,7 @@ COMMENT=	Meta-port for all things CentOS ${LINUX_DIST_VER}
 
 NO_BUILD=	yes
 NO_MTREE=	yes
+NO_INSTALL=	yes
 
 # base
 USE_LINUX=	c6
@@ -85,8 +86,6 @@ RUN_DEPENDS+=	linux-c6-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncns \
 		linux-c6-jpeg>0:${PORTSDIR}/graphics/linux-c6-jpeg \
 		linux-c6-cairo>0:${PORTSDIR}/graphics/linux-c6-cairo \
 		linux-c6-dri>0:${PORTSDIR}/graphics/linux-c6-dri
-
-do-install: # empty
 
 .include <bsd.port.pre.mk>
 

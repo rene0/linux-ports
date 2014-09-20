@@ -68,9 +68,6 @@ do-build:
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh \
 		bin/googleearth.orig
 
-pre-su-install:
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages

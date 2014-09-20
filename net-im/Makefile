@@ -138,6 +138,7 @@
     SUBDIR += sendxmpp
     SUBDIR += skype
     SUBDIR += skype-devel
+    SUBDIR += skype4
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-gabble
@@ -166,6 +167,5 @@
     SUBDIR += vqcc-gtk
     SUBDIR += yoono
     SUBDIR += zephyr
-    SUBDIR += skype4
 
 .include <bsd.port.subdir.mk>

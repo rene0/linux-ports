@@ -21,4 +21,9 @@ USE_LINUX_RPM=	yes
 RPMVERSION=	3.el6
 USE_LDCONFIG=	yes
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-ac97.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-hda.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-sbase.la
+
 .include <bsd.port.mk>

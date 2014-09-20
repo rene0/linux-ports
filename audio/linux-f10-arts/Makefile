@@ -3,6 +3,7 @@
 
 PORTNAME=		arts
 PORTVERSION=		1.5.10
+PORTREVISION=		1
 CATEGORIES=		audio kde linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 
@@ -18,5 +19,9 @@ USE_LINUX_RPM=		yes
 RPMVERSION=		1.fc10
 BRANDELF_DIRS=		usr/bin
 USE_LDCONFIG=		yes
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/*.la
+
 
 .include <bsd.port.mk>

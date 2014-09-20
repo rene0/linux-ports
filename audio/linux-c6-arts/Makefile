@@ -18,4 +18,7 @@ RPMVERSION=			10.el6
 BRANDELF_DIRS=		usr/bin
 USE_LDCONFIG=		yes
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/*.la
+
 .include <bsd.port.mk>

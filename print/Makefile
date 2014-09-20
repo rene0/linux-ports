@@ -118,8 +118,8 @@
     SUBDIR += libspectre
     SUBDIR += lilypond
     SUBDIR += lilypond-devel
-    SUBDIR += linux-f10-cups-libs
     SUBDIR += linux-c6-cups-libs
+    SUBDIR += linux-f10-cups-libs
     SUBDIR += lout
     SUBDIR += lpr-wrapper
     SUBDIR += lprps

@@ -1,8 +1,8 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/www/linux-seamonkey/Makefile 367712 2014-09-09 06:16:35Z bapt $
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.24
+DISTVERSION=	2.29
 CATEGORIES=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 
@@ -11,7 +11,7 @@ COMMENT=	The open source, standards compliant web browser
 
 USES=		tar:bzip2
 
-USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
+WANT_GTK218=	yes
 
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.mk>

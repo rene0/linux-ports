@@ -1,4 +1,4 @@
-# $FreeBSD: head/archivers/Makefile 361425 2014-07-10 05:30:16Z mm $
+# $FreeBSD: head/archivers/Makefile 367830 2014-09-10 13:11:28Z bapt $
 #
 
     COMMENT = Archivers
@@ -20,6 +20,7 @@
     SUBDIR += dpkg
     SUBDIR += dzip
     SUBDIR += ecm
+    SUBDIR += engrampa
     SUBDIR += epkg
     SUBDIR += fastjar
     SUBDIR += file-roller
@@ -41,7 +42,6 @@
     SUBDIR += hs-zip-archive
     SUBDIR += hs-zlib
     SUBDIR += hs-zlib-bindings
-    SUBDIR += hs-zlib-conduit
     SUBDIR += hs-zlib-enum
     SUBDIR += javatar
     SUBDIR += jzip.org
@@ -79,7 +79,6 @@
     SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mar
-    SUBDIR += mate-file-archiver
     SUBDIR += minizip
     SUBDIR += mscompress
     SUBDIR += mtf
@@ -99,6 +98,7 @@
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
+    SUBDIR += p5-Compress-LZ4
     SUBDIR += p5-Compress-LZF
     SUBDIR += p5-Compress-LZO
     SUBDIR += p5-Compress-LZW
@@ -150,6 +150,10 @@
     SUBDIR += php55-phar
     SUBDIR += php55-zip
     SUBDIR += php55-zlib
+    SUBDIR += php56-bz2
+    SUBDIR += php56-phar
+    SUBDIR += php56-zip
+    SUBDIR += php56-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip
@@ -171,7 +175,7 @@
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
-    SUBDIR += rubygem-bzip2
+    SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
     SUBDIR += rubygem-rubyzip
@@ -205,7 +209,6 @@
     SUBDIR += unshield
     SUBDIR += untar
     SUBDIR += unzip
-    SUBDIR += unzip-iconv
     SUBDIR += unzoo
     SUBDIR += upx
     SUBDIR += wzip
