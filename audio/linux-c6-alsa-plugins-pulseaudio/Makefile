@@ -25,5 +25,4 @@ RPMVERSION=	3.el6
 
 USE_LDCONFIG=	yes
 
-
 .include <bsd.port.mk>

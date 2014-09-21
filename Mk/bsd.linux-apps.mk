@@ -39,19 +39,20 @@ Linux_APPS_Pre_Include=			bsd.linux-apps.mk
 
 Linux_APPS_Post_Include=	bsd.linux-apps.mk
 
-.  if defined(OVERRIDE_LINUX_NONBASE_PORTS)
-.	if ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
-LINUX_DIST_SUFFIX=	-f10
-.	else
-.		if ${OVERRIDE_LINUX_NONBASE_PORTS} == "c6"
-LINUX_DIST_SUFFIX=	-c6
-.		else
-IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
-.		endif
-.	endif
+#new
+. if defined(OVERRIDE_LINUX_NONBASE_PORTS)
+.        if ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10" || ${OVERRIDE_LINUX_NONBASE_PORTS} == "c6"
+LINUX_DIST_SUFFIX=      -${OVERRIDE_LINUX_NONBASE_PORTS}
+.        else
+IGNORE=         valid values for OVERRIDE_LINUX_NONBASE_PORTS are: \"f10\" and \"c6\"
+.        endif
+. elif defined(USE_LINUX)
+.        if ${USE_LINUX} == "f10" || ${USE_LINUX} == "c6"
+LINUX_DIST_SUFFIX=      -${USE_LINUX}
+.        endif
 .  else
 # default
-LINUX_DIST_SUFFIX=	-f10 # temporary default, set to -c6 soon
+LINUX_DIST_SUFFIX=      -f10 # temporary default, set to -c6 soon
 .  endif
 
 WEB_AUTH=			nvu

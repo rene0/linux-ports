@@ -574,8 +574,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
-# INSTALL_MAN	- A command to install manpages.  May or not compress,
-#				  depending on the value of MANCOMPRESSED (see below).
+# INSTALL_MAN	- A command to install manpages.
 # COPYTREE_BIN
 # COPYTREE_SHARE
 #				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
@@ -1100,6 +1099,7 @@ CO_ENV+=	STAGEDIR=${STAGEDIR} \
 			PLIST_SUB_SED="${PLIST_SUB_SED}" \
 			PORT_OPTIONS="${PORT_OPTIONS}" \
 			PORTSDIR="${PORTSDIR}"
+MINIMAL_PKG_VERSION=	1.3.7
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1218,6 +1218,16 @@ WITH_NEW_XORG?=	yes
 
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+.if exists(${PKG_BIN})
+.if !defined(_PKG_VERSION)
+_PKG_VERSION!=	${PKG_BIN} -v
+.endif
+_PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
+.if ${_PKG_STATUS} == "<"
+IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade pkg(8) first
+.endif
+.endif
 
 MASTERDIR?=	${.CURDIR}
 
@@ -1519,6 +1529,12 @@ CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 WWWOWN?=	www
 WWWGRP?=	www
 
+# Keep PKGNG_ORIGIN/WITH_PKGNG for compat with scripts which are looking for it
+PKG_ORIGIN?=	ports-mgmt/pkg
+PKGNG_ORIGIN=	${PKG_ORIGIN}
+WITH_PKGNG?=	yes
+WITH_PKG?=	${WITH_PKGNG}
+
 .endif
 # End of pre-makefile section.
 
@@ -1616,17 +1632,6 @@ MAKE_SHELL?=	${SH}
 CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
-.if defined(MANCOMPRESSED)
-.if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
-	${MANCOMPRESSED} != maybe
-check-makevars::
-	@${ECHO_MSG} "${PKGNAME}: Makefile error: value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
-	@${FALSE}
-.endif
-.endif
-
-MANCOMPRESSED?=	no
-
 .if defined(PATCHFILES)
 .if ${PATCHFILES:M*.zip}x != x
 PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
@@ -1663,12 +1668,6 @@ IGNORE=		requires i386 (or compatible) platform to run
 LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
-
-# Keep PKGNG_ORIGIN/WITH_PKGNG for compat with scripts which are looking for it
-PKG_ORIGIN?=	ports-mgmt/pkg
-PKGNG_ORIGIN=	${PKG_ORIGIN}
-WITH_PKGNG?=	yes
-WITH_PKG?=	${WITH_PKGNG}
 
 .if ${WITH_PKG} == devel
 PKG_ORIGIN=		ports-mgmt/pkg-devel
@@ -2263,21 +2262,6 @@ TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
 TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
 
-.if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
-.if !defined(NO_MTREE)
-PKG_ARGS+=		-m ${MTREE_FILE}
-.endif
-.if defined(PKGORIGIN)
-PKG_ARGS+=		-o ${PKGORIGIN}
-.endif
-.if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=		-C "${CONFLICTS}"
-.endif
-.if defined(CONFLICTS_INSTALL) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=		-C "${CONFLICTS_INSTALL}"
-.endif
-.endif
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
@@ -3630,7 +3614,7 @@ do-package: ${TMPPLIST}
 	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -f ${PKG_SUFX:S/.//} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
 			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
-				|| ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+				|| ${CP} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
@@ -5005,7 +4989,7 @@ missing:
 		fi; \
 	done
 
-# shwo missing dependencies by name
+# Show missing dependencies by name
 missing-packages:
 	@_packages=$$(${PKG_INFO} -aq); \
 	for dir in $$(${ALL-DEPENDS-LIST}); do \
@@ -6053,8 +6037,8 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
 				configure-autotools pre-configure pre-configure-script \
-				run-autotools patch-libtool do-configure post-configure \
-				post-configure-script
+				run-autotools do-autoreconf patch-libtool do-configure \
+				post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
