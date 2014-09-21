@@ -1,4 +1,4 @@
-# $FreeBSD: head/sysutils/Makefile 368241 2014-09-15 02:27:39Z vanilla $
+# $FreeBSD: head/sysutils/Makefile 368669 2014-09-20 17:42:15Z marino $
 #
 
     COMMENT = System utilities
@@ -824,6 +824,7 @@
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-yell
+    SUBDIR += rundeck
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm

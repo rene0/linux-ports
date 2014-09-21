@@ -1,4 +1,4 @@
-# $FreeBSD: head/www/Makefile 368352 2014-09-17 01:25:45Z wblock $
+# $FreeBSD: head/www/Makefile 368697 2014-09-20 21:56:03Z rene $
 #
 
     COMMENT = Ports related to the World Wide Web
@@ -62,6 +62,7 @@
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
+    SUBDIR += calendarserver
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -1728,7 +1729,6 @@
     SUBDIR += rt42
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
-    SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack

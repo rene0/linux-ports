@@ -1,4 +1,4 @@
-# $FreeBSD: head/databases/Makefile 368156 2014-09-14 02:06:58Z swills $
+# $FreeBSD: head/databases/Makefile 368734 2014-09-21 09:43:31Z dinoex $
 #
 
     COMMENT = Databases
@@ -809,10 +809,6 @@
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
-    SUBDIR += ruby-dbd_mysql
-    SUBDIR += ruby-dbd_pg
-    SUBDIR += ruby-dbd_sqlite
-    SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
@@ -831,12 +827,17 @@
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel3
+    SUBDIR += rubygem-aspectr
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
+    SUBDIR += rubygem-dbd-mysql
+    SUBDIR += rubygem-dbd-odbc
+    SUBDIR += rubygem-dbd-pg
+    SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates
