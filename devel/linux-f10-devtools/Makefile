@@ -19,6 +19,9 @@ DISTFILES=	binutils-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		gcc-c++-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
 		gcc-gfortran-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin
 
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Linux compilers and base libraries
+
 .if defined(PACKAGE_BUILDING)
 MASTER_SITES+=	http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/${PORTVERSION}/SRPMS/:src \
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/source/SRPMS/:src
@@ -29,9 +32,6 @@ SRC_DISTFILES=	binutils-2.18.50.0.9-8.fc10.src.rpm:src \
 		mpfr-2.3.2-1.fc10.src.rpm:src \
 		gcc-4.3.2-7.src.rpm:src
 .endif
-
-MAINTAINER=	jwbacon@tds.net
-COMMENT=	Linux compilers and base libraries
 
 # LICENSE=	Various GNU
 

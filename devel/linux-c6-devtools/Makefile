@@ -16,13 +16,6 @@ DISTFILES=	binutils-2.20.51.0.2-5.36.el6.i686.rpm \
 		gcc-c++-4.4.7-4.el6.i686.rpm \
 		gcc-gfortran-4.4.7-4.el6.i686.rpm
 
-SRC_DISTFILES=	binutils-2.20.51.0.2-5.36.el6.src.rpm \
-		glibc-2.12-1.132.el6.src.rpm \
-		gmp-4.3.1-7.el6_2.2.src.rpm \
-		kernel-2.6.32-431.el6.src.rpm \
-		mpfr-2.4.1-6.el6.src.rpm \
-		gcc-4.4.7-4.el6.src.rpm
-
 MAINTAINER=	emulation@freebsd.org
 COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
 
@@ -34,5 +27,12 @@ USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	NLS=""
+
+SRC_DISTFILES=	binutils-2.20.51.0.2-5.36.el6.src.rpm \
+		glibc-2.12-1.132.el6.src.rpm \
+		gmp-4.3.1-7.el6_2.2.src.rpm \
+		kernel-2.6.32-431.el6.src.rpm \
+		mpfr-2.4.1-6.el6.src.rpm \
+		gcc-4.4.7-4.el6.src.rpm
 
 .include <bsd.port.mk>

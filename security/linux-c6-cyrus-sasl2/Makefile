@@ -7,7 +7,6 @@ CATEGORIES=	security linux
 DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS ${LINUX_DIST_VER})
 
 #DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
@@ -15,7 +14,7 @@ COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS 
 ONLY_FOR_ARCHS=	i386 amd64
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES=	cyrus-sasl-2.1.23-13.el6_3.1.src.rpm
-.endif 
+.endif
 
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes

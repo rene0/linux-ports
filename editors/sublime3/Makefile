@@ -5,8 +5,8 @@ PORTNAME=	sublime
 PORTVERSION=	3.0.65
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
-DISTNAME=	sublime_text_3_build_3065_x32
 PKGNAMEPREFIX=	linux-
+DISTNAME=	sublime_text_3_build_3065_x32
 
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
@@ -15,7 +15,7 @@ USES=	tar:bzip2
 INSTALLS_ICONS=	yes
 WRKSRC=	${WRKDIR}/sublime_text_3
 
-CONFLICTS=	linux-sublime-[0-9]*
+CONFLICTS=	linux-sublime-[0-24-9]*
 
 NO_BUILD=
 STRIP=	# don't strip linux binaries.

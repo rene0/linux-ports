@@ -4,8 +4,8 @@
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.11
 CATEGORIES=	audio linux
-DISTNAME=	SDL_mixer-${PORTVERSION}-${RPMVERSION}
 MASTER_SITES=	EPEL
+DISTNAME=	SDL_mixer-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library (Linux CentOS ${LINUX_DIST_VER})

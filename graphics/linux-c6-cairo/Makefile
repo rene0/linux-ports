@@ -6,7 +6,6 @@ PORTVERSION=	1.8.8
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
-
 COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-cairo-[0-9]* linux-f10-cairo-[0-9]*

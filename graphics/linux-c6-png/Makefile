@@ -4,11 +4,10 @@
 PORTNAME=	png
 PORTVERSION=	1.2.49
 CATEGORIES=	graphics linux
+DISTNAME=	lib${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (Linux CentOS ${LINUX_DIST_VER})
-
-DISTNAME=	lib${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 CONFLICTS=	linux-png-[0-9]* linux-f8-png-[0-9]* linux-f10-png-[0-9]*
 

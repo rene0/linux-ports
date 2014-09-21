@@ -4,13 +4,13 @@
 PORTNAME=	dri
 PORTVERSION=	9.0
 CATEGORIES=	graphics linux
+MASTER_SITES=	http://vault.centos.org/6.4/os/i386/Packages/
+PKGNAMESUFFIX=	-compat
 DISTFILES=		mesa-libGL-9.0-0.7.el6.i686.rpm \
 		mesa-libGLU-9.0-0.7.el6.i686.rpm \
 		mesa-dri-drivers-9.0-0.7.el6.i686.rpm \
 		libdrm-2.4.39-1.el6.i686.rpm \
 		freeglut-2.6.0-1.el6.i686.rpm
-MASTER_SITES=	http://vault.centos.org/6.4/os/i386/Packages/
-PKGNAMESUFFIX=	-compat
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa libGL runtime libraries (Linux CentOS 6.4)

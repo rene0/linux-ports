@@ -6,7 +6,7 @@ PORTVERSION=	1.0.20
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)(Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF) (Linux CentOS ${LINUX_DIST_VER})
 
 CONTFLICTS=	linux-libsndfile-[0-9]* linux-f10-libsndfile-[0-9]*
 

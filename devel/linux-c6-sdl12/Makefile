@@ -5,7 +5,6 @@ PORTNAME=	sdl
 PORTVERSION=	1.2.14
 CATEGORIES=	devel linux
 DISTNAME=	SDL-${PORTVERSION}-${RPMVERSION}
-SRC_DISTFILES=	SDL-1.2.14-3.el6.src.rpm
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_VER})
@@ -26,5 +25,7 @@ PLIST_FILES=	usr/lib/libSDL-1.2.so.0 usr/lib/libSDL-1.2.so.0.11.3
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING CREDITS README-SDL.txt
 DESCR=		${.CURDIR}/../${PORTNAME}12/pkg-descr
+
+SRC_DISTFILES=	SDL-1.2.14-3.el6.src.rpm
 
 .include <bsd.port.mk>

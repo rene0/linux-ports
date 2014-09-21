@@ -6,7 +6,6 @@ PORTVERSION=	4.3.0.37
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
-DISTNAME=	skype-${DISTVERSION}
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	xmj@chaot.net
@@ -37,7 +36,7 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MVIDEO}
-RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=	libv4l
 SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
 .else

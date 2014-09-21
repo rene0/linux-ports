@@ -11,9 +11,10 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor
 
+BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	devtools
-BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_MANCOMPRESS=	yes

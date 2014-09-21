@@ -9,7 +9,6 @@ PKGNAMEPREFIX=	linux-${USE_LINUX}-
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Netscape Portable Runtime (Linux CentOS ${LINUX_DIST_VER})
 
-
 CONFLICTS=	linux-f10-nspr-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

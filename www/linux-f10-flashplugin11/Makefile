@@ -6,13 +6,13 @@ PORTVERSION=	11.2r202.400
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
-
 DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
 		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
+
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes

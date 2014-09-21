@@ -4,11 +4,10 @@
 PORTNAME=	tiff
 PORTVERSION=	3.9.4
 CATEGORIES=	graphics linux
+DISTNAME=	lib${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	TIFF library (Linux CentOS ${LINUX_DIST_VER})
-
-DISTNAME=	lib${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 CONFLICTS=	linux-tiff-[0-9]* linux-f10-tiff-[0-9]*
 

@@ -7,7 +7,6 @@ CATEGORIES=	ftp linux
 DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		libcurl-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm
 
-
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Command line tool for transferring files with URL syntax (Linux CentOS ${LINUX_DIST_VER})
 

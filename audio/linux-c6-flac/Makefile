@@ -18,6 +18,6 @@ RPMVERSION=		6.1.el6
 BRANDELF_DIRS=		usr/bin
 USE_LDCONFIG=		yes
 
-DESCR= 			${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 
 
 LINUX_DIST=	centos
 LINUX_DIST_VER=6.5
-DIST_SUBDIR=   rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
+DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-15.el6_4.${LINUX_RPM_ARCH}.rpm \
@@ -68,7 +68,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-MASTER_SITES+=  http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
+MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-15.el6_4.src.rpm \
@@ -116,7 +116,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=              linux_base-gentoo* linux_base-f* linux-glib2-*
+CONFLICTS=		linux_base-gentoo* linux_base-f10-[0-9]* linux-glib2-*
 
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i686

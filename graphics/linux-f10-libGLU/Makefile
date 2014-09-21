@@ -6,7 +6,6 @@ PORTVERSION=	7.2
 CATEGORIES=	graphics linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	mesa-${PORTNAME}-${PORTVERSION}-${RPMVERSION}
-SRC_DISTFILE=	mesa-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa libGLU runtime library (Linux Fedora 10)
@@ -25,5 +24,7 @@ SRC_DISTFILES=	mesa-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 PLIST_FILES=	usr/lib/libGLU.so.1 usr/lib/libGLU.so.1.3.070300
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+
+SRC_DISTFILE=	mesa-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 .include <bsd.port.mk>

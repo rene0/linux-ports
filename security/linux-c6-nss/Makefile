@@ -4,14 +4,13 @@
 PORTNAME=	nss
 PORTVERSION=	3.15.1
 CATEGORIES=	security linux
-
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		nss-util-3.15.1-3.el6.${LINUX_RPM_ARCH}.rpm \
 		nss-softokn-3.14.3-9.el6.${LINUX_RPM_ARCH}.rpm \
 		nss-softokn-freebl-3.14.3-9.el6.${LINUX_RPM_ARCH}.rpm
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-f10-nss-[0-9]*
 

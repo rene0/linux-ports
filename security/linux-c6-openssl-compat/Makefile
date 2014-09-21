@@ -4,10 +4,10 @@
 PORTNAME=	openssl-compat
 PORTVERSION=	0.9.8e
 CATEGORIES=	security linux
+DISTNAME=	openssl098e-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OpenSSL toolkit (Linux CentOS ${LINUX_DIST_VER})
-DISTNAME=	openssl098e-${PORTVERSION}-${RPMVERSION}
 
 CONFLICTS=	linux-openssl-[0-9]* linux-f8-openssl-[0-9]* linux-f10-openssl-[0-9]*
 

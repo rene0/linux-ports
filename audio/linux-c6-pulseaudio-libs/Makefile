@@ -4,7 +4,6 @@
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.21
 CATEGORIES=	audio linux
-SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
@@ -18,6 +17,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/pulseaudio-${PORTVERSION}
 DESCR=		${.CURDIR}/../pulseaudio/pkg-descr
+SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/usr/bin ${WRKSRC}/etc/rc.d ${WRKSRC}/etc/sysconfig
